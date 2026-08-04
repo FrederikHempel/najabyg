@@ -1,0 +1,54 @@
+{
+  "kilde": "Skovvangsvej (færdigt projekt)",
+  "reference": {
+    "m2": 68,
+    "antal_bad": 1,
+    "stand": 4,
+    "scope_faktor": 1.0
+  },
+  "totals": {
+    "faste": 84788.7,
+    "variable": 69673.99,
+    "semi_variable": 17184.06,
+    "total": 171646.75
+  },
+  "kategorier": {
+    "faste": {
+      "Køkken": 40802.75,
+      "Hårde Hvidevare": 16210.01,
+      "Bad & Toilet": 8934.98,
+      "Inventar": 16431.16,
+      "VVS": 0.0,
+      "Forplejning": 2409.8
+    },
+    "variable": {
+      "Materialer": 12713.84,
+      "Microcement": 15687.65,
+      "Gulve": 7522.5,
+      "Maler": 33750.0
+    },
+    "semi_variable": {
+      "Elektriker": 16426.31,
+      "Diverse": 757.75,
+      "El": 0.0,
+      "Diverse (Budget)": 0.0
+    }
+  },
+  "formler": {
+    "faste": "sum_faste * (antal_bad / ref_bad) * scope_faktor",
+    "variable": "sum_variable * (m2 / ref_m2)",
+    "semi_variable": "sum_semi * (m2 / ref_m2) * scope_faktor",
+    "stand_til_faktor": "stand≤4: 0.3 + (stand-1) * 0.7/3   ;   stand>4: 1.0 + (stand-4) * 1.0/6"
+  },
+  "risiko_grænser": {
+    "ltv_max": 0.75,
+    "renovering_pct_max": 0.15,
+    "min_fortjeneste": 200000,
+    "stress_prisfald_pct": 0.15
+  },
+  "andre_omkostninger_pct": {
+    "køb_pct_af_købspris": 0.02,
+    "finansiering_pct_af_lånebeløb": 0.03,
+    "salg_pct_af_salgspris": 0.025
+  }
+}

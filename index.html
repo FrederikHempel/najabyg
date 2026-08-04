@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="description" content="Naja Byg — Nauntofte & Jacobsen. Professionel ejendomsinvestering med fokus på kvalitet og langsigtet værdiskabelse i Aarhus.">
+    <title>Naja Byg — Nauntofte & Jacobsen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#hero" class="navbar-logo">
+                <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" />
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Åbn menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#om">Om os</a>
+                <a href="#projekter">Projekter</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <!-- Karrusel — afgrænset blok øverst -->
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="hero-slide active" style="background-image: url('assets/billeder/Skovvangsvej/Hero billeder/IMG_6434 copy.jpeg'); background-position: center;"></div>
+            <div class="hero-slide" style="background-image: url('assets/billeder/Skovvangsvej/Hero billeder/IMG_6435 copy.jpeg'); background-position: center;"></div>
+            <div class="hero-slide" style="background-image: url('assets/billeder/Skovvangsvej/Hero billeder/IMG_6446 copy.jpeg'); background-position: center;"></div>
+            <!-- Logo placeret i bunden af hero-billedet -->
+            <div class="hero-logo-wrap">
+                <img src="assets/naja-logo.png" alt="Naja Byg" class="hero-logo" />
+            </div>
+            <!-- Progresslinje -->
+            <div class="hero-progress">
+                <div class="hero-progress-bar" id="heroProgressBar"></div>
+            </div>
+        </div>
+
+        <!-- Tekst nedenunder billederne -->
+        <div class="hero-inner">
+            <p class="tagline">Vi skaber varig værdi gennem ansvarlig ejendomsinvestering</p>
+            <a href="#projekter" class="btn-primary">Se vores projekter</a>
+        </div>
+    </section>
+
+    <!-- Om Naja Byg -->
+    <section id="om" class="section section-sand">
+        <div class="container">
+            <h2 class="section-title">Om Naja Byg</h2>
+            <p class="section-intro">
+                Naja Byg er et dansk investeringsselskab grundlagt af Niclas Nauntofte og Frederik Jacobsen.
+                Vi investerer i ejendomme med fokus på kvalitet, tidløst design og langsigtet værdiskabelse.
+            </p>
+
+            <div class="partners-grid">
+                <article class="partner-card">
+                    <div class="partner-avatar">
+                        <img src="assets/billeder/Niclas/83034665_10219400056046551_1889777028895342592_n.jpg"
+                             alt="Niclas Nauntofte" loading="lazy"
+                             onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-initials','NN');" />
+                    </div>
+                    <h3 class="partner-name">Niclas Nauntofte</h3>
+                    <p class="partner-title">Partner &amp; Medinvestor</p>
+                    <p class="partner-bio">
+                        Niclas har solid erfaring inden for ejendomme og investering. Med øje for potentiale
+                        og en hands-on tilgang bringer han både forretningsforståelse og praktisk ekspertise
+                        ind i Naja Bygs projekter.
+                    </p>
+                </article>
+
+                <article class="partner-card">
+                    <div class="partner-avatar">
+                        <img src="assets/billeder/Frederik/IMG_4038.jpeg"
+                             alt="Frederik Jacobsen" loading="lazy"
+                             onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-initials','FJ');" />
+                    </div>
+                    <h3 class="partner-name">Frederik Jacobsen</h3>
+                    <p class="partner-title">Partner &amp; Medinvestor</p>
+                    <p class="partner-bio">
+                        Frederik har baggrund i forretningsudvikling og strategi. Han sikrer at hvert projekt
+                        er finansielt velgennemtænkt og skalérbart, med fokus på langsigtet værdiskabelse.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projekter -->
+    <section id="projekter" class="section">
+        <div class="container">
+            <h2 class="section-title">Vores projekter</h2>
+            <p class="section-intro">Klik på et projekt for at se detaljer, galleri og før/efter.</p>
+
+            <div class="projects-grid">
+                <!-- Skovvangsvej -->
+                <a href="skovvangsvej.html" class="project-tile">
+                    <div class="project-tile-img" style="background-image: url('assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg');"></div>
+                    <div class="project-tile-overlay">
+                        <div class="project-tile-info">
+                            <span class="project-tile-name">Skovvangsvej 167</span>
+                            <span class="project-tile-location">Trøjborg · Aarhus N</span>
+                        </div>
+                        <span class="project-tile-status">Renoveret 2026</span>
+                    </div>
+                </a>
+                <!-- Fremtidige projekter tilføjes her -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="section section-sand">
+        <div class="container">
+            <h2 class="section-title">Kontakt os</h2>
+            <p class="section-intro">
+                Vi hører gerne fra investorer, samarbejdspartnere og lejere.
+            </p>
+            <ul class="contact-list">
+                <li>
+                    <span class="contact-icon" aria-hidden="true">✉</span>
+                    <a href="mailto:email@naja.dk">email@naja.dk</a>
+                </li>
+                <li>
+                    <span class="contact-icon" aria-hidden="true">☎</span>
+                    <a href="tel:+4500000000">+45 XX XX XX XX</a>
+                </li>
+                <li>
+                    <span class="contact-icon" aria-hidden="true">⌖</span>
+                    <span>Aarhus, Danmark</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" class="footer-logo" />
+            <p class="copyright">© 2025 Naja Byg — Nauntofte &amp; Jacobsen</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

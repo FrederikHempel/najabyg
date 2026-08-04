@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Excel lockfiles
+~$*.xlsx
+~$*.xls
+
+# Følsomme arbejdsfiler — bank-, tinglysnings- og råfiler
+# Ligger lokalt på Frederiks harddisk. Aldrig i repo.
+assets/Trøjborg - Skovvangsvej copy/
+assets/Project calculator/
+
+# Personlige Claude Code-indstillinger (ikke launch.json som er projekt-config)
+.claude/settings.local.json
+
+# Diverse
+*.log
+Thumbs.db

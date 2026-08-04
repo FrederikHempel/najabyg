@@ -1,0 +1,752 @@
+{
+  "id": "skovvangsvej",
+  "navn": "Skovvangsvej 167",
+  "adresse": "Skovvangsvej 167, st. tv., 8200 Aarhus N",
+  "status": "Færdigt",
+  "kpi": {
+    "købspris": 2000000,
+    "salgspris": 2650000,
+    "m2_tinglyst": 68,
+    "m2_bbr": 56,
+    "projektvarighed_mdr": 4,
+    "antal_bad": 1,
+    "stand_baseline": 4,
+    "renovering_total": 171646.75,
+    "total_omkostninger": 378261.75,
+    "fortjeneste_estimeret": 255183.25,
+    "fortjeneste_lav": 203183.25,
+    "roi_estimeret_pct": 23.2,
+    "roi_lav_pct": 18.47,
+    "ltv": 0.6
+  },
+  "kategorier": [
+    {
+      "navn": "Køkken",
+      "type": "fast",
+      "total": 40802.75,
+      "bilag": [
+        {
+          "dato": "2026-03-09",
+          "leverandør": "Nettoline/Windahl Living",
+          "produkt": "Køkken (Projekt 1.511)",
+          "antal": 1,
+          "beløb": 40139.0
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Geyser Mini Køkkenarmatur Mat Guld",
+          "antal": 1,
+          "beløb": 495.0
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Rønde",
+          "produkt": "Emballage (strøer + light)",
+          "antal": 1,
+          "beløb": 168.75
+        }
+      ]
+    },
+    {
+      "navn": "Maler",
+      "type": "variabel",
+      "total": 33750.0,
+      "bilag": [
+        {
+          "dato": "2026-03-19",
+          "leverandør": "Malerfirma J.M.Rasmussen",
+          "produkt": "Malerarbejde (tilbud 112)",
+          "antal": 1,
+          "beløb": 33750.0
+        }
+      ]
+    },
+    {
+      "navn": "Inventar",
+      "type": "fast",
+      "total": 16431.16,
+      "bilag": [
+        {
+          "dato": "2026-03-09",
+          "leverandør": "Nettoline/Windahl Living",
+          "produkt": "Garderobeskabe soveværelse (Projekt 1.511)",
+          "antal": 1,
+          "beløb": 7543.0
+        },
+        {
+          "dato": "2026-03-17",
+          "leverandør": "Bauhaus",
+          "produkt": "Radiatorskjuler Klara 1460x700mm",
+          "antal": 1,
+          "beløb": 1133.1
+        },
+        {
+          "dato": "2026-03-17",
+          "leverandør": "Bauhaus",
+          "produkt": "Radiatorskjuler Klara 860x700mm x2",
+          "antal": 2,
+          "beløb": 1421.92
+        },
+        {
+          "dato": "2026-03-17",
+          "leverandør": "Bauhaus",
+          "produkt": "Radiatorskjuler Klara 1360x700mm x2",
+          "antal": 2,
+          "beløb": 2176.2
+        },
+        {
+          "dato": "2026-03-17",
+          "leverandør": "Bauhaus",
+          "produkt": "DUO Benpar 2/PK x4",
+          "antal": 4,
+          "beløb": 1331.85
+        },
+        {
+          "dato": "2026-03-17",
+          "leverandør": "Bauhaus",
+          "produkt": "OJA 29 Bad Loftlampe Hvid",
+          "antal": 1,
+          "beløb": 224.95
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Rønde",
+          "produkt": "Bøg Bordplade 30x625x4100mm",
+          "antal": 1,
+          "beløb": 2600.14
+        }
+      ]
+    },
+    {
+      "navn": "Elektriker",
+      "type": "semi-variabel",
+      "total": 16426.31,
+      "bilag": [
+        {
+          "dato": "2026-04-23",
+          "leverandør": "Frederiksbjerg El",
+          "produkt": "Timearbejde + service (montør 8,5t á 588 + servicevogn + admin + kvalitetssikring + strakslev. + parkering)",
+          "antal": 1,
+          "beløb": 7761.69
+        },
+        {
+          "dato": "2026-04-23",
+          "leverandør": "Frederiksbjerg El",
+          "produkt": "El-artikler (FUGA stik/afbrydere/rammer + lampeudtag + kabler + hjælpematerialer)",
+          "antal": 1,
+          "beløb": 8664.62
+        }
+      ]
+    },
+    {
+      "navn": "Hårde Hvidevare",
+      "type": "fast",
+      "total": 16210.01,
+      "bilag": [
+        {
+          "dato": "2026-02-09",
+          "leverandør": "Power Tilst",
+          "produkt": "Thermex Kulfiltersæt CF135",
+          "antal": 1,
+          "beløb": 299.0
+        },
+        {
+          "dato": "2026-02-09",
+          "leverandør": "Power Tilst",
+          "produkt": "BEKO ovn + SENZ emhætte (Niclas udlæg)",
+          "antal": 1,
+          "beløb": 2298.01
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Whirlpool Integreret Kølefrys",
+          "antal": 1,
+          "beløb": 2999.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Senz Integreret Opvaskemaskine 60cm",
+          "antal": 1,
+          "beløb": 1999.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Senz Induktionskogeplade 60cm",
+          "antal": 1,
+          "beløb": 1299.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Gorenje Tørretumbler HP 8kg",
+          "antal": 1,
+          "beløb": 2777.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Gorenje Vaskemaskine FL 8kg",
+          "antal": 1,
+          "beløb": 1999.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Senz Køleskab",
+          "antal": 1,
+          "beløb": 1100.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Chef Matteo Capsula 2in1",
+          "antal": 1,
+          "beløb": 740.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Power B2B",
+          "produkt": "Levering (lokal + kantstens)",
+          "antal": 1,
+          "beløb": 700.0
+        }
+      ]
+    },
+    {
+      "navn": "Microcement",
+      "type": "variabel",
+      "total": 15687.65,
+      "bilag": [
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Urban Hald ApS",
+          "produkt": "MicroCement materialer (køkken)",
+          "antal": 1,
+          "beløb": 7241.0
+        },
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Urban Hald ApS",
+          "produkt": "MicroCement Værktøjssæt Stort",
+          "antal": 1,
+          "beløb": 849.0
+        },
+        {
+          "dato": "2026-03-16",
+          "leverandør": "Urban Hald ApS",
+          "produkt": "MicroCement materialer (bad)",
+          "antal": 1,
+          "beløb": 7597.65
+        }
+      ]
+    },
+    {
+      "navn": "Materialer",
+      "type": "variabel",
+      "total": 12713.84,
+      "bilag": [
+        {
+          "dato": "2026-02-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "Raptor Basic Afdæksplast 15 MY 2x50M",
+          "antal": 1,
+          "beløb": 69.95
+        },
+        {
+          "dato": "2026-02-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "TESA Afdækningstape",
+          "antal": 1,
+          "beløb": 125.0
+        },
+        {
+          "dato": "2026-02-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "Raptor Murespand",
+          "antal": 1,
+          "beløb": 20.95
+        },
+        {
+          "dato": "2026-02-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Gulvpap 500 GR/m2 30M",
+          "antal": 1,
+          "beløb": 218.72
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Raptor Arbejdslampe LED 42W",
+          "antal": 1,
+          "beløb": 245.0
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Gulvpap 300 gr/m2 30m",
+          "antal": 1,
+          "beløb": 218.72
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "57mm RAW Fuldmålslægter 2.4m",
+          "antal": 1,
+          "beløb": 23.55
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Fischer Karmskrue 7,5x92 PK/100",
+          "antal": 1,
+          "beløb": 91.95
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "NKT Spun 4,0x40/27mm PK/500",
+          "antal": 1,
+          "beløb": 81.4
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "SPIT Gipsskrue 3,9x32mm PK/1000",
+          "antal": 1,
+          "beløb": 134.71
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Stanley Fold-Up Savbuk",
+          "antal": 1,
+          "beløb": 576.46
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Montage Lim 290 ML",
+          "antal": 1,
+          "beløb": 35.66
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Standard Gips 13x900x2400mm x4",
+          "antal": 4,
+          "beløb": 275.75
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "38x57mm RAW Fuldmålslægter 12m",
+          "antal": 1,
+          "beløb": 117.75
+        },
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Jem & Fix",
+          "produkt": "Forlængerskaft ALU Elite",
+          "antal": 1,
+          "beløb": 239.0
+        },
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Jem & Fix",
+          "produkt": "Tapetopbløder",
+          "antal": 1,
+          "beløb": 106.0
+        },
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Jem & Fix",
+          "produkt": "Sandpapir P80",
+          "antal": 1,
+          "beløb": 49.5
+        },
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Proshop",
+          "produkt": "Makita Bajonetsav 18V DJR186Z",
+          "antal": 1,
+          "beløb": 919.0
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "Uniq Industriel Wipes Basic DS/80",
+          "antal": 1,
+          "beløb": 73.58
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Montage Lim 290 ML",
+          "antal": 1,
+          "beløb": 35.66
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "Husmandsgreb Messing/Træ 30-45mm dør",
+          "antal": 2,
+          "beløb": 249.4
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Massiv Finland Dør Hvid 40x825x2040mm",
+          "antal": 2,
+          "beløb": 1550.97
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Karmsæt u/Bundstykke Hvid 100x886x2089mm",
+          "antal": 1,
+          "beløb": 500.11
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Karmsæt u/Bundstykke Hvid 110x886x2089mm",
+          "antal": 1,
+          "beløb": 576.11
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Bundstykke Eg Lak 110x886mm",
+          "antal": 1,
+          "beløb": 145.0
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "47x100mm RAW Reglar Væg 9m",
+          "antal": 9,
+          "beløb": 141.75
+        },
+        {
+          "dato": "2026-03-03",
+          "leverandør": "Stark Risskov",
+          "produkt": "Raptor Affaldssæk M-klar 110L 10 stk",
+          "antal": 1,
+          "beløb": 27.5
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW MS Sealant x4",
+          "antal": 4,
+          "beløb": 275.8
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "Knudsen Styreklodser Mix",
+          "antal": 1,
+          "beløb": 257.95
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Montage Lim 290 ML x3",
+          "antal": 3,
+          "beløb": 221.25
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Karmsæt u/Bundstykke 128mm",
+          "antal": 1,
+          "beløb": 618.75
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Bundstykke Eg 121mm",
+          "antal": 1,
+          "beløb": 186.25
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Karmsæt u/Bundstykke 110mm",
+          "antal": 1,
+          "beløb": -576.11
+        },
+        {
+          "dato": "2026-03-04",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Bundstykke Eg 110mm",
+          "antal": 1,
+          "beløb": -145.0
+        },
+        {
+          "dato": "2026-03-19",
+          "leverandør": "Stark Risskov",
+          "produkt": "DEWALT Rundsavsklinge 216x30mm 40T",
+          "antal": 1,
+          "beløb": 345.6
+        },
+        {
+          "dato": "2026-03-19",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Montage Lim 290 ML x12",
+          "antal": 12,
+          "beløb": 1211.4
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Fodliste Fyr Hvid 14x65x4450mm x6",
+          "antal": 6,
+          "beløb": 783.3
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Indfatning Fyr Hvid 14x65x2200mm x5",
+          "antal": 5,
+          "beløb": 322.69
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Wet Vådrum Gips 13x900x2500mm x2",
+          "antal": 2,
+          "beløb": 248.02
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Stark Risskov",
+          "produkt": "38x57mm RAW Fuldmålslægter 9.6m",
+          "antal": 1,
+          "beløb": 86.16
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Stark Risskov",
+          "produkt": "Gyproc Spartelprofil GAB 90 x2",
+          "antal": 2,
+          "beløb": 126.53
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Stark Risskov",
+          "produkt": "Levering + emballage + afgift",
+          "antal": 1,
+          "beløb": 736.06
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW MS Sealant Grå 290 ML",
+          "antal": 5,
+          "beløb": 251.25
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Stark Risskov",
+          "produkt": "Raptor Alkaline Batteri AA PK/24",
+          "antal": 1,
+          "beløb": 98.95
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Stark Risskov",
+          "produkt": "TJEP Dykker TF16 ELZ 1,6x38mm PK/2500",
+          "antal": 1,
+          "beløb": 228.11
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW Montage Lim 290 ML",
+          "antal": 5,
+          "beløb": 504.75
+        },
+        {
+          "dato": "2026-03-30",
+          "leverandør": "Stark Risskov",
+          "produkt": "Sikasil-C Sort 300ml Siliconefuge",
+          "antal": 1,
+          "beløb": 82.95
+        }
+      ]
+    },
+    {
+      "navn": "Bad & Toilet",
+      "type": "fast",
+      "total": 8934.98,
+      "bilag": [
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Silvan",
+          "produkt": "Milobad New York Brusevæg Sort 90x200cm",
+          "antal": 1,
+          "beløb": 950.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Silvan",
+          "produkt": "Levering fragt",
+          "antal": 1,
+          "beløb": 450.0
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Geyser Delta Håndvaskearmatur Mat Guld",
+          "antal": 1,
+          "beløb": 487.5
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "IFØ Sign Toilet uden Multiquick",
+          "antal": 1,
+          "beløb": 1995.0
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Adora Advance Toiletsæde Soft Close",
+          "antal": 1,
+          "beløb": 259.73
+        },
+        {
+          "dato": "2026-03-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "Geyser Mini Topbruserterm. Sæt Mat Guld",
+          "antal": 1,
+          "beløb": 1398.75
+        },
+        {
+          "dato": "2026-04-10",
+          "leverandør": "Nettoline/Windahl Living",
+          "produkt": "Bad tilbehør/færdiggørelse",
+          "antal": 1,
+          "beløb": 3394.0
+        }
+      ]
+    },
+    {
+      "navn": "Gulve",
+      "type": "variabel",
+      "total": 7522.5,
+      "bilag": [
+        {
+          "dato": "2026-04-20",
+          "leverandør": "Kim Gulvmand",
+          "produkt": "Gulvafslibning + 3x lak (stue/køkken + soveværelse)",
+          "antal": 1,
+          "beløb": 7522.5
+        }
+      ]
+    },
+    {
+      "navn": "Forplejning",
+      "type": "fast",
+      "total": 2409.8,
+      "bilag": [
+        {
+          "dato": "2026-03-02",
+          "leverandør": "Netto",
+          "produkt": "Mad & Drikke (diverse)",
+          "antal": 1,
+          "beløb": 509.8
+        },
+        {
+          "dato": "2026-03-06",
+          "leverandør": "Ziggy",
+          "produkt": "Frokost x2 + drikkevarer",
+          "antal": 1,
+          "beløb": 526.0
+        },
+        {
+          "dato": "2026-03-18",
+          "leverandør": "Bones Tilst",
+          "produkt": "Frokost (burger, spareribs, øl)",
+          "antal": 1,
+          "beløb": 470.0
+        },
+        {
+          "dato": "2026-03-22",
+          "leverandør": "Zagros",
+          "produkt": "Frokost takeaway",
+          "antal": 1,
+          "beløb": 100.0
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Burger King",
+          "produkt": "Frokost",
+          "antal": 1,
+          "beløb": 176.0
+        },
+        {
+          "dato": "2026-03-24",
+          "leverandør": "Zagros",
+          "produkt": "Frokost takeaway",
+          "antal": 1,
+          "beløb": 50.0
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Zagros",
+          "produkt": "Frokost takeaway x2",
+          "antal": 1,
+          "beløb": 100.0
+        },
+        {
+          "dato": "2026-04-14",
+          "leverandør": "Ziggy",
+          "produkt": "Frokost (2x Mexican burger, drikkevarer)",
+          "antal": 1,
+          "beløb": 478.0
+        }
+      ]
+    },
+    {
+      "navn": "Diverse",
+      "type": "semi-variabel",
+      "total": 757.75,
+      "bilag": [
+        {
+          "dato": "2026-02-09",
+          "leverandør": "Power Tilst",
+          "produkt": "Airfryer papir (ikke projekt)",
+          "antal": 1,
+          "beløb": 49.0
+        },
+        {
+          "dato": "2026-02-26",
+          "leverandør": "Aarhus Kommune",
+          "produkt": "Parkeringsbøde Skovvangsvej 167",
+          "antal": 1,
+          "beløb": 510.0
+        },
+        {
+          "dato": "2026-02-27",
+          "leverandør": "Stark Risskov",
+          "produkt": "RAW OSB3 Tag TG2 12x610x2440mm x2",
+          "antal": 2,
+          "beløb": 192.8
+        },
+        {
+          "dato": "2026-03-25",
+          "leverandør": "Stark Risskov",
+          "produkt": "Stark Bærepose Stor",
+          "antal": 1,
+          "beløb": 5.95
+        }
+      ]
+    }
+  ]
+}

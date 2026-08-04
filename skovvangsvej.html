@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="description" content="Skovvangsvej 167, Trøjborg, Aarhus N — Naja Byg. Gennemrenoveret lejlighed med fokus på kvalitet og tidløst design.">
+    <title>Skovvangsvej 167 — Naja Byg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" />
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Åbn menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#om">Om os</a>
+                <a href="index.html#projekter">Projekter</a>
+                <a href="index.html#kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Projekt-hero -->
+    <section class="project-page-hero" style="background-image: url('assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg');">
+        <div class="project-page-hero-overlay"></div>
+        <div class="project-page-hero-content">
+            <a href="index.html#projekter" class="project-back-link">
+                <span aria-hidden="true">←</span> Alle projekter
+            </a>
+            <h1 class="project-page-title">Skovvangsvej 167</h1>
+            <p class="project-page-subtitle">Trøjborg · Aarhus N · Renoveret 2026</p>
+        </div>
+    </section>
+
+    <!-- Overblik: beskrivelse + plantegning -->
+    <section class="section section-sand">
+        <div class="container project-overview">
+            <div class="project-info">
+                <h2 class="project-info-title">Om projektet</h2>
+                <div class="project-stats">
+                    <div class="project-stat">
+                        <span class="stat-label">Adresse</span>
+                        <span class="stat-value">Skovvangsvej 167, st. tv., 8200 Aarhus N</span>
+                    </div>
+                    <div class="project-stat">
+                        <span class="stat-label">Areal</span>
+                        <span class="stat-value">— m²</span>
+                    </div>
+                    <div class="project-stat">
+                        <span class="stat-label">Rum</span>
+                        <span class="stat-value">—-værelses</span>
+                    </div>
+                    <div class="project-stat">
+                        <span class="stat-label">Renovering</span>
+                        <span class="stat-value">2026</span>
+                    </div>
+                    <div class="project-stat">
+                        <span class="stat-label">Købspris</span>
+                        <span class="stat-value">2.000.000 kr.</span>
+                    </div>
+                    <div class="project-stat">
+                        <span class="stat-label">Salgspris</span>
+                        <span class="stat-value">2.650.000 kr.</span>
+                    </div>
+                </div>
+                <p class="project-desc-text">
+                    Skovvangsvej i Trøjborg-kvarteret er Naja Bygs første investeringsprojekt.
+                    Lejligheden er gennemrenoveret fra bund til top med fokus på tidløse materialer
+                    og kvalitet i detaljerne. Badeværelset er totalrenoveret med microcement og
+                    armaturer i mat guld. Køkken og stue er åbnet op og udstyret med nyt
+                    nordisk køkken med underlysning og egetræsdetaljer.
+                </p>
+            </div>
+            <div class="project-floorplan">
+                <img src="assets/billeder/Skovvangsvej/Plantegning.png"
+                     alt="Plantegning — Skovvangsvej 167"
+                     loading="lazy" />
+                <p class="floorplan-caption">Plantegning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Billedgalleri med tabs -->
+    <section class="section" id="galleri">
+        <div class="container">
+            <h2 class="section-title">Billedgalleri</h2>
+
+            <!-- Tab-navigation -->
+            <div class="gallery-tabs" role="tablist">
+                <button class="gallery-tab active" role="tab" aria-selected="true"
+                        data-tab="som-koebt">Som købt</button>
+                <button class="gallery-tab" role="tab" aria-selected="false"
+                        data-tab="byggeproces">Under renovering</button>
+                <button class="gallery-tab" role="tab" aria-selected="false"
+                        data-tab="faerdig">Færdigt resultat</button>
+            </div>
+
+            <!-- Tab-paneler — fyldes af skovvangsvej.js -->
+            <div class="gallery-panel active" id="tab-som-koebt" role="tabpanel"></div>
+            <div class="gallery-panel" id="tab-byggeproces" role="tabpanel"></div>
+            <div class="gallery-panel" id="tab-faerdig" role="tabpanel"></div>
+        </div>
+    </section>
+
+    <!-- Rum for rum — før/efter-sliders -->
+    <section class="section section-sand" id="rum-sliders">
+        <div class="container">
+            <h2 class="section-title">Rum for rum</h2>
+            <p class="section-intro">Træk slideren og se transformationen fra start til slut.</p>
+
+            <div class="room-sliders-grid">
+
+                <!-- Stuen -->
+                <div class="room-slider-wrap">
+                    <h3 class="room-slider-label">Stuen</h3>
+                    <div class="inline-ba-slider"
+                         data-before="assets/billeder/Skovvangsvej/Stuen/Før/IMG_5032.jpeg"
+                         data-after="assets/billeder/Skovvangsvej/Stuen/Efter/IMG_6432.jpeg">
+                        <img class="iba-after" src="assets/billeder/Skovvangsvej/Stuen/Efter/IMG_6432.jpeg"
+                             alt="Stuen — efter" loading="lazy" />
+                        <img class="iba-before" src="assets/billeder/Skovvangsvej/Stuen/Før/IMG_5032.jpeg"
+                             alt="Stuen — før" loading="lazy" />
+                        <div class="iba-handle">
+                            <span class="iba-handle-circle">⇆</span>
+                        </div>
+                        <span class="iba-label iba-label-before">Før</span>
+                        <span class="iba-label iba-label-after">Efter</span>
+                    </div>
+                </div>
+
+                <!-- Køkken -->
+                <div class="room-slider-wrap">
+                    <h3 class="room-slider-label">Køkken</h3>
+                    <div class="inline-ba-slider"
+                         data-before="assets/billeder/Skovvangsvej/Køkken/Før/IMG_4981.jpeg"
+                         data-after="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg">
+                        <img class="iba-after" src="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg"
+                             alt="Køkken — efter" loading="lazy" />
+                        <img class="iba-before" src="assets/billeder/Skovvangsvej/Køkken/Før/IMG_4981.jpeg"
+                             alt="Køkken — før" loading="lazy" />
+                        <div class="iba-handle">
+                            <span class="iba-handle-circle">⇆</span>
+                        </div>
+                        <span class="iba-label iba-label-before">Før</span>
+                        <span class="iba-label iba-label-after">Efter</span>
+                    </div>
+                </div>
+
+                <!-- Badeværelset -->
+                <div class="room-slider-wrap">
+                    <h3 class="room-slider-label">Badeværelset</h3>
+                    <div class="inline-ba-slider"
+                         data-before="assets/billeder/Skovvangsvej/Badeværelset/Før 1/IMG_5034.jpeg"
+                         data-after="assets/billeder/Skovvangsvej/Badeværelset/Efter 1/IMG_6443.jpeg">
+                        <img class="iba-after" src="assets/billeder/Skovvangsvej/Badeværelset/Efter 1/IMG_6443.jpeg"
+                             alt="Badeværelset — efter" loading="lazy" />
+                        <img class="iba-before" src="assets/billeder/Skovvangsvej/Badeværelset/Før 1/IMG_5034.jpeg"
+                             alt="Badeværelset — før" loading="lazy" />
+                        <div class="iba-handle">
+                            <span class="iba-handle-circle">⇆</span>
+                        </div>
+                        <span class="iba-label iba-label-before">Før</span>
+                        <span class="iba-label iba-label-after">Efter</span>
+                    </div>
+                </div>
+
+                <!-- Badeværelset 2 -->
+                <div class="room-slider-wrap">
+                    <h3 class="room-slider-label">Badeværelset — vinkel 2</h3>
+                    <div class="inline-ba-slider"
+                         data-before="assets/billeder/Skovvangsvej/Badeværelset/Før 2/IMG_6177.jpeg"
+                         data-after="assets/billeder/Skovvangsvej/Badeværelset/Efter 2/IMG_6445.jpeg">
+                        <img class="iba-after" src="assets/billeder/Skovvangsvej/Badeværelset/Efter 2/IMG_6445.jpeg"
+                             alt="Badeværelset vinkel 2 — efter" loading="lazy" />
+                        <img class="iba-before" src="assets/billeder/Skovvangsvej/Badeværelset/Før 2/IMG_6177.jpeg"
+                             alt="Badeværelset vinkel 2 — før" loading="lazy" />
+                        <div class="iba-handle">
+                            <span class="iba-handle-circle">⇆</span>
+                        </div>
+                        <span class="iba-label iba-label-before">Før</span>
+                        <span class="iba-label iba-label-after">Efter</span>
+                    </div>
+                </div>
+
+            </div><!-- /.room-sliders-grid -->
+        </div>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="section">
+        <div class="container">
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps?q=Skovvangsvej+167,+8200+Aarhus+N&output=embed"
+                    title="Skovvangsvej 167, 8200 Aarhus N"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" class="footer-logo" />
+            <p class="copyright">© 2025 Naja Byg — Nauntofte &amp; Jacobsen</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox (enkeltbillede) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Luk">×</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Forrige">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Næste">›</button>
+        <div class="lightbox-inner">
+            <img class="lightbox-img" id="lightboxImg" alt="" />
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <script src="skovvangsvej.js"></script>
+</body>
+</html>

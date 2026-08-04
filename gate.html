@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>Naja Byg — Hjemmeside kommer snart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Work Sans', -apple-system, sans-serif;
+            background-color: #F9F6F2;
+            color: #1B3A5C;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .gate-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 3.5rem 2.75rem 2.5rem;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+            text-align: center;
+        }
+
+        .gate-logo {
+            height: 44px;
+            width: auto;
+            margin: 0 auto 2rem;
+            display: block;
+        }
+
+        .gate-eyebrow {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #C9A96E;
+            margin-bottom: 1rem;
+        }
+
+        .gate-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1B3A5C;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .gate-subtitle {
+            font-size: 1rem;
+            color: #8C8278;
+            margin-bottom: 2.5rem;
+            padding: 0 0.25rem;
+        }
+
+        .gate-divider {
+            position: relative;
+            margin: 0 auto 1.75rem;
+            width: 60%;
+            height: 1px;
+            background: #E8E0D5;
+        }
+
+        .gate-divider::after {
+            content: 'Intern adgang';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #FFFFFF;
+            padding: 0 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #8C8278;
+        }
+
+        .gate-input-wrap {
+            position: relative;
+            margin-bottom: 0.85rem;
+        }
+
+        .gate-input {
+            width: 100%;
+            padding: 0.9rem 1.25rem;
+            border: 2px solid #E8E0D5;
+            border-radius: 999px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            color: #1B3A5C;
+            background: #F9F6F2;
+            outline: none;
+            text-align: center;
+            letter-spacing: 0.08em;
+            transition: border-color 0.25s ease, background-color 0.25s ease;
+        }
+
+        .gate-input:focus {
+            border-color: #1B3A5C;
+            background: #FFFFFF;
+        }
+
+        .gate-input.error {
+            border-color: #c0392b;
+            animation: shake 0.35s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25%       { transform: translateX(-6px); }
+            75%       { transform: translateX(6px); }
+        }
+
+        .gate-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: #1B3A5C;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 999px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.2s ease;
+        }
+
+        .gate-btn:hover {
+            background-color: #C9A96E;
+            transform: translateY(-2px);
+        }
+
+        .gate-error {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #c0392b;
+            min-height: 1.2em;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .gate-error.visible {
+            opacity: 1;
+        }
+
+        .gate-footer {
+            margin-top: 2.25rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #F0EBE3;
+            font-size: 0.78rem;
+            color: #B8B0A6;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 500px) {
+            .gate-card { padding: 2.5rem 1.75rem 2rem; }
+            .gate-title { font-size: 1.55rem; }
+            .gate-subtitle { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gate-card">
+        <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" class="gate-logo" />
+
+        <span class="gate-eyebrow">Naja Byg</span>
+        <h1 class="gate-title">Hjemmeside kommer snart</h1>
+        <p class="gate-subtitle">
+            Vi arbejder på noget nyt. Kig forbi om lidt — eller kontakt os direkte
+            hvis du er samarbejdspartner eller lejer.
+        </p>
+
+        <div class="gate-divider"></div>
+
+        <form id="gateForm" autocomplete="off">
+            <div class="gate-input-wrap">
+                <input
+                    type="password"
+                    id="gateInput"
+                    class="gate-input"
+                    placeholder="Adgangskode"
+                    autocomplete="current-password"
+                />
+            </div>
+            <button type="submit" class="gate-btn">Log ind →</button>
+            <p class="gate-error" id="gateError">Forkert adgangskode — prøv igen.</p>
+        </form>
+
+        <p class="gate-footer">© 2025 Naja Byg</p>
+    </div>
+
+    <script>
+        /* -------------------------------------------------------
+           Skift ACCESS_CODE til den kode I ønsker at bruge
+           ------------------------------------------------------- */
+        const ACCESS_CODE = 'naja2026';
+
+        const form    = document.getElementById('gateForm');
+        const input   = document.getElementById('gateInput');
+        const errMsg  = document.getElementById('gateError');
+
+        // Allerede logget ind? Gå videre med det samme
+        if (sessionStorage.getItem('naja_access') === 'granted') {
+            window.location.replace('index.html');
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const entered = input.value.trim();
+
+            if (entered === ACCESS_CODE) {
+                sessionStorage.setItem('naja_access', 'granted');
+                window.location.replace('index.html');
+            } else {
+                input.classList.add('error');
+                errMsg.classList.add('visible');
+                input.value = '';
+                setTimeout(() => input.classList.remove('error'), 400);
+            }
+        });
+
+        input.addEventListener('input', () => errMsg.classList.remove('visible'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naja Byg — intern projektoversigt og beregner">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>Intern — Naja Byg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body class="intern-body">
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" />
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">← Forside</a>
+                <a href="#projekter">Projekter</a>
+                <a href="#beregner">Beregner</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Intern hero -->
+    <section class="intern-hero">
+        <div class="container">
+            <span class="intern-eyebrow">Intern · projektoversigt</span>
+            <h1 class="intern-title">Projekt&shy;dashboard</h1>
+            <p class="intern-lede">
+                Faktiske tal fra færdige projekter og estimat-beregner for nye opkøb.
+                Klik på en kategori for at se underliggende bilag.
+            </p>
+        </div>
+    </section>
+
+    <!-- Færdige projekter -->
+    <section id="projekter" class="section">
+        <div class="container">
+            <div class="intern-section-head">
+                <h2>Færdige projekter</h2>
+                <p>Faktiske tal fra afsluttede investeringer.</p>
+            </div>
+
+            <div id="projects-container" class="projects-stack">
+                <!-- Projekter renderes af intern.js -->
+                <div class="loading-state">Indlæser projektdata…</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beregner -->
+    <section id="beregner" class="section section-sand">
+        <div class="container">
+            <div class="intern-section-head">
+                <h2>Beregner — nyt projekt</h2>
+                <p>Estimér renoveringsomkostninger og afkast baseret på historisk data fra Skovvangsvej.</p>
+            </div>
+
+            <div class="calc-grid">
+                <!-- Inputs -->
+                <form class="calc-inputs" id="calcForm" autocomplete="off">
+                    <div class="calc-row">
+                        <label for="cProjektnavn">Projektnavn</label>
+                        <input type="text" id="cProjektnavn" placeholder="Fx Mølledalen 15A" />
+                    </div>
+                    <div class="calc-row">
+                        <label for="cAdresse">Adresse</label>
+                        <input type="text" id="cAdresse" placeholder="Vej, by" />
+                    </div>
+                    <div class="calc-row">
+                        <label for="cKøbspris">Købspris (kr)</label>
+                        <input type="number" id="cKøbspris" min="0" step="50000" value="2000000" />
+                    </div>
+                    <div class="calc-row">
+                        <label for="cSalgspris">Forventet salgspris (kr)</label>
+                        <input type="number" id="cSalgspris" min="0" step="50000" value="2650000" />
+                    </div>
+                    <div class="calc-row">
+                        <label for="cLTV">
+                            Belåningsgrad (LTV)
+                            <span class="stand-value-label">
+                                <span id="ltvValue">60</span> % · lånebeløb: <span id="lånebeløbValue">1.200.000 kr.</span>
+                            </span>
+                        </label>
+                        <input type="range" id="cLTV" class="range-slider" min="0" max="100" step="5" value="60" />
+                        <div class="range-ticks">
+                            <span>0 %</span>
+                            <span>50 %</span>
+                            <span>100 %</span>
+                        </div>
+                    </div>
+                    <div class="calc-row calc-row-split">
+                        <div>
+                            <label for="cM2">Areal (m²)</label>
+                            <input type="number" id="cM2" min="10" max="500" step="1" value="68" />
+                        </div>
+                        <div>
+                            <label for="cBad">Antal bad</label>
+                            <input type="number" id="cBad" min="0" max="5" step="1" value="1" />
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <label for="cStand">
+                            Stand
+                            <span class="stand-value-label">
+                                <span id="standValue">4</span>/10 · <span id="standDescription">middel renovering</span>
+                            </span>
+                        </label>
+                        <input type="range" id="cStand" class="range-slider" min="1" max="10" step="1" value="4" />
+                        <div class="range-ticks">
+                            <span>1 · let</span>
+                            <span>4 · ref</span>
+                            <span>10 · total</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-actions">
+                        <button type="button" id="calcReset" class="btn-secondary">Nulstil</button>
+                    </div>
+                </form>
+
+                <!-- Output -->
+                <aside class="calc-output" id="calcOutput" aria-live="polite">
+                    <div class="calc-output-header">
+                        <span class="calc-output-label">Estimeret renovering</span>
+                        <span class="calc-output-total" id="oTotal">0 kr</span>
+                        <span class="calc-output-sub" id="oPerM2">0 kr/m²</span>
+                    </div>
+
+                    <ul class="calc-breakdown">
+                        <li>
+                            <span class="bd-label">Faste omkostninger</span>
+                            <span class="bd-meta">Køkken, hvidevarer, bad</span>
+                            <span class="bd-value" id="oFast">0 kr</span>
+                        </li>
+                        <li>
+                            <span class="bd-label">Variable omkostninger</span>
+                            <span class="bd-meta">Skalérer med m²</span>
+                            <span class="bd-value" id="oVariable">0 kr</span>
+                        </li>
+                        <li>
+                            <span class="bd-label">Semi-variable</span>
+                            <span class="bd-meta">m² × stand</span>
+                            <span class="bd-value" id="oSemi">0 kr</span>
+                        </li>
+                    </ul>
+
+                    <div class="calc-subsection">
+                        <h4 class="calc-subsection-title">
+                            Andre omkostninger
+                            <span class="calc-subsection-total" id="oAndreTotal">0 kr</span>
+                        </h4>
+                        <ul class="calc-breakdown calc-breakdown-sub">
+                            <li>
+                                <span class="bd-label">Faste købsomkostninger</span>
+                                <span class="bd-meta"><span id="oKøbPct">2,0</span> % af købspris</span>
+                                <span class="bd-value" id="oKøb">0 kr</span>
+                            </li>
+                            <li>
+                                <span class="bd-label">Finansieringsomkostninger</span>
+                                <span class="bd-meta"><span id="oFinPct">3,0</span> % af lånebeløb (LTV × købspris)</span>
+                                <span class="bd-value" id="oFin">0 kr</span>
+                            </li>
+                            <li>
+                                <span class="bd-label">Salgsomkostninger</span>
+                                <span class="bd-meta"><span id="oSalgPct">2,5</span> % af salgspris</span>
+                                <span class="bd-value" id="oSalg">0 kr</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="calc-economy">
+                        <div class="econ-row">
+                            <span>Estimeret fortjeneste</span>
+                            <span id="oFortjeneste" class="econ-value">0 kr</span>
+                        </div>
+                        <div class="econ-row">
+                            <span>Estimeret ROI</span>
+                            <span id="oROI" class="econ-value">0 %</span>
+                        </div>
+                        <div class="econ-row">
+                            <span>Renovering af salgspris</span>
+                            <span id="oRenPct" class="econ-value">0 %</span>
+                        </div>
+                    </div>
+
+                    <div class="risk-flags" id="riskFlags"></div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drilldown modal -->
+    <div class="drilldown-modal" id="drilldownModal" hidden>
+        <div class="drilldown-backdrop" data-close></div>
+        <div class="drilldown-panel" role="dialog" aria-modal="true" aria-labelledby="drilldownTitle">
+            <header class="drilldown-header">
+                <div>
+                    <span class="drilldown-eyebrow" id="drilldownEyebrow">Kategori</span>
+                    <h3 id="drilldownTitle">—</h3>
+                </div>
+                <button type="button" class="drilldown-close" data-close aria-label="Luk">×</button>
+            </header>
+            <div class="drilldown-summary">
+                <span>Total</span>
+                <strong id="drilldownTotal">0 kr</strong>
+                <span id="drilldownCount" class="drilldown-count">0 bilag</span>
+            </div>
+            <div class="drilldown-table-wrap">
+                <table class="drilldown-table">
+                    <thead>
+                        <tr>
+                            <th>Dato</th>
+                            <th>Leverandør</th>
+                            <th>Produkt</th>
+                            <th class="num">Beløb</th>
+                        </tr>
+                    </thead>
+                    <tbody id="drilldownBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <img src="assets/naja-logo-horizontal.png" alt="Naja Byg" class="footer-logo" />
+            <p class="copyright">© 2025 Naja Byg — Intern</p>
+        </div>
+    </footer>
+
+    <script src="intern.js?v=2"></script>
+</body>
+</html>

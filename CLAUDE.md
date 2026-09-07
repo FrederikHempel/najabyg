@@ -254,6 +254,8 @@ Aldrig: tal der tæller op · parallax · karruseller · autoplay-video i hero.
 - [ ] **Kontaktformularen har ingen backend.** `action="#"`. Sæt en formulartjeneste på
 - [ ] **Logoet** skal gennem en grafiker (bog-læsningen). Skitsen bruges indtil da
 - [ ] **Byg Garanti-mærket** må først vises, når medlemskab af DI Byggeri eller Dansk Håndværk er på plads
+- [ ] **HTTPS på najabyg.dk** — certifikat ikke udstedt, se Hosting
+- [ ] **robots.txt** vendes til Allow ved go-live
 - [ ] **Google Business Profile** med de samme billeder
 - [ ] **De rigtige billeder** — hero og jobkort er midlertidige
 - [ ] **Syddjurs Byg** — tre fakta til forsidens trin 4 (år, navn, farens rolle)
@@ -315,7 +317,13 @@ Sessionen nulstilles ved lukning af browsertab. Der er ingen server-side sikkerh
 
 ## Hosting
 
-Deployes som statisk site. Produktionsrepoet ligger i `../GitHub/najabyg` (custom domain `najabyg.dk`) og indeholder stadig den **gamle** ejendomsinvest-udgave — det skal opdateres separat, når indholdet her er godkendt. Go-live er tidligst marts 2027.
+Deployes som statisk site via GitHub Pages fra `../GitHub/najabyg` (branch `main`, custom domain `najabyg.dk`). **Pushed 7. september 2026** — najabyg.dk viser nu det nye site bag gaten. Go-live er tidligst marts 2027.
+
+**Sådan deployes en ændring:** kopiér sitets filer fra denne mappe til repoet (kun HTML/CSS/JS, `assets/billeder`, `data`, `scripts`, favicon, sitemap, robots, CLAUDE.md, OPGAVER) — aldrig designguide, analyser, `logo/`, `_arkiv-ejendomsinvest/` eller `visual inspiration/`. De er ignoreret i repoets `.gitignore`. Commit og push til `main`; Pages bygger på under et minut.
+
+**Kendte forhold:**
+- `robots.txt` blokerer alt, så længe gaten er på — crawlere kører ikke JavaScript, så gaten alene holder dem ikke ude. Vendes til `Allow: /` ved go-live.
+- **HTTPS virker ikke på najabyg.dk** (september 2026). DNS er korrekt (A-records til GitHub Pages, `is_https_eligible: true`), men GitHub har ikke udstedt certifikatet. Fix: GitHub → repo → Settings → Pages → fjern custom domain, gem, tilføj `najabyg.dk` igen, vent på „Certificate issued", slå „Enforce HTTPS" til. Skal være løst før go-live.
 
 ---
 

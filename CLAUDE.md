@@ -1,18 +1,26 @@
 # Naja Byg — Hjemmeside
 
-Dette dokument beskriver projektets nuværende tilstand og konventioner. Læs det grundigt inden du laver ændringer.
+Dette dokument beskriver projektets nuværende tilstand og konventioner. Læs det grundigt, inden du laver ændringer.
+
+**Designgrundlag, i prioriteret rækkefølge:**
+
+1. `naja-byg-designguide-v4.html` (v4.8, 7. september 2026) — **facit.** Afsnit 16 er forsidens drejebog. Er der tvivl om en farve, en formulering eller et komponentvalg, slår guiden koden.
+2. `naja-byg-frygtanalyse.html` — 49 kodede klagepunkter fra danske boligejere. Forklarer *hvorfor* løfterne og stemplerne er formuleret, som de er. Læs den, før du ændrer et budskab.
+3. `OPGAVER-v4.3.md` — deltaen fra 24. august-koden til guidens v4.8. **Udført 7. september 2026** (opgave 0–9; Lighthouse udestår). Listen står som dokumentation af, hvad der blev ændret og hvorfor.
+
+`naja-byg-designguide.pdf` (v3.0) er forældet og må ikke bruges som reference.
 
 ---
 
 ## Om projektet
 
-En professionel, dansk **multi-page statisk hjemmeside** for **Naja Byg** (kommercielt navn — juridisk enhed er fortsat Nauntofte & Jacobsen ApS). Formålet er at fremstå seriøse og troværdige over for potentielle investorer, samarbejdspartnere og lejere — og fungere som et internt projektfremvisningsværktøj.
+Dansk, statisk **multi-page hjemmeside** for **Naja Byg** — tømrerarbejde for private boligejere i Aarhus og opland. Små og mellemstore opgaver, én ad gangen.
 
-**Teknologi-stack:** Ren HTML5, CSS3 og vanilla JavaScript. Ingen frameworks, ingen build-tools, ingen package.json. Siden åbnes direkte i browser eller hostes som statisk site (fx Netlify, GitHub Pages).
+Sitet svarer på to ting, og kun de to: at kunden ikke ved, hvad hun skal bede om, og at hun er bange for, at aftalerne ikke holder. Ikke „bedre håndværk“. Frygtanalysen viser, at kun 1 ud af 4 klager over håndværkere handler om selve håndværket — de 3 andre handler om, om nogen svarer, om prisen holder, om de møder op, og om det bliver færdigt. Det er dét, sitet skal bevise.
 
-**Adgangsbeskyttelse:** Siden er beskyttet af en password-gate (`gate.html`) der viser "Hjemmeside kommer snart" og et login-felt for interne brugere. Koden er pt. `naja2026` og kan ændres i `gate.html` under `const ACCESS_CODE`.
+**Teknologi-stack:** Ren HTML5, CSS3 og vanilla JavaScript. Ingen frameworks, ingen build-tools, ingen package.json. Det er et bevidst valg for et site på seks sider, som skal kunne rettes af Frederik uden en udvikler.
 
-**Søgemaskine-indeksering:** Er blokeret. Alle HTML-sider har `<meta name="robots" content="noindex, nofollow">`, og `robots.txt` forbyder alle bots (`Disallow: /`). Fjernes når siden er klar til at gå live.
+**Adgangsbeskyttelse:** Sitet er beskyttet af `gate.html`, indtil det går live. Koden er pt. `naja2026` og ændres i konstanten `ACCESS_CODE`.
 
 ---
 
@@ -20,19 +28,28 @@ En professionel, dansk **multi-page statisk hjemmeside** for **Naja Byg** (komme
 
 | Fil | Beskrivelse |
 |-----|-------------|
-| `index.html` | Forsiden — navbar, hero-karrusel, om os, projekt-tiles, kontakt, footer |
-| `style.css` | Al CSS for hele projektet (deles af alle sider) |
-| `script.js` | JS til `index.html` — hero-karrusel, navbar, hamburger, adgangstjek |
-| `skovvangsvej.html` | Detaljeside for Skovvangsvej-projektet |
-| `skovvangsvej.js` | JS til `skovvangsvej.html` — tab-galleri, lightbox, rum-sliders, adgangstjek |
-| `gate.html` | Password-beskyttet adgangsside (entry point) |
-| `intern.html` | **Intern** dashboard-side — projektdata + beregner (skjult URL, ikke linket fra forsiden) |
-| `intern.js` | JS til `intern.html` — projektkort, donut, drilldown-modal, beregner-formler |
-| `data/skovvangsvej.json` | Konverterede Skovvangsvej-data (KPI, kategorier, bilag) |
-| `data/baseline.json` | Referenceværdier til beregneren (faste/variable/semi-variable totaler) |
-| `robots.txt` | Blokerer alle søgemaskine-bots (`Disallow: /`) |
-| `scripts/excel-to-json.py` | Python-script der konverterer Excel-filer i `assets/project calculator/` til JSON |
-| `CLAUDE.md` | Dette dokument |
+| `index.html` | Forsiden — en salgstragt i syv trin (guiden afsnit 16): hero → stempler → ydelser → erfaring + jobkort → pris → forløbet → „Skal vi tage en uforpligtende snak?“. Filen hedder index, fordi det er det navn, serveren leder efter — det ændres ikke |
+| `ydelser.html` | Hvad vi laver — Syddjurs Bygs liste inkl. tilbygning og renovering — og hvad vi ikke laver: totalentreprise og nybyggeri |
+| `opgaver.html` | Jobkort, før/efter-slidere og procesgalleri |
+| `priser.html` | Åbne timepriser: **tre tal** (timepris, kørsel, materialer) + tærsklen for varsling + hvad der ikke er med |
+| `om-os.html` | Niclas og Frederik, direkte numre, **den fulde løfteliste**, ejendomsforretningen som faktalinje |
+| `kontakt.html` | Fem formularfelter med hjælpetekster + rækkefølgen for en opgave |
+| `gate.html` | Adgangsside (entry point, kun indtil live) |
+| `style.css` | Hele designsystemet, bygget på guidens v4-tokens |
+| `script.js` | Telefonbar, mobilmenu, før/efter-slider, adgangstjek |
+| `sitemap.xml` / `robots.txt` | SEO — se afsnittet nedenfor |
+| `favicon.svg` / `favicon-32.png` | Mærket alene. SVG først, PNG som fallback |
+| `assets/og-image.jpg` | 1200 × 630, fuldt lockup på Sand 50. Genereres med Pillow |
+| `assets/tilbud-eksempel.pdf` | **Placeholder** — skiftes til et rigtigt, anonymiseret tilbud |
+| `assets/billeder/hero/` | Hero-beskæringer (desktop 16:9, mobil stående). Originalen er `Byggeprocessen/IMG_6323.jpeg` |
+| `intern.html` / `intern.js` / `intern.css` | **Intern** dashboard + beregner til ejendomsforretningen. Skjult URL, eget legacy-stylesheet — rører ikke det nye brand |
+| `_arkiv-ejendomsinvest/` | Den gamle NAJA Ejendomsinvest-side, som den så ud før rebrandet |
+| `logo/` | Logoarbejde. **Døråbningen (E8) er valgt** — se afsnittet Logo |
+| `naja-byg-designguide-v4.html` | Designguiden, v4.8 |
+| `naja-byg-grundflade.html` | Sammenligningen, der førte til valget af varm hvid. Historisk |
+| `naja-byg-skriftvalg.html` | Skriftsammenligningen, der førte til valget af Work Sans. Historisk |
+| `naja-byg-frygtanalyse.html` | Kundeanalysen bag budskaberne |
+| `naja-billedudvalg.html` | 26 frit licenserede stockkandidater (kun til atmosfære, aldrig som bevis) |
 
 ---
 
@@ -40,134 +57,221 @@ En professionel, dansk **multi-page statisk hjemmeside** for **Naja Byg** (komme
 
 ### Identitet
 - **Virksomhedsnavn:** Naja Byg
-- **Undertitel:** Nauntofte & Jacobsen
-- **Tagline:** Vi skaber varig værdi gennem ansvarlig ejendomsinvestering
+- **Undertekst i mærket:** Nauntofte & Jacobsen
+- **Hovedbudskab (forsidens h1):** Tømrer i Aarhus og opland.
+  *Besluttet 7. september: intet slogan. Fem kandidater faldt. Heroen siger, hvad det er — som Polestars „Polestar 4 coupé“ — og lead-linjen bærer differentieringen: „Vinduer, døre, tag, tilbygning, terrasse. Én opgave ad gangen — og timeprisen står her på siden.“ Overtalelsen sker i stemplerne under heroen, ikke i h1. Det er også den bedste h1 til lokal søgning.*
+- **Indgangslinje (annoncer, kontakt-CTA):** Du behøver ikke vide, hvad du skal bede om.
+- **Kontakt-CTA-overskrift (forsidens bund):** Skal vi tage en uforpligtende snak?
+- **Telefon:** 28 18 64 88
 - **Sprog:** Dansk
 
-### Logo
-- `assets/naja-logo.png` — stående version (bruges i hero-karrusel)
-- `assets/naja-logo-horizontal.png` — vandret version (bruges i navbar, footer, gate)
+**Fravalgt — må ikke genindføres:** „Faste priser. Faste aftaler. Faste folk.“ (fast pris kan ikke holdes hver gang) · „Fortæl os drømmen. Vi får den i mål.“ (kliché) · „Vi lader håndværket tale for sig selv“ (lover tavshed, som er branchens hyppigste klage) · „Vi stopper først ved 100 %“ (gør os til dem, der afgør hvornår 100 % er nået) · „Du skal ikke gå og gætte“ (intet objekt) · „Aftalt er aftalt“ (faldt) · „Når kvalitet og pris går op i en højere enhed“ (Frederik afviste den selv på dag ét; seks af syv konkurrenter skriver den) · „Der er mere hus, end du tror“ (falder på to vinduer) · „kvalitet“, „faglighed“ eller „tryghed“ uden kvittering i samme sætning.
 
-### Farvepalette
+### Logo
+**Døråbningen, variant E8**, er valgt. Master-skitser ligger i `logo/bud-02-perspektiv-doer/doer-e8.svg` og `doer-e8-negativ.svg`. Geometrien:
+
+```svg
+<svg viewBox="16 2 76 98">
+  <path d="M16,10 L48,10 L48,92 L16,92 Z" fill="#E08356"/>   <!-- åbningen, rust lys -->
+  <path d="M48,10 L92,2 L92,100 L48,92 Z" fill="#064E3B"/>   <!-- bladet, Emerald Ink -->
+</svg>
+```
+
+- Mærket bruger **`#064E3B`** til bladet — ikke guidens Teal 950. Det er logoets egen farve og ligger som `--nb-logo-ink`. Alle andre steder på sitet bruges Teal 950.
+- Rusten i mærket er *lyset i rummet bagved*, ikke accenten. **Logoet må aldrig stå klods op ad en rust-knap.** Står logoet i farve på en flade, er den flades accent brugt.
+- Tre lockup-niveauer: **fuldt** (mærke + Naja Byg + NAUNTOFTE & JACOBSEN, min. 180 px — hero, tilbud, vogndør) · **standard** (mærke + Naja Byg, min. 90 px — navbar, footer) · **mærket alene** (favicon, min. 16 px).
+- Ordmærket sættes i Work Sans 700, tracking −0,035 em, sætningskasse. Underteksten i Work Sans 500, versaler, 0,13 em sperring, Sten 600 på lys / Sten 400 på mørk, aldrig i to linjer.
+- Mærket læses også som en opslået bog. Det er en kendt svaghed, som en grafiker skal løse (smallere åbning, kraftigere svaj). **Skitsen bruges, som den er, indtil da.**
+- Forbudt i og omkring mærket: hus, tag, hammer, sav, blad, „NB“-monogram, dørhåndtag, og **enhver slange- eller S-form** (Naja er kobraslægtens latinske navn).
+
+### Farvepalette (guide v4.8)
+
+**Besluttet 7. september:** grundfladen er varm hvid, ikke sand. Token-navnene er uændrede — kun værdierne for `--nb-sand-50/100/200` er nye. Den gamle sand (`#F7E9C9`) må ikke findes i koden.
 
 | CSS-variabel | Hex | Brug |
 |---|---|---|
-| `--navy` | `#1B3A5C` | Primærfarve, overskrifter, knapper |
-| `--warm-white` | `#F9F6F2` | Sidens baggrund |
-| `--light-sand` | `#E8E0D5` | Alternativ sektionsbaggrund |
-| `--warm-gray` | `#8C8278` | Brødtekst, sekundær tekst |
-| `--gold` | `#C9A96E` | Accent — understregninger, hover, badges |
-| `--white` | `#FFFFFF` | Kort, navbar, lightbox |
+| `--nb-teal-950` | `#04302C` | Overskrifter, mørke sektioner, primær knap, footer, rissestregen i stemplerne |
+| `--nb-teal-900` | `#063A35` | Brødtekst |
+| `--nb-teal-800` | `#0A423C` | Kort på mørk bund |
+| `--nb-logo-ink` | `#064E3B` | **Kun** logoets blad |
+| `--nb-sand-50` | `#FAF6EE` | Sidebaggrund overalt — varm hvid. Læses som hvid, er det ikke. **Aldrig ren hvid, aldrig kølig grå** |
+| `--nb-sand-100` | `#F1EADB` | Sektionsskift, kort, felter |
+| `--nb-sand-200` | `#E4DAC5` | Tabellinjer og dividers — **kun dekorativt** |
+| `--nb-sten-500` | `#847F6C` | Funktionelle rammer og inputfelter (klarer 3:1) |
+| `--nb-sten-600` | `#5C5A4F` | Dæmpet tekst på lys |
+| `--nb-sten-700` | `#474639` | Lead-afsnit, labels, billedtekst |
+| `--nb-rust-600` | `#A8431F` | Accent, links på lys, fokusring |
+| `--nb-rust-400` | `#E08356` | Accent og links på mørk bund, åbningen i logoet |
 
-Alle farver skal bruges via CSS custom properties — aldrig hardkodet hex i CSS eller JS.
+Fordeling: **68 % sand · 24 % teal · 5 % sten · 3 % rust.** Rust bruges til **én handling pr. skærmbillede** — overskrides det, holder den op med at være en accent. Logoet er den ene undtagelse (se ovenfor).
+
+Ingen orange, gul, marineblå eller mintgrøn. Ingen gradienter eller glow. Eneste tilladte skygge er `--nb-shadow`. Alle farver via custom properties — aldrig hardkodet hex.
 
 ### Typografi
-**Udelukkende Work Sans** (Google Fonts) — vægte 300, 400, 500, 600, 700.
-- Overskrifter: 600–700, let negativ letter-spacing
-- Brødtekst: 400
-- Labels/badges: 500–600, positiv letter-spacing
+**Work Sans til alt** — besluttet 7. september 2026. Bricolage Grotesque og Instrument Sans er ude. Én familie, fire statiske vægte fra Google Fonts: `Work+Sans:wght@400;500;600;700`.
 
-> ⚠️ CLAUDE.md nævnte tidligere Playfair Display + Inter — det er ikke implementeret. Work Sans bruges gennemgående.
+- **Overskrifter:** Work Sans 600, tracking −0,03 em, sætningskasse. Aldrig 700 i overskrifter — 700 er reserveret til ordmærket. Aldrig versal.
+- **Brødtekst:** Work Sans 400, minimum 16,5 px, linjehøjde 1,62. Fremhævet tekst og data i 500. `tabular-nums` globalt.
+- **Labels, knapper, eyebrows:** Work Sans 600, 0,72 rem, 0,14 em sperring, versaler.
+- Ingen `font-variation-settings` nogen steder — Work Sans har ingen bredde-akse.
+- Ingen udråbstegn.
+
+Work Sans er også NAJA Ejendomsinvests skrift. Det er kendt og accepteret — palet, mærke og tone er forskellige.
+
+### Form
+Hjørneradius 2 px (aldrig over 4). Rammer 1 px. Maks. indholdsbredde 1140 px, tekstspalte 68ch. Trykflader mindst 44 × 44 px. Fokusring 2 px rust, offset 2 px.
 
 ---
 
-## Sidestruktur
+## Hero
 
-### `index.html`
+Fuldbredde-billede med overskrift og handling i venstre side. Gradienten er brandets teal (`rgba(4,48,44,…)`) — aldrig en generisk sort overlay.
 
-1. **Navbar** — sticky, logo til venstre, links til højre (Om os / Projekter / Kontakt), hamburger på mobil. Klassen `.scrolled` tilføjes ved scroll > 10px.
+- **Desktop:** gradienten kommer fra venstre, motivet får luft til højre. Bytter du billede, skal beskæringen laves om — ellers lander motivet under teksten.
+- **Mobil (< 760 px):** teksten flytter ned i bunden, hvor gradienten er tættest, og knapperne bliver fuldbredde. Stående beskæring.
+- Hero-billedet har `fetchpriority="high"` og **ikke** `loading="lazy"`. Aldrig over 250 KB.
+- Billederne er midlertidige, indtil de rigtige kommer. Systemet er bygget til telefonfotos — se Billeder.
+- Heroen bærer det **fulde lockup** (mærke + navn + undertekst) over h1. Navbaren bærer standard-lockup. Det er guidens regel, ikke en dublet.
+- Heroens knapper er aldrig rust — tragtens eneste rust-knap er trin 7's *Skriv to linjer*.
 
-2. **Hero** — 72vh karrusel med 3 slides fra `assets/billeder/Skovvangsvej/Hero billeder/`. Progressbar i bunden. Logo centreret over gradient-overgang. Tagline + CTA-knap nedenunder.
+---
 
-3. **Om NAJA** (`#om`) — intro-tekst + 2 partnerkort side om side (stablet på mobil). Cirkulære portræt-billeder, navn, "Partner & Medinvestor", bio-tekst.
+## Signaturkomponenter
 
-4. **Vores projekter** (`#projekter`) — grid af klikbare projekt-tiles. Hver tile har: baggrundsbillede, gradient-overlay, projektnavn, lokation, status-badge. Klikker man, navigeres til projektets detaljeside.
+Fem elementer bærer hele differentieringen. Rør dem ikke uden at læse guiden.
 
-5. **Kontakt** (`#kontakt`) — email, telefon, by. Placeholders der udfyldes af brugeren.
+1. **Kvalitetsstemplerne** (`.stamps`) — fem korte forpligtelser i én række, direkte under heroen på forsiden. Hvert stempel er en overskrift (påstand) + én sætning (mekanisme). **Stemplet uden sin sætning er værdiløst.** Formen er *rissestregen* — en kort streg i Teal 950 over overskriften. Aldrig skjolde, segl, laurbær, ikoner eller flueben. Ingen rust. Ordlyd i guiden afsnit 13.
+2. **Løftelisten** (`.promises`) — syv flade forpligtelser, **ordret ens** på Om os, i tilbuddet og på visitkortet. Står **ikke** på forsiden — dér er stemplerne den korte form. De to formater må aldrig stå på samme side. Ordlyd i guiden afsnit 02.
+3. **Vi spørger altid om** (`.questions`) — fem spørgsmål. Pointen er ikke spørgsmålene, det er begrundelsen under hvert af dem. Spørgsmål 05 hedder *„Har du sat et budget?“* — ikke „hvad har du regnet med, det koster“.
+4. **Jobkortet** (`.jobcard`) — ét telefonfoto i 4:3, seks faste felter, én sætning signeret med fornavn. Samme kort i 4:5 er en færdig Meta-annonce. Udbedring og oprydning *vises* her — de loves ikke.
+5. **Åbne timepriser** (`priser.html`) — **tre tal side om side:** timepris, kørsel, materialer. Plus tærsklen: *„Overstiger vi det oplyste timeantal med mere end 10 % eller to timer, stopper vi og ringer, før næste time bruges.“* Aldrig bag en formular. Ingen „priser fra“.
 
-6. **Footer** — vandret logo + copyright.
+### Løftelisten, ordret
 
-### `skovvangsvej.html`
-
-1. **Projekt-hero** — 55vh baggrundsbillede (køkken efter), mørk overlay, "← Alle projekter"-link, projektnavn + undertitel.
-
-2. **Om projektet** — 2-kolonne layout (stablet på mobil):
-   - Venstre: stats (adresse, areal, rum, renovering, købspris, salgspris) + beskrivelsestekst
-   - Højre: plantegning (`assets/billeder/Skovvangsvej/Plantegning.png`)
-
-3. **Billedgalleri** (`#galleri`) — 3 tabs:
-   - **Som købt** — 9 billeder fra `Som købt/`
-   - **Under renovering** — 24 billeder fra `Byggeprocessen/`
-   - **Færdigt resultat** — 11 billeder fra `Færdig lejlighed/`
-   Klik på billede åbner lightbox med enkeltbillede-visning og prev/next-navigation.
-
-4. **Rum for rum** (`#rum-sliders`) — 4 inline før/efter-sliders (drag eller touch):
-   - Stuen
-   - Køkken
-   - Badeværelset (vinkel 1)
-   - Badeværelset (vinkel 2)
-
-5. **Google Maps** — embed for Skovvangsvej 167, 8200 Aarhus N.
-
-6. **Footer** — identisk med `index.html`.
-
-### `gate.html`
-
-Selvstændig adgangsside med NAJA-logo, passwordfelt og "Fortsæt →"-knap. Ved korrekt kode sættes `sessionStorage.naja_access = 'granted'` og brugeren redirectes til `index.html`. Forkert kode giver shake-animation + fejlbesked. Koden ændres i konstanten `ACCESS_CODE` øverst i `<script>`-blokken.
-
-### `intern.html` — Intern projektoversigt
-
-Intern dashboard-side med to formål:
-
-1. **Færdige projekter** — udvideligt projektkort (klik headeren for at åbne) med:
-   - **KPI-strip**: Købspris, salgspris, renovering, fortjeneste, ROI, LTV
-   - **Donut-chart** (ren SVG): omkostningsfordeling pr. kategori
-   - **Kategori-tabel**: klik på en række → drilldown-modal med alle bilag (dato, leverandør, produkt, beløb)
-
-2. **Beregner — nyt projekt** — live-opdaterende inputfelter:
-   - Projektnavn, adresse, købspris, salgspris, andre omkostninger
-   - Areal (m²), antal bad, **stand (1-10 slider)**
-   - Output: faste / variable / semi-variable omkostninger, total, fortjeneste, ROI, risiko-flags
-
-**Skjult URL** — siden er ikke linket fra navbar, footer eller forsiden. Adgang sker ved at skrive `intern.html` direkte i URL'en. Beskyttet af samme `naja_access`-gate som resten af sitet.
-
-**Beregningsformler** (Excel-tro fra `Estimering`-arket):
-- `Faste = sum_faste × (antal_bad / ref_bad) × scope_faktor`
-- `Variable = sum_variable × (m² / ref_m²)`
-- `Semi-variable = sum_semi_variable × (m² / ref_m²) × scope_faktor`
-
-**Stand → scope-faktor** (to-segments lineær):
-- stand 1 → 0.3, stand 4 → 1.0 (Skovvangsvej baseline), stand 10 → 2.0
-- 1-4: `0.3 + (stand-1) × 0.7/3`
-- 4-10: `1.0 + (stand-4) × 1.0/6`
-
-**Risiko-tjek** (fra Excel `Risikotjek`-arket):
-- Renovering > 15% af salgspris → ⚠ rød
-- Fortjeneste < 200.000 kr → ⚠ gul
-- Negativ fortjeneste → ⚠ rød
-- Tab ved 15% prisfald (stress test) → ⚠ gul
-
-### Opdatering af projektdata
-
-Når Excel-filerne i `assets/project calculator/` opdateres, køres konverteren igen:
-
-```bash
-python3 scripts/excel-to-json.py
+```
+01  Du får svar samme hverdag.
+    Også når svaret er, at opgaven ikke er noget for os. Så får du et navn på en, der kan.
+02  Samme timepris for alle. Den står på hjemmesiden.
+    Sammen med, hvad kørsel og materialer koster.
+03  Skrider tid eller pris, laver vi en ny aftale sammen — før vi arbejder videre.
+    Aldrig først på fakturaen.
+04  Én opgave ad gangen. Vi starter ikke hos dig, før vi er færdige hos den forrige.
+    Det betyder, at du venter på, at vi starter — ikke på, at vi bliver færdige.
+05  Du har én kontaktperson, der kender din sag fra start til slut.
+    Frederik tager telefonen og aftalerne. Niclas, uddannet tømrer med 10+ år i faget, udfører arbejdet.
+06  Bliver vi forsinket, får du besked, så snart vi ved det.
+    Planlagte ændringer senest dagen før. Sker der noget på dagen, ringer vi med det samme.
+07  Vi afslutter først, når listen er tom, og du er tilfreds.
+    Vi går opgaven igennem sammen og skriver ned, hvad der mangler. Står der noget på listen, er vi ikke færdige.
 ```
 
-Output: `data/skovvangsvej.json` og `data/baseline.json` overskrives. Beregneren og dashboard opdaterer automatisk næste gang siden indlæses.
+Reglen fra Frederiks gennemgang: **sig det ligeud.** Findes der en smart formulering og en lige, vælges den lige.
 
-### Tilføjelse af nyt færdigt projekt til den interne side
+### Kvalitetsstemplerne, ordret
 
-1. Læg Excel-fil i `assets/project calculator/[Projektnavn].xlsx`
-2. Udvid `scripts/excel-to-json.py` så det også genererer `data/[projektnavn].json`
-3. Tilføj fetch + render-kald i `intern.js` (i `loadData()` og `renderProjects()`)
+```
+Aftalt dag, aftalt tid     Bliver vi forsinket, får du besked, så snart vi ved det. Ikke når du har taget fri og venter.
+Svar samme hverdag         Du venter ikke forgæves på et tilbud, der aldrig kommer.
+Samme timepris for alle    Den står på hjemmesiden, sammen med kørsel og materialer.
+Én opgave ad gangen        Du venter på, at vi starter. Ikke på, at vi bliver færdige.
+Én kontaktperson           Frederik kender din sag fra start til slut. Niclas, uddannet tømrer med 10+ år i faget, laver arbejdet.
+```
+
+**Bevidst fravalgt som løfte eller stempel:** inkasso-politik (skrives aldrig), udbedring for egen regning og oprydning (gøres, men loves ikke — vises i jobkort og fotos).
+
+---
+
+## Sprog
+
+**Erstat tillægsord med tal.** Kan en påstand ikke tælles, dateres eller navngives, skal den skrives om eller ud.
+
+**Brug:** svar samme hverdag · timepris · kørsel · materialer · arbejdsdage · skriftligt · vi måler op · én opgave ad gangen · samme folk · senest dagen før · vi siger til, før vi arbejder videre · det laver vi ikke · vi giver dig et navn · vi afleverer sammen · uddannet tømrer, 10+ år i faget
+
+**Kræver kvittering i samme sætning:** kvalitet · faglighed · erfaring · ordentlighed · tryghed · vi sætter en ære i. Ordene er ikke forbudte — de er værdiløse alene. „Høj faglighed“ = det, alle skriver. „Uddannet tømrer, ti år i faget“ = faglighed med kvittering. Tryghed er sitets *mål*, ikke dets ord.
+
+**Undgå:** fast pris (som løfte) · slutdato (som løfte, indtil spredningen kendes) · uforpligtende *tilbud* (en uforpligtende *snak* er derimod den rigtige CTA) · glade kunder · skræddersyet · totalløsninger · store som små opgaver · vi brænder for · passion · trygge hænder · garanti / certificeret / godkendt om egne løfter · Dansk Byggeri (hedder DI Byggeri siden 2021) · 5 års reklamationsret (findes ikke for forbrugere) · inkasso (nævnes aldrig)
+
+**Om folkene:** Niclas Nauntofte er uddannet tømrer med 10+ år i faget og udfører arbejdet. Frederik Jacobsen står for tilbud, opmåling og aftaler. Skriv det sådan — ikke „erfarne folk“.
+
+**Syddjurs Byg:** Niclas' fars firma, hvis opgaver Naja Byg overtager. Det er det stærkeste tillidssignal, sitet har, og det bruges i forsidens trin 4. Tre fakta mangler, før linjen kan skrives færdig: antal år, om navnet må nævnes, om faren fortsætter i en rolle. Indtil da står linjen med klammer.
+
+**Om ejendomsforretningen:** NAJA Ejendomsinvest nævnes **aldrig** som salgsargument, aldrig i en overskrift, aldrig i en annonce. Én faktalinje på Om os, som forklarer, hvor standarden kommer fra.
+
+---
+
+## SEO
+
+Lokal søgning er den eneste kanal, der betyder noget for et tømrerfirma i Aarhus. Reglerne:
+
+- **`<title>`-mønster:** `[Sidens emne] · Tømrer i Aarhus · Naja Byg`, højst 60 tegn. Forsiden: `Tømrer i Aarhus · Naja Byg`. Ordet *Aarhus* skal stå i alle titler.
+- **Meta description:** 120–155 tegn, indeholder ét konkret løfte (timeprisen står på siden / svar samme hverdag) og *Aarhus og opland*. Aldrig „kvalitet“.
+- **Én `<h1>` pr. side.** Forsidens h1 er hovedbudskabet, ikke et søgeord — søgeordet bæres af `<title>`, meta og den første `<p>`.
+- **JSON-LD** på alle sider: `LocalBusiness` med `@type: "GeneralContractor"`, navn, telefon, mail, `areaServed` (Aarhus Kommune og nabokommuner), `address` (Aarhus, DK), `priceRange`, `openingHoursSpecification`, `image` (logo), `sameAs` (Google Business Profile, når den findes). Ligger som ét `<script type="application/ld+json">` i `<head>`.
+- **Canonical** på alle sider. **Open Graph** (`og:title`, `og:description`, `og:image` 1200 × 630 med logo på sand) på alle sider.
+- `sitemap.xml` og `robots.txt` i roden. Sitemap opdateres, når en side tilføjes.
+- Alt-tekster som jobkortets titel: *„Ny zinkinddækning ved skotrende, Risskov 2026“*. Aldrig „byggefirma i Aarhus“.
+- **Fase 2 (efter live):** én side pr. ydelse (`terrasse.html`, `vinduer-og-doere.html`, `tag.html`, `carport.html` …) med hver sin title, sit jobkort og sit prisuddrag. Det er den største organiske løftestang efter Google Business Profile.
+- **Google Business Profile** er vigtigere end alt ovenstående. Kategori: Tømrer. Samme billeder, samme telefonnummer, samme åbningstider som sitet.
+
+---
+
+## Billeder
+
+Systemet skal **løfte telefonbilleder, ikke kræve en fotograf.** Kræver det en fotograf at fodre sitet, dør brandet efter tre måneder.
+
+- Faste beskæringsforhold: **4:3 i jobkort, 16:9 i hero, 4:5 i annoncer**
+- Grading lægges på i CSS (`img { filter: saturate(.96) contrast(1.05) brightness(1.02) }`) — ikke i et redigeringsprogram. Send billeder ubehandlede
+- **Aldrig stockfotos i jobkort, galleri eller før/efter.** Et jobkort uden eget foto får en tom fotoplads (`.jobcard-media--empty`) — aldrig et billede fra en anden opgave
+- Aldrig: manden med boremaskinen · opstilling foran firmabil · hjelm-og-vest som tillidssignal · dronehero uden mennesker · kold eller HDR-grading
+- Billederne på sitet nu er **midlertidige**. De skiftes, uden at layoutet skal røres.
+
+---
+
+## Bevægelse
+
+Bevægelse, der bekræfter noget, brugeren gør, er god. Bevægelse, der optræder af sig selv, er dekoration. Intet over 400 ms. Intet gentager sig. Alt slukkes ved `prefers-reduced-motion`.
+
+- **Før/efter-slider** — den vigtigste. `script.js`, virker med mus, touch og piletaster
+- **Indtoning ved scroll** — `.reveal`, ren CSS via `animation-timeline: view()`, nul JavaScript. Intet må starte ved `opacity: 0` uden fallback
+- **Blødt sideskift** — `@view-transition { navigation: auto }`
+- **Telefonbaren** bliver kompakt efter 10 px
+- **Jobkort zoomer 1,03 ved hover**, 400 ms
+
+Aldrig: tal der tæller op · parallax · karruseller · autoplay-video i hero.
+
+---
+
+## Åbne punkter før live
+
+- [ ] **CVR-forholdet.** Naja Byg findes ikke i CVR, og NAJA Ejendomsinvest ApS' formål (branchekode 681100) dækker ikke håndværksydelser til tredjemand. Footeren står med `NAJA Ejendomsinvest ApS · CVR 46 14 14 66`, indtil advokaten har svaret
+- [ ] **Løftelisten v4.5** skal bekræftes af Niclas — den er skrevet efter Frederiks gennemgang, ikke Niclas'
+- [ ] **Timepriserne skal valideres.** Tallene i `priser.html` er guidens estimater ud fra markedsdata — ikke jeres egne lønninger og dækningsbidrag
+- [ ] **Kørselspolitik og materialetillæg** skal besluttes — de er de to tal, der mangler ved siden af timeprisen
+- [ ] **Dato for sidste prisregulering** under pristabellen
+- [ ] **Mindst tre jobkort med rigtige tal.** Søg efter `is-todo` og `TODO`
+- [ ] **Frederiks direkte nummer** på `om-os.html`
+- [ ] **Mailadresse** — `kontakt@najabyg.dk` er antaget, ikke bekræftet
+- [ ] **Kontaktformularen har ingen backend.** `action="#"`. Sæt en formulartjeneste på
+- [ ] **Logoet** skal gennem en grafiker (bog-læsningen). Skitsen bruges indtil da
+- [ ] **Byg Garanti-mærket** må først vises, når medlemskab af DI Byggeri eller Dansk Håndværk er på plads
+- [ ] **Google Business Profile** med de samme billeder
+- [ ] **De rigtige billeder** — hero og jobkort er midlertidige
+- [ ] **Syddjurs Byg** — tre fakta til forsidens trin 4 (år, navn, farens rolle)
+- [ ] **Et rigtigt, anonymiseret tilbud** som PDF til forsidens trin 6
+- [ ] **Vores venner i branchen** (`ydelser.html#venner`): firmanavn, URL, by og én sætning for Jespers VVS-firma og elektrikeren. Navne, ikke logoer — guidens regel om fremmede mærker gælder
+
+---
+
+## De to tests, der betyder mest
+
+1. **Dæk logoet til og læs siden.** Kunne den være seks andre danske byggefirmaers hjemmeside, er den ikke færdig. Sæt den ved siden af vibergtoemrerfirma.dk, akbyg.dk og hptomrer.dk.
+2. **Kan I stadig fodre den om seks måneder?** Kræver et jobkort en fotograf, en tekstforfatter eller en fridag, er systemet bygget forkert. Fire minutter fra en telefon i bilen.
 
 ---
 
 ## Adgangsbeskyttelse
 
-`script.js`, `skovvangsvej.js` og `intern.js` tjekker ved load:
+`script.js` og `intern.js` tjekker ved load:
 
 ```js
 if (sessionStorage.getItem('naja_access') !== 'granted') {
@@ -175,105 +279,49 @@ if (sessionStorage.getItem('naja_access') !== 'granted') {
 }
 ```
 
-Sessionen nulstilles ved lukning af browsertab. Der er ingen server-side sikkerhed — beskyttelsen er tilstrækkelig til at holde siden ikke-offentlig, men ikke kryptografisk sikker.
+Sessionen nulstilles ved lukning af browsertab. Der er ingen server-side sikkerhed. **Fjernes før live** — og `robots.txt` må ikke blokere sitet, når gaten er væk.
 
 ---
 
-## Mappestruktur (assets)
+## Den interne side
 
-```
-assets/
-├── naja-logo.png                        ← Stående logo (hvid baggrund fjernet via Pillow)
-├── naja-logo-horizontal.png             ← Vandret logo (hvid baggrund fjernet)
-└── billeder/
-    ├── Frederik/
-    │   └── IMG_4038.jpeg                ← Portræt Frederik
-    ├── Niclas/
-    │   └── 83034665_...jpg              ← Portræt Niclas
-    └── Skovvangsvej/
-        ├── Hero billeder/               ← 3 billeder til index.html hero-karrusel
-        │   ├── IMG_6434 copy.jpeg
-        │   ├── IMG_6435 copy.jpeg
-        │   └── IMG_6446 copy.jpeg
-        ├── Som købt/                    ← 9 billeder — lejligheden som købt
-        ├── Byggeprocessen/              ← 24 billeder — under renovering
-        ├── Færdig lejlighed/            ← 11 billeder — færdigt resultat
-        ├── Stuen/
-        │   ├── Før/IMG_5032.jpeg
-        │   └── Efter/IMG_6432.jpeg
-        ├── Køkken/
-        │   ├── Før/IMG_4981.jpeg
-        │   └── Efter/IMG_6435.jpeg
-        ├── Badeværelset/
-        │   ├── Før 1/IMG_5034.jpeg
-        │   ├── Efter 1/IMG_6443.jpeg
-        │   ├── Før 2/IMG_6177.jpeg
-        │   └── Efter 2/IMG_6445.jpeg
-        └── Plantegning.png              ← Kopieret fra Trøjborg-mappen
-```
+`intern.html` (projektdashboard + beregner) hører til ejendomsforretningen og er **ikke** en del af Naja Byg-brandet. Den ligger på sin egen `intern.css` og er urørt af rebrandet. Ikke linket fra navigation eller footer. Datakonvertering: `python3 scripts/excel-to-json.py`. Dokumentation i `_arkiv-ejendomsinvest/CLAUDE.md`.
 
 ---
 
-## Tilføjelse af nyt projekt til forsiden
+## Tilføj et jobkort
 
-1. Læg billeder i `assets/billeder/[Projektnavn]/`
-2. Tilføj et nyt `<a class="project-tile">` i `#projekter`-sektionen i `index.html`
-3. Opret `[projektnavn].html` og `[projektnavn].js` baseret på `skovvangsvej.html`/`skovvangsvej.js`
-4. Tilføj adgangstjek øverst i den nye `.js`-fil
-
----
-
-## Tilføjelse af billeder til Skovvangsvej-galleriet
-
-Billedlisten er hardkodet i `skovvangsvej.js` i `tabs`-objektet. Tilføj nye billedstier her:
-
-```js
-const tabs = {
-    'som-koebt':   [ { src: '...', alt: '...' }, ... ],
-    'byggeproces': [ { src: '...', alt: '...' }, ... ],
-    'faerdig':     [ { src: '...', alt: '...' }, ... ],
-};
-```
+1. Tag ét telefonfoto i 4:3. Dagslys, ryddet motiv, lige telefon
+2. Læg det i `assets/billeder/[Opgave]/`
+3. Kopiér en `<article class="jobcard">` i `opgaver.html` og udfyld de seks felter: opgave · sted og måned · omfang · varighed · materialer · pris
+4. Skriv én sætning i egen stemme, helst om noget der gik anderledes end planlagt. Signér med fornavn
+5. Alt-tekst = titel + sted + år
+6. Har du ikke fotoet endnu, så brug `.jobcard-media--empty` — aldrig et billede fra en anden opgave
 
 ---
 
 ## Tekniske konventioner
 
-- Alle billeders stier er relative (ingen `/`-prefix) — siden er statisk
+- Relative billedstier (ingen `/`-prefix) — sitet er statisk
 - `loading="lazy"` på alle `<img>` undtagen above-the-fold
-- CSS custom properties til alle farver — aldrig hardkodet hex i CSS
-- Adgangstjek øverst i hvert `.js`-fil (før al anden kode)
+- CSS custom properties til alle farver — aldrig hardkodet hex
+- Adgangstjek øverst i hver `.js`-fil (indtil live)
 - Kommentarer på dansk
 - Ingen frameworks, ingen npm, ingen build-step
+- Undersiderne deler header og footer som kopieret markup. Ændrer du den ene, så ændr dem alle — søg efter `<!-- ═══ Navigation ═══ -->` og `<!-- ═══ Footer ═══ -->`
+- Logoet indsættes som inline `<svg>` (ikke `<img>`), så bladet kan skifte farve i negativ
 
 ---
 
 ## Hosting
 
-Siden deployes som statisk site. Anbefalet flow:
-- **Netlify Drop** — træk hele mappen til app.netlify.com/drop
-- Del URL + adgangskode (`naja2026`) med samarbejdspartnere
-
-For fremtidig auto-deploy ved ændringer: GitHub + Netlify CI/CD.
-
----
-
-## Skovvangsvej — projektdata
-
-| Felt | Værdi |
-|------|-------|
-| Adresse | Skovvangsvej 167, st. tv., 8200 Aarhus N |
-| Renovering | 2026 |
-| Købspris | 2.000.000 kr. |
-| Salgspris | 2.650.000 kr. |
-| Areal | udfyldes |
-| Rum | udfyldes |
+Deployes som statisk site. Produktionsrepoet ligger i `../GitHub/najabyg` (custom domain `najabyg.dk`) og indeholder stadig den **gamle** ejendomsinvest-udgave — det skal opdateres separat, når indholdet her er godkendt. Go-live er tidligst marts 2027.
 
 ---
 
 ## Tone of voice
 
-- **Professionel men tilgængelig** — ikke juridisk tung, ikke salgsagtigt
+- **Konkret** — tal, datoer og navne frem for tillægsord
 - **Kort og præcis** — ingen lange tekstblokke
-- **Tillidsfuld** — vi viser hvem vi er, hvad vi har gjort, hvem vi er
+- **Ærlig om begrænsninger** — det er dér, autoriteten ligger
 - **Dansk** — korrekt retskrivning, ingen anglicismer

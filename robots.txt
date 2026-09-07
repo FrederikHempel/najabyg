@@ -1,2 +1,7 @@
+# Sitet er bag en adgangskode indtil go-live (tidligst marts 2027).
+# Crawlere kører ikke nødvendigvis JavaScript, så gaten alene holder dem ikke ude.
+# VED GO-LIVE: erstat med "Allow: /" + Disallow af intern.html og gate.html, og behold Sitemap-linjen.
 User-agent: *
 Disallow: /
+
+Sitemap: https://najabyg.dk/sitemap.xml

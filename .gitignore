@@ -16,3 +16,12 @@ assets/Project calculator/
 # Diverse
 *.log
 Thumbs.db
+
+# Designguide, analyser og logo-arbejde er interne arbejdsdokumenter — aldrig i repo
+naja-byg-*.html
+naja-billedudvalg.html
+naja-byg-designguide.pdf
+logo/
+_arkiv-ejendomsinvest/
+visual inspiration/
+.impeccable/

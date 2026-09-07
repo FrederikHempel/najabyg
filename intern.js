@@ -1,5 +1,5 @@
 /* ==========================================================
-   Naja Byg — Intern dashboard & beregner
+   NAJA — Intern dashboard & beregner
    ========================================================== */
 
 // Adgangstjek (samme mønster som script.js og skovvangsvej.js)

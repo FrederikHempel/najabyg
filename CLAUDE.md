@@ -72,10 +72,9 @@ Sitet svarer på to ting, og kun de to: at kunden ikke ved, hvad hun skal bede o
 ### Identitet
 - **Virksomhedsnavn:** Naja Byg
 - **Undertekst i mærket:** Nauntofte & Jacobsen
-- **Hovedbudskab (forsidens h1):** Tømrer i Aarhus og opland.
-  *Besluttet 7. september: intet slogan. Fem kandidater faldt. Heroen siger, hvad det er — som Polestars „Polestar 4 coupé“ — og lead-linjen bærer differentieringen: „Vinduer, døre, tag, tilbygning, terrasse. Én opgave ad gangen — og timeprisen står her på siden.“ Overtalelsen sker i stemplerne under heroen, ikke i h1. Det er også den bedste h1 til lokal søgning.*
-- **Indgangslinje (annoncer, kontakt-CTA):** Du behøver ikke vide, hvad du skal bede om.
-- **Kontakt-CTA-overskrift (forsidens bund):** Skal vi tage en uforpligtende snak?
+- **Hovedbudskab (forsidens h1):** Lokal tømrer i Aarhus og opland *(Frederik, 9. september)*. Lead: „Vinduer, døre, tag, terrasse. Åben og ærlig dialog om dine behov med priser, der er til at stole på.“
+- **Kontakt-overskrift (forsidens bund og kontakt.html):** Kontakt os. Tekst: „Vi tager en uformel og uforpligtende snak om dine behov. Sammen finder vi den løsning, der passer bedst til jer.“
+- **Fravalgt 9. september:** „Du behøver ikke vide, hvad du skal bede om“ (underligt leveret) · „Skal vi tage en uforpligtende snak?“ · alt med „Ring til Frederik“, „Frederik giver dig et tilbud“, „Frederik tager telefonen og Niclas klarer opgaven“. Frederik vil ikke have forceret marketingsprog — skriv „vi“ og „du“.
 - **Telefon:** 28 18 64 88
 - **Sprog:** Dansk
 
@@ -154,6 +153,10 @@ Frederiks dom over v4.8-koden: farvestriber, logo to gange, fem ens kasser, søg
 Regler fra designværktøjets kvalitetsgulv, som nu gælder: ingen eyebrow over overskrifter · ingen ens kort som sidestruktur · ingen farvet kant over 1 px · ingen sektionsnumre uden betydning.
 
 ---
+
+## Layout — forsidens rækkefølge (9. sep. 2026)
+
+Efter Frederiks rettelser 9. september: **Hero** (fuldt foto, teal-fade fra venstre, h1 + lead + „Ring“ + „Skriv til os“; ingen logo, ingen billedtekst) → **Hvad vi laver** (syv håndtegnede SVG-ikoner i rust, inline i HTML) → **Nytænkende tømrervirksomhed med 10+ års erfaring** (om-tekst + de to navne) → **Det har vi bygget** (tre kort side om side i Koh Kood-layoutet: foto, titel, én linje, specs, pris, „Se mere“/„Kontakt os“) → **Sådan ser det ud, når vi er færdige** (billedmosaik, ikke et ens grid) → **Vores priser** (teal-felt, tre poster, „Vi siger til, hvis det tager længere tid end ventet.“) → **Vores proces og løfter til dig** (trin 1–4 + løftekæden: Vi kommer som lovet → Du har kun med personer at gøre, du kender → Transparent kommunikation → Vores opgave er først færdig, når du er tilfreds) → **Kontakt os** (nummeret i stor skrift). „Det kan du regne med“-afsnittet er taget af forsiden — de fem stempler står stadig på Ydelser, de syv løfter på Om os.
 
 ## Layout — forsiden som et tilbud på papir (8. sep. 2026)
 

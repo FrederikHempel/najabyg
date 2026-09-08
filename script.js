@@ -81,3 +81,14 @@ if (sessionStorage.getItem('naja_access') !== 'granted') {
         });
     });
 })();
+
+/* ── Opgavekort: „Se mere“ folder citatet ud ─────────────────── */
+(function cardToggles() {
+    document.querySelectorAll('.card-toggle').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.card');
+            const open = card.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', String(open));
+        });
+    });
+})();

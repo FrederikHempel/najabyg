@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tømrer i Aarhus · Naja Byg</title>
-    <meta name="description" content="Tømrer i Aarhus og opland. Vinduer, døre, tag, tilbygning, terrasse. Én opgave ad gangen, svar samme hverdag — og timeprisen står på siden.">
+    <meta name="description" content="Lokal tømrer i Aarhus og opland. Vinduer, døre, tag, terrasse. Åben og ærlig dialog om dine behov — og priser, der er til at stole på.">
     <link rel="canonical" href="https://najabyg.dk/">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Tømrer i Aarhus · Naja Byg">
-    <meta property="og:description" content="Tømrer i Aarhus og opland. Vinduer, døre, tag, tilbygning, terrasse. Én opgave ad gangen, svar samme hverdag — og timeprisen står på siden.">
+    <meta property="og:description" content="Lokal tømrer i Aarhus og opland. Vinduer, døre, tag, terrasse. Åben og ærlig dialog om dine behov — og priser, der er til at stole på.">
     <meta property="og:url" content="https://najabyg.dk/">
     <meta property="og:image" content="https://najabyg.dk/assets/og-image.jpg">
     <meta property="og:locale" content="da_DK">
@@ -82,14 +82,14 @@
 </head>
 <body>
 <!--
-THESIS: Forsiden er et tilbud på papir — tal, klausuler og navne, sat ligeud. Den nægter
+THESIS: Forsiden er et tilbud på papir — tal, løfter og navne, sat ligeud, uden marketingsprog. Den nægter
   kategoriens mørke hero med overlay, ikonkasserne og eyebrow-labels.
 OWN-WORLD: Varm hvid grund, Work Sans 600 i store grader, hårlinjer i sand-200 som eneste
   struktur, ét teal-felt (priserne), rust kun på „Skriv til os“, døråbningen som mærke.
 STORY: Kunden ser en tømrer ved arbejdet, læser fem ting hun kan regne med, finder sin
   opgave, ser tallet, forstår forløbet, og ringer — nummeret er sidens sidste ord.
-FIRST VIEWPORT: Venstre: h1 „Tømrer i Aarhus og opland.“ i 4,4 rem, lead, teal knap og
-  tekstlink. Højre: fotoet af Niclas uden overlay, bløder ud til kanten, afdækkes som en dør.
+FIRST VIEWPORT: Fuldt foto med teal-fade fra venstre. H1 „Lokal tømrer i Aarhus og opland“,
+  lead, lys knap og tekstlink. Ingen logo i heroen, ingen billedtekst.
 FORM: Tilbudsdokumentet. Eget koncept fra egne aktiver; ingen lodtrækning kørt (pinned brief).
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review,
   the verdict, and DESIGN.md
@@ -125,113 +125,118 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
     <!-- ═══ 1 · Hero ═══ -->
     <section class="hero">
-        <div class="hero-grid">
-            <div class="hero-copy">
-                <h1>Tømrer i Aarhus og opland.</h1>
-                <p class="hero-lead">Vinduer, døre, tag, tilbygning, terrasse. Én opgave ad gangen — og timeprisen står her på siden.</p>
+        <picture class="hero-media">
+            <source media="(max-width: 700px)" srcset="assets/billeder/hero/niclas-koekken-1200.jpg">
+            <img src="assets/billeder/hero/niclas-koekken-2000.jpg"
+                 alt="Tømrer retter overskabene op under køkkenmontering, Aarhus N 2026"
+                 width="2000" height="1125" fetchpriority="high">
+        </picture>
+        <div class="hero-veil" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+            <div class="hero-content">
+                <h1>Lokal tømrer i Aarhus og opland</h1>
+                <p class="hero-lead">Vinduer, døre, tag, terrasse. Åben og ærlig dialog om dine behov med priser, der er til at stole på.</p>
                 <div class="hero-actions">
-                    <a class="btn btn--primary" href="tel:+4528186488">Ring 28 18 64 88</a>
-                    <a class="link-more" style="margin:0" href="kontakt.html">Skriv til os</a>
+                    <a class="btn btn--on-dark" href="tel:+4528186488">Ring 28 18 64 88</a>
+                    <a class="link-more" href="kontakt.html">Skriv til os</a>
                 </div>
             </div>
-            <figure class="hero-photo">
-                <picture>
-                    <source media="(max-width: 860px)" srcset="assets/billeder/hero/niclas-koekken-1200.jpg">
-                    <img src="assets/billeder/hero/niclas-koekken-split.jpg"
-                         alt="Niclas Nauntofte retter overskabene op under køkkenmontering, Aarhus N 2026"
-                         width="1400" height="1354" fetchpriority="high">
-                </picture>
-                <!-- TODO: billedet er midlertidigt. Det rigtige skal vise ansigtet. -->
-                <figcaption class="hero-caption"><b>Niclas Nauntofte</b>, tømrer. Aarhus N, 2026</figcaption>
-            </figure>
         </div>
     </section>
 
-    <!-- ═══ 2 · Det kan du regne med ═══ -->
-    <section class="section" id="regne-med">
-        <div class="wrap">
-            <h2>Det kan du regne med.</h2>
-            <div class="clauses">
-                <div class="clause"><span class="t">Aftalt dag, aftalt tid</span><p class="p">Bliver vi forsinket, får du besked, så snart vi ved det. Ikke når du har taget fri og venter.</p></div>
-                <div class="clause"><span class="t">Svar samme hverdag</span><p class="p">Du venter ikke forgæves på et tilbud, der aldrig kommer.</p></div>
-                <div class="clause"><span class="t">Samme timepris for alle</span><p class="p">Den står på hjemmesiden, sammen med kørsel og materialer.</p></div>
-                <div class="clause"><span class="t">Én opgave ad gangen</span><p class="p">Du venter på, at vi starter. Ikke på, at vi bliver færdige.</p></div>
-                <div class="clause"><span class="t">Én kontaktperson</span><p class="p">Frederik kender din sag fra start til slut. Niclas, uddannet tømrer med 10+ år i faget, laver arbejdet.</p></div>
-            </div>
-            <a class="link-more" href="om-os.html#loefter">Alle syv løfter</a>
-        </div>
-    </section>
-
-    <!-- ═══ 3 · Det laver vi ═══ -->
+    <!-- ═══ 2 · Hvad vi laver ═══ -->
     <section class="section" id="ydelser">
         <div class="wrap">
-            <h2>Det laver vi.</h2>
-            <p class="services-run">
-                <a href="ydelser.html">Vinduer og døre</a>, <a href="ydelser.html">tag</a>,
-                <a href="ydelser.html">tilbygning</a>, <a href="ydelser.html">renovering</a>,
-                <a href="ydelser.html">terrasse og træværk</a>, <a href="ydelser.html">gulve</a>,
-                <a href="ydelser.html">køkkenmontering</a>, <a href="ydelser.html">carport og garage</a>.
-            </p>
-            <p class="section-intro">Står din opgave ikke her, så ring alligevel. Laver vi det ikke, giver vi dig et navn på en, der gør.</p>
+            <h2>Hvad vi laver</h2>
+            <ul class="services-grid">
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7.5 8.6c8-.6 16.2-.5 24.6.2l.6 30.8c-8.4.4-16.6.3-25.4-.3z"/><path d="M8.2 24.1c8.1-.4 16.3-.3 23.6.2"/><path d="M20.1 9.2c.3 10 .2 20 .5 29.6"/><path d="M35.6 12.4c2.4-.2 4.2-.1 5.4.3l.4 26.3c-1.8.4-3.6.3-5.6 0"/><path d="M38.9 26.2c.9.1 1.3.6 1.2 1.6"/></svg><span>Vinduer og døre</span></a></li>
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5.3 26.8c6.4-6.2 12.7-12.5 18.9-18.6 6.3 6 12.5 12.1 18.6 18.4"/><path d="M11.4 22.9l.4 15.8c8.3.3 16.5.3 24.8 0l.2-15.9"/><path d="M30.6 11.8l.1-5.9c1.7-.2 3.4-.2 5.1.1l-.1 11"/><path d="M11.9 29.2c8.2-1.3 16.4-1.4 24.6-.2"/><path d="M12.2 34.5c8.1-1.1 16.2-1.2 24.2 0"/></svg><span>Tag</span></a></li>
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6.4 20.5c4.6-4.7 9.2-9.3 13.7-13.7 4.6 4.5 9.1 9.1 13.6 13.6"/><path d="M10.3 18.2l.3 20.9c6.5.3 13 .3 19.4 0l.2-20.7"/><path d="M30.1 25.1c3.9-.2 7.7-.1 11.6.3l.2 13.8c-3.9.3-7.8.3-11.7 0" stroke-dasharray="3 3.2"/><path d="M15.6 39V30c2.1-.4 4-.4 5.9 0v9"/><path d="M34.5 32.6c1.6-.2 2.9-.1 4.1.2"/></svg><span>Tilbygning &amp; renovering</span></a></li>
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5.8 30.3c12.1-1.1 24.3-1.2 36.5-.2"/><path d="M6.2 35.4c12-.9 24-1 36 0"/><path d="M6.7 40.4c11.8-.9 23.7-1 35.5-.1"/><path d="M11.2 29.8V15.6M40.1 29.4V15.3M25.7 29.6V15.4"/><path d="M10.8 16.1c9.9-.9 19.8-1 29.6-.2"/><path d="M11 22.4c9.8-.8 19.6-.9 29.4-.1"/></svg><span>Terrasse og træværk</span></a></li>
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6.2 13.6c12-1 24.1-1.1 35.9-.2"/><path d="M6.5 22.1c12-.9 23.9-1 35.7-.1"/><path d="M6.8 30.6c11.9-.9 23.8-1 35.5 0"/><path d="M7.1 39c11.8-.8 23.6-.9 35.2 0"/><path d="M17.4 13.9l.2 8M31.9 13.7l.2 8.2M12.1 22.4l.2 8.1M25.5 22.3l.2 8.2M36.6 22.2l.2 8.3M19.3 30.8l.2 8M33.4 30.7l.2 8.1"/></svg><span>Gulve</span></a></li>
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6.3 22.4c12-.7 24.1-.8 36-.1"/><path d="M8.2 22.9l.4 17.2c10.5.4 21 .4 31.4 0l.3-17.1"/><path d="M8.6 31.5c10.4-.5 20.8-.6 31.2-.1"/><path d="M24.2 23.3l.2 16.5"/><path d="M14.6 27.1c1.5-.1 2.7-.1 3.8.1M29.8 27c1.5-.1 2.8-.1 3.9.1M14.9 35.6c1.4-.1 2.6-.1 3.7.1M30.1 35.5c1.4-.1 2.7-.1 3.8.1"/><path d="M29.4 22.1V13.8c0-2.3 1.6-3.9 3.7-3.9s3.6 1.6 3.6 3.9"/><path d="M27.3 22c1.4-.2 2.8-.2 4.2 0"/></svg><span>Køkkenmontering</span></a></li>
+                <li class="service-item"><a href="ydelser.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5.6 15.9c12.3-2.9 24.6-3 36.9-.2"/><path d="M9.6 15.2l.3 24.4M38.3 14.9l.2 24.6"/><path d="M15.2 39.2v-6.1c1.7-3 3.5-5.4 5.4-7.2 2.6-.3 5.2-.3 7.7 0 2 1.8 3.8 4.2 5.4 7.2v6.2"/><path d="M15.4 33.3c5.8-.4 11.7-.5 17.6-.1"/><path d="M18.9 36.4c.9-.1 1.6-.1 2.2 0M27.5 36.3c.9-.1 1.6-.1 2.3 0"/></svg><span>Carport og garage</span></a></li>
+            </ul>
         </div>
     </section>
 
-    <!-- ═══ 4 · Hvem vi er ═══ -->
-    <section class="section" id="hvem">
+    <!-- ═══ 3 · Om os ═══ -->
+    <section class="section" id="om">
         <div class="wrap">
-            <h2>Uddannet tømrer. Ti år i faget. Og kunderne fra Syddjurs Byg.</h2>
-            <!-- TODO: tre fakta om Syddjurs Byg mangler — antal år, om navnet må nævnes, farens rolle. -->
-            <p class="section-intro">
-                Niclas Nauntofte er udlært tømrer og har arbejdet i faget i over ti år —
-                <span class="todo-fact">[de seneste X år]</span> hos Syddjurs Byg, hans fars firma,
-                hvis opgaver Naja Byg overtager. Frederik Jacobsen står for tilbud, opmåling og
-                aftaler. Vi renoverer også ejendomme for egne penge — det er dér, man lærer, hvad
-                der holder, fordi man selv betaler for det, der ikke gør.
-            </p>
-            <div class="jobrows">
+            <h2>Nytænkende tømrervirksomhed med 10+ års erfaring</h2>
+            <div class="about" style="margin-top:28px">
+                <div>
+                    <p>Naja Byg er stiftet af Niclas Nauntofte og Frederik Jacobsen. Niclas med mange års erfaring som håndværker, og Frederik med en baggrund som selvstændig og i virksomhedsdrift.</p>
+                    <p>Vi har altså forstand på både håndværket og virksomhedsdriften. Godt håndværk er ikke nok i sig selv — det er en vigtig komponent i helhedsoplevelsen.</p>
+                </div>
+                <div class="about-people">
+                    <div><b>Niclas Nauntofte</b>Uddannet tømrer, 10+ år i faget.</div>
+                    <div><b>Frederik Jacobsen</b>Selvstændig, virksomhedsdrift.</div>
+                    <div><a class="link-more" style="margin-top:4px" href="om-os.html">Læs mere om os</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ 4 · Opgaver — side om side ═══ -->
+    <section class="section" id="opgaver">
+        <div class="wrap">
+            <h2>Det har vi bygget</h2>
+            <p class="section-intro">Hvad det var, hvor længe det tog, og hvad det kostede.</p>
+            <div class="cards">
                 <!-- TODO: omfang, varighed og pris skal udfyldes med de faktiske tal. -->
-                <article class="jobrow">
-                    <div class="jobrow-media"><img src="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg" alt="Nyt køkken monteret i lejlighed, Aarhus N 2026" loading="lazy"></div>
-                    <div>
+                <article class="card">
+                    <div class="card-media"><img src="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg" alt="Nyt køkken monteret i lejlighed, Aarhus N 2026" loading="lazy"></div>
+                    <div class="card-body">
                         <h3>Nyt køkken</h3>
-                        <p class="jobrow-loc">Aarhus N, 2026</p>
-                        <dl>
-                        <dt>Omfang</dt><dd class="is-todo">udfyldes</dd>
-                        <dt>Varighed</dt><dd class="is-todo">udfyldes</dd>
-                        <dt>Materialer</dt><dd class="is-todo">udfyldes</dd>
-                        <dt>Pris</dt><dd class="is-todo">udfyldes</dd>
+                        <p class="card-desc">Montering, tilpasning og bordplade. Aarhus N, 2026.</p>
+                        <dl class="card-specs">
+                        <div class="row"><dt>Omfang</dt><dd class="is-todo">udfyldes</dd></div>
+                        <div class="row"><dt>Varighed</dt><dd class="is-todo">udfyldes</dd></div>
+                        <div class="row"><dt>Materialer</dt><dd class="is-todo">udfyldes</dd></div>
                         </dl>
-                        <p class="jobrow-quote is-todo">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.<span class="sig">Udfyldes</span></p>
+                        <p class="card-price is-todo">udfyldes<small>kr. inkl. moms</small></p>
+                        <div class="card-more">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.<span class="sig">Udfyldes</span></div>
+                        <div class="card-actions">
+                            <button class="btn btn--secondary card-toggle" type="button" aria-expanded="false"><span class="when-closed">Se mere</span><span class="when-open">Se mindre</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5l4 4 4-4"/></svg></button>
+                            <a class="btn btn--primary" href="kontakt.html">Kontakt os</a>
+                        </div>
                     </div>
                 </article>
-                <!-- TODO: omfang, varighed og pris skal udfyldes med de faktiske tal. -->
-                <article class="jobrow">
-                    <div class="jobrow-media"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6432.jpeg" alt="Nyt plankegulv og nye lofter i stue, Aarhus N 2026" loading="lazy"></div>
-                    <div>
+                <article class="card">
+                    <div class="card-media"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6432.jpeg" alt="Nyt plankegulv og nye lofter i stue, Aarhus N 2026" loading="lazy"></div>
+                    <div class="card-body">
                         <h3>Nye gulve og lofter</h3>
-                        <p class="jobrow-loc">Aarhus N, 2026</p>
-                        <dl>
-                        <dt>Omfang</dt><dd class="is-todo">udfyldes</dd>
-                        <dt>Varighed</dt><dd class="is-todo">udfyldes</dd>
-                        <dt>Materialer</dt><dd class="is-todo">udfyldes</dd>
-                        <dt>Pris</dt><dd class="is-todo">udfyldes</dd>
+                        <p class="card-desc">Plankegulv, nye lofter og lister. Aarhus N, 2026.</p>
+                        <dl class="card-specs">
+                        <div class="row"><dt>Omfang</dt><dd class="is-todo">udfyldes</dd></div>
+                        <div class="row"><dt>Varighed</dt><dd class="is-todo">udfyldes</dd></div>
+                        <div class="row"><dt>Materialer</dt><dd class="is-todo">udfyldes</dd></div>
                         </dl>
-                        <p class="jobrow-quote is-todo">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.<span class="sig">Udfyldes</span></p>
+                        <p class="card-price is-todo">udfyldes<small>kr. inkl. moms</small></p>
+                        <div class="card-more">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.<span class="sig">Udfyldes</span></div>
+                        <div class="card-actions">
+                            <button class="btn btn--secondary card-toggle" type="button" aria-expanded="false"><span class="when-closed">Se mere</span><span class="when-open">Se mindre</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5l4 4 4-4"/></svg></button>
+                            <a class="btn btn--primary" href="kontakt.html">Kontakt os</a>
+                        </div>
                     </div>
                 </article>
-                <!-- Eksempel fra designguiden — ikke en rigtig opgave. Udskift med en afsluttet opgave. -->
-                <article class="jobrow">
-                    <div class="jobrow-media jobrow-media--empty">Telefonfoto i 4:3.<br>Indsæt eget foto af opgaven.</div>
-                    <div>
+                <article class="card">
+                    <div class="card-media card-media--empty">Telefonfoto i 4:3.<br>Indsæt eget foto af opgaven.</div>
+                    <div class="card-body">
                         <h3>Terrasse i lærk</h3>
-                        <p class="jobrow-loc">Eksempel: sådan ser en opgave ud, når den er lagt op</p>
-                        <dl>
-                        <dt>Omfang</dt><dd>34 m² terrasse, 11 m rækværk</dd>
-                        <dt>Varighed</dt><dd>9 arbejdsdage</dd>
-                        <dt>Materialer</dt><dd>Lærketræ, rustfrie skruer, justerbare fødder</dd>
-                        <dt>Pris</dt><dd>61.400 kr. inkl. moms og materialer</dd>
+                        <p class="card-desc">Eksempel: sådan ser en opgave ud, når den er lagt op.</p>
+                        <dl class="card-specs">
+                        <div class="row"><dt>Omfang</dt><dd>34 m² terrasse, 11 m rækværk</dd></div>
+                        <div class="row"><dt>Varighed</dt><dd>9 arbejdsdage</dd></div>
+                        <div class="row"><dt>Materialer</dt><dd>Lærketræ, rustfrie skruer</dd></div>
                         </dl>
-                        <p class="jobrow-quote">„Underlaget var dårligere, end vi regnede med. Vi lagde to ekstra strøer — og sagde det, før vi gjorde det.“<span class="sig">Eksempel</span></p>
+                        <p class="card-price">61.400<small>kr. inkl. moms</small></p>
+                        <div class="card-more">„Underlaget var dårligere, end vi regnede med. Vi lagde to ekstra strøer — og sagde det, før vi gjorde det.“<span class="sig">Eksempel</span></div>
+                        <div class="card-actions">
+                            <button class="btn btn--secondary card-toggle" type="button" aria-expanded="false"><span class="when-closed">Se mere</span><span class="when-open">Se mindre</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5l4 4 4-4"/></svg></button>
+                            <a class="btn btn--primary" href="kontakt.html">Kontakt os</a>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -239,15 +244,28 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
     </section>
 
-    <!-- ═══ 5 · Hvad koster det? — sidens ene teal-felt ═══ -->
+    <!-- ═══ 5 · Billeder ═══ -->
+    <section class="section" id="billeder">
+        <div class="wrap">
+            <h2>Sådan ser det ud, når vi er færdige</h2>
+            <div class="mosaic">
+                <figure class="m1"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6446.jpeg" alt="Nyt badeværelse med bryggers, Aarhus N 2026" loading="lazy"></figure>
+                <figure class="m2"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6434.jpeg" alt="Færdigt køkken, Aarhus N 2026" loading="lazy"></figure>
+                <figure class="m3"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6443.jpeg" alt="Badeværelse, Aarhus N 2026" loading="lazy"></figure>
+                <figure class="m4"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6437.jpeg" alt="Arbejdsplads i stue, Aarhus N 2026" loading="lazy"></figure>
+            </div>
+            <p class="mosaic-caption">Skovvangsvej, Aarhus N, 2026. Flere billeder, før og efter, på <a href="opgaver.html">Opgaver</a>.</p>
+        </div>
+    </section>
+
+    <!-- ═══ 6 · Priser ═══ -->
     <section class="price-block" id="priser">
         <div class="wrap">
-            <h2>Hvad koster det?</h2>
-            <p class="section-intro">Samme timepris for alle. Tre tal, du kan regne med, før du ringer.</p>
-            <!-- TODO: timeprisen er guidens markedsestimat. Kørsel og materialer er ikke besluttet. -->
+            <h2>Vores priser</h2>
+            <!-- TODO: timeprisen er guidens markedsestimat. Kørsel og materialetillæg skal verificeres. -->
             <div class="price-lines">
                 <div class="price-line">
-                    <div><span class="lbl">Timepris</span><p class="sub">Tømrermester, inkl. moms. 625 kr. ekskl. Svend og lærling står i prislisten.</p></div>
+                    <div><span class="lbl">Timepris</span><p class="sub">Inkl. moms. 625 kr. ekskl. Svend og lærling står i prislisten.</p></div>
                     <span class="val">781 kr.<small>pr. time</small></span>
                 </div>
                 <div class="price-line">
@@ -255,37 +273,43 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
                     <span class="val is-todo">0 kr.</span>
                 </div>
                 <div class="price-line">
-                    <div><span class="lbl">Materialer</span><p class="sub is-todo">Plus moms. Bilag følger med.</p></div>
-                    <span class="val is-todo">Indkøbspris</span>
+                    <div><span class="lbl">Materialer</span><p class="sub is-todo">Skal verificeres.</p></div>
+                    <span class="val is-todo">Indkøbspris + 10 %</span>
                 </div>
             </div>
-            <p class="price-threshold">Overstiger vi det oplyste timeantal med mere end 10 % eller to timer, stopper vi og ringer, før næste time bruges.</p>
+            <p class="price-threshold">Vi siger til, hvis det tager længere tid end ventet.</p>
             <a class="link-more" href="priser.html">Hele prislisten</a>
         </div>
     </section>
 
-    <!-- ═══ 6 · Fra du ringer, til vi afleverer ═══ -->
+    <!-- ═══ 7 · Proces og løfter ═══ -->
     <section class="section" id="forloeb">
         <div class="wrap">
-            <h2>Fra du ringer, til vi afleverer.</h2>
+            <h2>Vores proces og løfter til dig</h2>
             <ol class="flow">
-                <li><strong>Du ringer eller skriver.</strong><p>Frederik svarer samme hverdag — også hvis svaret er nej.</p></li>
+                <li><strong>Du ringer eller skriver.</strong><p>Du får svar samme hverdag — også hvis svaret er nej.</p></li>
                 <li><strong>Vi kommer ud og måler op.</strong><p>Vi stiller <a href="kontakt.html#spoergsmaal">de fem spørgsmål, vi altid stiller</a>. Det koster ikke noget.</p></li>
                 <li><strong>Du får et tilbud.</strong><p>Timepris, forventet timeantal, og hvad der kan få tallet til at ændre sig. Du bestemmer.</p></li>
                 <li><strong>Vi laver det.</strong><p>Én opgave ad gangen, de samme folk hele vejen. Og vi afleverer sammen med dig.</p></li>
+            </ol>
+            <ol class="promise-chain">
+                <li>Vi kommer som lovet.</li>
+                <li>Du har kun med personer at gøre, du kender – og som kender dig.</li>
+                <li>Transparent kommunikation.<small>Det betyder også ingen prisoverraskelser eller glemte aftaler.</small></li>
+                <li>Vores opgave er først færdig, når du er tilfreds.</li>
             </ol>
             <!-- TODO: assets/tilbud-eksempel.pdf er en placeholder, indtil et rigtigt, anonymiseret tilbud findes. -->
             <a class="link-more" href="assets/tilbud-eksempel.pdf">Se, hvordan et tilbud fra os ser ud</a>
         </div>
     </section>
 
-    <!-- ═══ 7 · Afslutningen ═══ -->
-    <section class="close" id="snak">
+    <!-- ═══ 8 · Kontakt ═══ -->
+    <section class="close" id="kontakt">
         <div class="wrap">
-            <h2>Skal vi tage en uforpligtende snak?</h2>
+            <h2>Kontakt os</h2>
             <a class="close-phone" href="tel:+4528186488">28 18 64 88</a>
             <div class="close-row">
-                <p>Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på. Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge. Du får svar samme hverdag.</p>
+                <p>Vi tager en uformel og uforpligtende snak om dine behov. Sammen finder vi den løsning, der passer bedst til jer. Du får svar samme hverdag.</p>
                 <a class="btn btn--accent" href="kontakt.html">Skriv til os</a>
             </div>
         </div>

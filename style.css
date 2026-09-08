@@ -1252,7 +1252,7 @@ td.name { font-weight: 600; color: var(--nb-text-heading); }
 /* Sektionsrytme: hårlinjer, ikke farvestriber */
 /* Rissestregen — tømrerens blyantstreg før snittet. Sidens ene strukturmærke.
    Sektioner adskilles af luft, ikke af linjer. */
-.section--line { border-top: 0; }
+
 .section h2::before, .price-block h2::before, .close h2::before {
     content: "";
     display: block;

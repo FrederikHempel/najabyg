@@ -160,7 +160,7 @@ Regler fra designværktøjets kvalitetsgulv, som nu gælder: ingen eyebrow over 
 Efter Frederiks afvisning af v4.8-udgaven (farvestriber, logo to gange, fem ens kasser, søgt prisoverskrift) er forsiden bygget om med friske øjne. Konceptet: siden er det tilbud, kunden sidder med ved køkkenbordet — tal, klausuler og navne, sat ligeud.
 
 - **Én lys header.** Mærke, sider, nummeret i 600, „Skriv til os". Ingen telefonbar, ingen mørk bjælke.
-- **Hero delt i to.** Tekst venstre på varm hvid, foto højre uden overlay og uden logo, bløder ud til kanten. Fotoet afdækkes én gang fra venstre (400 ms). Sidens eneste bevægelse.
+- **Hero delt i to.** Tekst venstre på varm hvid, foto højre uden overlay og uden logo, bløder ud til kanten. Fotoet afdækkes én gang fra højre kant og ind (400 ms). Sidens eneste bevægelse.
 - **Rissestregen** — en 36 × 3 px streg i tekstfarven over hver h2 — er sidens eneste strukturmærke. Sektioner adskilles af luft, ikke af fuldbredde-linjer. Hårlinjer bruges kun inde i tabeller (klausuler, jobrækker, prisposter).
 - **Stemplerne som klausuler** (`.clauses`): påstand venstre i stor grad, mekanisme højre. Samme form bærer løftelisten på Om os og de fem spørgsmål på Kontakt.
 - **Ydelserne som én sætning** i displaystørrelse (`.services-run`), som listen på en vogndør.

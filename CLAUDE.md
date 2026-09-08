@@ -52,8 +52,8 @@ Sitet svarer på to ting, og kun de to: at kunden ikke ved, hvad hun skal bede o
 | `om-os.html` | Niclas og Frederik, direkte numre, **den fulde løfteliste**, ejendomsforretningen som faktalinje |
 | `kontakt.html` | Fem formularfelter med hjælpetekster + rækkefølgen for en opgave |
 | `gate.html` | Adgangsside (entry point, kun indtil live) |
-| `style.css` | Hele designsystemet, bygget på guidens v4-tokens. Komponenterne står under „Forsiden som et tilbud på papir“ |
-| `PRODUCT.md` | Produktsandhed til designværktøjet (impeccable). Kort. |
+| `style.css` | Hele designsystemet, bygget på guidens v4-tokens. Komponenterne står under „Layout — forsiden som et tilbud på papir“ |
+| `PRODUCT.md` / `DESIGN.md` | Produktsandhed og det byggede designsystem, til designværktøjerne. Holdes ude af repoet |
 | `script.js` | Telefonbar, mobilmenu, før/efter-slider, adgangstjek |
 | `sitemap.xml` / `robots.txt` | SEO — se afsnittet nedenfor |
 | `intern.html` / `intern.js` / `intern.css` | **Intern** dashboard + beregner til ejendomsforretningen. Skjult URL, eget legacy-stylesheet — rører ikke det nye brand |
@@ -152,6 +152,23 @@ Frederiks dom over v4.8-koden: farvestriber, logo to gange, fem ens kasser, søg
 - **Hero-billederne** ligger i `assets/billeder/hero/` (split-beskæring til desktop, stående til mobil). Aldrig over 250 KB. Midlertidige, indtil de rigtige kommer.
 
 Regler fra designværktøjets kvalitetsgulv, som nu gælder: ingen eyebrow over overskrifter · ingen ens kort som sidestruktur · ingen farvet kant over 1 px · ingen sektionsnumre uden betydning.
+
+---
+
+## Layout — forsiden som et tilbud på papir (8. sep. 2026)
+
+Efter Frederiks afvisning af v4.8-udgaven (farvestriber, logo to gange, fem ens kasser, søgt prisoverskrift) er forsiden bygget om med friske øjne. Konceptet: siden er det tilbud, kunden sidder med ved køkkenbordet — tal, klausuler og navne, sat ligeud.
+
+- **Én lys header.** Mærke, sider, nummeret i 600, „Skriv til os". Ingen telefonbar, ingen mørk bjælke.
+- **Hero delt i to.** Tekst venstre på varm hvid, foto højre uden overlay og uden logo, bløder ud til kanten. Fotoet afdækkes én gang fra venstre (400 ms). Sidens eneste bevægelse.
+- **Rissestregen** — en 36 × 3 px streg i tekstfarven over hver h2 — er sidens eneste strukturmærke. Sektioner adskilles af luft, ikke af fuldbredde-linjer. Hårlinjer bruges kun inde i tabeller (klausuler, jobrækker, prisposter).
+- **Stemplerne som klausuler** (`.clauses`): påstand venstre i stor grad, mekanisme højre. Samme form bærer løftelisten på Om os og de fem spørgsmål på Kontakt.
+- **Ydelserne som én sætning** i displaystørrelse (`.services-run`), som listen på en vogndør.
+- **Priserne som poster i et tilbud** (`.price-lines`) i sidens **eneste** teal-felt. Footeren er lys.
+- **Jobkort som rækker** (`.jobrows`): foto venstre, fakta højre. Rigtige fotos først, guidens eksempel sidst og mærket „Eksempel:".
+- **Afslutningen er nummeret** i op til 6 rem (`.close`), med den ene rust-knap ved siden af.
+
+**Skabelon-tegn, der bevidst holdes ude:** eyebrow-labels, versal-labels, midterprikker i meta-tekst („A · B · C"), pile efter links, ens kort i grid, farvede kanter over 1 px, tal der tæller op, indtoning på hver sektion. Se `DESIGN.md` for tokens og komponenter.
 
 ---
 

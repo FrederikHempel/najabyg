@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Priser · Tømrer i Aarhus · Naja Byg</title>
-    <meta name="description" content="Åbne timepriser for tømrer i Aarhus og opland: timepris, kørsel og materialer står på siden — ikke bag en formular. Og hvornår vi ringer.">
+    <meta name="description" content="Hvad koster en tømrer i Aarhus og opland? Timepris, kørsel og materialer står her — og hvornår vi stopper og ringer, hvis det bliver mere.">
     <link rel="canonical" href="https://najabyg.dk/priser.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Priser · Tømrer i Aarhus · Naja Byg">
-    <meta property="og:description" content="Åbne timepriser for tømrer i Aarhus og opland: timepris, kørsel og materialer står på siden — ikke bag en formular. Og hvornår vi ringer.">
+    <meta property="og:description" content="Hvad koster en tømrer i Aarhus og opland? Timepris, kørsel og materialer står her — og hvornår vi stopper og ringer, hvis det bliver mere.">
     <meta property="og:url" content="https://najabyg.dk/priser.html">
     <meta property="og:image" content="https://najabyg.dk/assets/og-image.jpg">
     <meta property="og:locale" content="da_DK">
@@ -82,19 +82,9 @@
 </head>
 <body>
 
-<!-- ═══ Telefonbaren — klæbet til toppen, altid trykbar ═══ -->
-<div class="phonebar" id="phonebar">
-    <div class="phonebar-inner">
-        <span class="phonebar-label">Ring — vi tager den</span>
-        <a class="phonebar-number" href="tel:+4528186488">28 18 64 88</a>
-        <span class="phonebar-spacer"></span>
-        <a class="phonebar-alt" href="kontakt.html">Skriv i stedet</a>
-    </div>
-</div>
-
-<!-- ═══ Navigation ═══ -->
-<header class="nav">
-    <div class="nav-inner">
+<!-- ═══ Header ═══ -->
+<header class="hdr">
+    <div class="hdr-inner">
         <a class="lockup" href="index.html" aria-label="Naja Byg — forside">
             <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
                 <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
@@ -104,67 +94,51 @@
                 <span class="lockup-name">Naja Byg</span>
             </span>
         </a>
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
         <nav class="nav-links" id="navLinks">
-            <a href="index.html">Forside</a>
             <a href="ydelser.html">Ydelser</a>
             <a href="opgaver.html">Opgaver</a>
             <a href="priser.html" aria-current="page">Priser</a>
             <a href="om-os.html">Om os</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
+        <div class="hdr-contact">
+            <a class="hdr-phone" href="tel:+4528186488">28 18 64 88</a>
+            <a class="hdr-write" href="kontakt.html">Skriv til os</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
 </header>
 
 <main>
-
-    <section class="section">
+    <section class="price-block">
         <div class="wrap">
-            <hr class="rule">
-            <span class="eyebrow">Priser</span>
-            <h1 style="font-size:clamp(2.1rem,4.6vw,3.4rem);margin-top:12px">Timeprisen står her. Ikke bag en formular.</h1>
-            <p class="lead" style="margin-top:20px">
-                Samme timepris for alle. Tre tal, du kan regne med, før du ringer — og en grænse for,
-                hvornår vi stopper og spørger.
-            </p>
+            <h1 style="font-size:clamp(2.4rem,4.8vw,3.6rem);line-height:1.04;color:var(--nb-sand-50)">Hvad koster det?</h1>
+            <p class="section-intro">Samme timepris for alle. Tre tal, du kan regne med, før du ringer — og en grænse for, hvornår vi stopper og spørger.</p>
             <!-- TODO: timeprisen er guidens markedsestimat. Kørsel og materialer er ikke besluttet. -->
-            <div class="price-trio">
-                <div class="price-cell">
-                    <span class="lbl">Timepris</span>
-                    <span class="val">781 kr./t</span>
-                    <p class="sub">inkl. moms · 625 kr. ekskl. Svend og lærling står i prislisten.</p>
+            <div class="price-lines">
+                <div class="price-line">
+                    <div><span class="lbl">Timepris</span><p class="sub">Tømrermester, inkl. moms. 625 kr. ekskl. Svend og lærling står i prislisten.</p></div>
+                    <span class="val">781 kr.<small>pr. time</small></span>
                 </div>
-                <div class="price-cell">
-                    <span class="lbl">Kørsel</span>
+                <div class="price-line">
+                    <div><span class="lbl">Kørsel</span><p class="sub is-todo">Inden for Aarhus og 25 km.</p></div>
                     <span class="val is-todo">0 kr.</span>
-                    <p class="sub is-todo">Inden for Aarhus og 25 km.</p>
                 </div>
-                <div class="price-cell">
-                    <span class="lbl">Materialer</span>
+                <div class="price-line">
+                    <div><span class="lbl">Materialer</span><p class="sub is-todo">Plus moms. Bilag følger med.</p></div>
                     <span class="val is-todo">Indkøbspris</span>
-                    <p class="sub is-todo">+ moms. Bilag følger med.</p>
                 </div>
             </div>
-            <p class="threshold">Overstiger vi det oplyste timeantal med mere end 10 % eller to timer — hvad der kommer først — stopper vi og ringer, før næste time bruges. Under den grænse arbejder vi videre.</p>
+            <p class="price-threshold">Overstiger vi det oplyste timeantal med mere end 10 % eller to timer, stopper vi og ringer, før næste time bruges.</p>
         </div>
     </section>
 
-    <section class="section section--subtle reveal">
+    <section class="section">
         <div class="wrap">
-            <div class="section-head">
-                <span class="eyebrow">Timepris pr. rolle</span>
-                <h2>Hvem der laver hvad, og hvad det koster</h2>
-            </div>
-            <div class="table-wrap" style="margin-top:0">
+            <h2>Hvem der laver hvad, og hvad det koster.</h2>
+            <div class="table-wrap">
                 <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Rolle</th>
-                            <th scope="col">Ekskl. moms</th>
-                            <th scope="col">Inkl. moms</th>
-                            <th scope="col">Note</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th scope="col">Rolle</th><th scope="col">Ekskl. moms</th><th scope="col">Inkl. moms</th><th scope="col">Note</th></tr></thead>
                     <tbody>
                         <tr><td class="name">Tømrermester</td><td class="num">625 kr./t</td><td class="num">781 kr./t</td><td class="muted">Opmåling, planlægning og ansvar for sagen</td></tr>
                         <tr><td class="name">Svend</td><td class="num">545 kr./t</td><td class="num">681 kr./t</td><td class="muted">Udførende tømrer</td></tr>
@@ -178,17 +152,11 @@
         </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section section--line">
         <div class="wrap">
-            <div class="section-head">
-                <span class="eyebrow">Hvornår ringer vi?</span>
-                <h2>Grænsen er 10 % eller to timer</h2>
-            </div>
-            <p class="lead">
-                Overstiger vi det oplyste timeantal med mere end 10 % eller to timer — hvad der kommer
-                først — stopper vi og ringer, før næste time bruges. Under den grænse arbejder vi videre.
-            </p>
-            <div class="yesno">
+            <h2>Hvornår ringer vi?</h2>
+            <p class="section-intro">Overstiger vi det oplyste timeantal med mere end 10 % eller to timer, stopper vi og ringer, før næste time bruges.</p>
+            <div class="grid-2" style="margin-top:36px">
                 <div>
                     <h3>Det er ikke med i timeprisen</h3>
                     <ul class="list-plain">
@@ -201,39 +169,21 @@
                 </div>
                 <div>
                     <h3>Timepris frem for en fast sum</h3>
-                    <p class="muted">
-                        Du får en timepris, et forventet timeantal, og en liste over det, der kan få
-                        tallet til at ændre sig. Skrider tid eller pris, laver vi en ny aftale sammen —
-                        før vi arbejder videre. Aldrig først på fakturaen.
-                    </p>
+                    <p class="muted" style="margin-top:8px">Du får en timepris, et forventet timeantal, og en liste over det, der kan få tallet til at ændre sig. Skrider tid eller pris, laver vi en ny aftale sammen — før vi arbejder videre. Aldrig først på fakturaen.</p>
                 </div>
             </div>
-
             <div class="note">
-                <span class="eyebrow">Håndværkerfradrag</span>
-                <p>
-                    Fradraget dækker siden 2025 kun grøn istandsættelse — isolering, vinduer, yderdøre,
-                    varmepumper, solceller, ventilation, kloak og radon. Af det, vi laver, er det kun
-                    <strong>vinduer og yderdøre</strong>, der tæller med.
-                </p>
+                <p><strong>Håndværkerfradrag.</strong> Fradraget dækker siden 2025 kun grøn istandsættelse — isolering, vinduer, yderdøre, varmepumper, solceller, ventilation, kloak og radon. Af det, vi laver, er det kun <strong>vinduer og yderdøre</strong>, der tæller med.</p>
             </div>
         </div>
     </section>
-
-    <section class="section section--dark reveal" id="snak">
+    <section class="close section--line" id="snak">
         <div class="wrap">
-            <div class="col">
-                <span class="eyebrow">Kontakt</span>
-                <h2 style="margin-top:12px">Skal vi tage en uforpligtende snak?</h2>
-                <p style="margin-top:16px">
-                    Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på.
-                    Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge.
-                    Du får svar samme hverdag.
-                </p>
-            </div>
-            <div class="btn-row">
-                <a class="btn btn--on-dark" href="tel:+4528186488">Ring 28 18 64 88</a>
-                <a class="btn btn--accent" href="kontakt.html">Skriv to linjer</a>
+            <h2>Skal vi tage en uforpligtende snak?</h2>
+            <a class="close-phone" href="tel:+4528186488">28 18 64 88</a>
+            <div class="close-row">
+                <p>Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på. Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge. Du får svar samme hverdag.</p>
+                <a class="btn btn--accent" href="kontakt.html">Skriv til os</a>
             </div>
         </div>
     </section>
@@ -245,16 +195,17 @@
     <div class="wrap">
         <div class="footer-grid">
             <div>
-                <a class="lockup lockup--on-dark" href="index.html" aria-label="Naja Byg — forside">
+                <a class="lockup lockup--full" href="index.html" aria-label="Naja Byg — forside">
             <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
                 <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
                 <path class="door-leaf" d="M48,10 L92,2 L92,100 L48,92 Z"/>
             </svg>
             <span class="lockup-text">
                 <span class="lockup-name">Naja Byg</span>
+                <span class="lockup-sub">Nauntofte &amp; Jacobsen</span>
             </span>
         </a>
-                <p style="margin-top:16px">Tømrer i Aarhus og opland. Én opgave ad gangen — og timeprisen står på siden.</p>
+                <p style="margin-top:20px">Tømrer i Aarhus og opland. Én opgave ad gangen — og timeprisen står på siden.</p>
             </div>
             <div>
                 <h4>Kontakt</h4>

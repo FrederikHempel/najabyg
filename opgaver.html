@@ -82,19 +82,9 @@
 </head>
 <body>
 
-<!-- ═══ Telefonbaren — klæbet til toppen, altid trykbar ═══ -->
-<div class="phonebar" id="phonebar">
-    <div class="phonebar-inner">
-        <span class="phonebar-label">Ring — vi tager den</span>
-        <a class="phonebar-number" href="tel:+4528186488">28 18 64 88</a>
-        <span class="phonebar-spacer"></span>
-        <a class="phonebar-alt" href="kontakt.html">Skriv i stedet</a>
-    </div>
-</div>
-
-<!-- ═══ Navigation ═══ -->
-<header class="nav">
-    <div class="nav-inner">
+<!-- ═══ Header ═══ -->
+<header class="hdr">
+    <div class="hdr-inner">
         <a class="lockup" href="index.html" aria-label="Naja Byg — forside">
             <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
                 <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
@@ -104,121 +94,88 @@
                 <span class="lockup-name">Naja Byg</span>
             </span>
         </a>
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
         <nav class="nav-links" id="navLinks">
-            <a href="index.html">Forside</a>
             <a href="ydelser.html">Ydelser</a>
             <a href="opgaver.html" aria-current="page">Opgaver</a>
             <a href="priser.html">Priser</a>
             <a href="om-os.html">Om os</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
+        <div class="hdr-contact">
+            <a class="hdr-phone" href="tel:+4528186488">28 18 64 88</a>
+            <a class="hdr-write" href="kontakt.html">Skriv til os</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
 </header>
 
 <main>
-
     <section class="section">
         <div class="wrap">
-            <hr class="rule">
-            <span class="eyebrow">Opgaver</span>
-            <h1 style="font-size:clamp(2.1rem,4.6vw,3.4rem);margin-top:12px">Hvad vi lavede, hvor længe det tog, og hvad det kostede</h1>
-            <p class="lead" style="margin-top:20px">
-                Alle billeder er vores egne. Ingen stockfotos. Tallene står som de var —
-                også når noget gik anderledes end planlagt.
-            </p>
+            <h1 style="font-size:clamp(2.4rem,4.8vw,3.6rem);line-height:1.04;max-width:18ch">Hvad vi lavede, hvor længe det tog, og hvad det kostede.</h1>
+            <p class="section-intro">Alle billeder er vores egne. Ingen stockfotos. Tallene står som de var — også når noget gik anderledes end planlagt.</p>
         </div>
     </section>
 
-    <section class="section section--subtle reveal">
+    <section class="section section--line">
         <div class="wrap">
-            <div class="jobcards" style="margin-top:0">
-
-                <!-- TODO: eksempelkort fra designguiden. Udskift med en rigtig, afsluttet opgave. -->
-                <article class="jobcard">
-                    <div class="jobcard-media jobcard-media--empty">
-                        Telefonfoto · 4:3<br>indsæt eget foto af opgaven
-                    </div>
-                    <div class="jobcard-body">
-                        <h3 class="jobcard-title">Terrasse i lærk</h3>
-                        <span class="jobcard-loc">Risskov · maj 2026</span>
-                        <dl>
-                            <dt>Omfang</dt><dd>34 m² terrasse, 11 m rækværk</dd>
-                            <dt>Varighed</dt><dd>9 arbejdsdage</dd>
-                            <dt>Materialer</dt><dd>Lærketræ, rustfrie skruer, justerbare fødder</dd>
-                            <dt>Pris</dt><dd>61.400 kr. inkl. moms og materialer</dd>
-                        </dl>
-                        <p class="jobcard-quote">
-                            „Underlaget var dårligere, end vi regnede med. Vi lagde to ekstra strøer
-                            — og sagde det, før vi gjorde det.“
-                            <span class="jobcard-sig">Niclas</span>
-                        </p>
-                    </div>
-                </article>
-
+            <div class="jobrows" style="margin-top:0;border-top:0">
                 <!-- TODO: omfang, varighed og pris skal udfyldes med de faktiske tal. -->
-                <article class="jobcard">
-                    <div class="jobcard-media">
-                        <img src="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg"
-                             alt="Nyt køkken monteret i lejlighed, Aarhus N 2026" loading="lazy">
-                    </div>
-                    <div class="jobcard-body">
-                        <h3 class="jobcard-title">Nyt køkken</h3>
-                        <span class="jobcard-loc">Aarhus N · 2026</span>
+                <article class="jobrow">
+                    <div class="jobrow-media"><img src="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg" alt="Nyt køkken monteret i lejlighed, Aarhus N 2026" loading="lazy"></div>
+                    <div>
+                        <h3>Nyt køkken</h3>
+                        <p class="jobrow-loc">Aarhus N · 2026</p>
                         <dl>
-                            <dt>Omfang</dt><dd class="is-todo">udfyldes</dd>
-                            <dt>Varighed</dt><dd class="is-todo">udfyldes</dd>
-                            <dt>Materialer</dt><dd class="is-todo">udfyldes</dd>
-                            <dt>Pris</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Omfang</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Varighed</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Materialer</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Pris</dt><dd class="is-todo">udfyldes</dd>
                         </dl>
-                        <p class="jobcard-quote is-todo">
-                            <span class="is-todo">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.</span>
-                            <span class="jobcard-sig">Udfyldes</span>
-                        </p>
+                        <p class="jobrow-quote is-todo">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.<span class="sig">Udfyldes</span></p>
                     </div>
                 </article>
-
                 <!-- TODO: omfang, varighed og pris skal udfyldes med de faktiske tal. -->
-                <article class="jobcard">
-                    <div class="jobcard-media">
-                        <img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6432.jpeg"
-                             alt="Nyt plankegulv og nye lofter i stue, Aarhus N 2026" loading="lazy">
-                    </div>
-                    <div class="jobcard-body">
-                        <h3 class="jobcard-title">Nye gulve og lofter</h3>
-                        <span class="jobcard-loc">Aarhus N · 2026</span>
+                <article class="jobrow">
+                    <div class="jobrow-media"><img src="assets/billeder/Skovvangsvej/Færdig lejlighed/IMG_6432.jpeg" alt="Nyt plankegulv og nye lofter i stue, Aarhus N 2026" loading="lazy"></div>
+                    <div>
+                        <h3>Nye gulve og lofter</h3>
+                        <p class="jobrow-loc">Aarhus N · 2026</p>
                         <dl>
-                            <dt>Omfang</dt><dd class="is-todo">udfyldes</dd>
-                            <dt>Varighed</dt><dd class="is-todo">udfyldes</dd>
-                            <dt>Materialer</dt><dd class="is-todo">udfyldes</dd>
-                            <dt>Pris</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Omfang</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Varighed</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Materialer</dt><dd class="is-todo">udfyldes</dd>
+                        <dt>Pris</dt><dd class="is-todo">udfyldes</dd>
                         </dl>
-                        <p class="jobcard-quote is-todo">
-                            <span class="is-todo">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.</span>
-                            <span class="jobcard-sig">Udfyldes</span>
-                        </p>
+                        <p class="jobrow-quote is-todo">Én sætning i egen stemme — helst om noget, der gik anderledes end planlagt.<span class="sig">Udfyldes</span></p>
                     </div>
                 </article>
-
+                <!-- Eksempel fra designguiden — ikke en rigtig opgave. Udskift med en afsluttet opgave. -->
+                <article class="jobrow">
+                    <div class="jobrow-media jobrow-media--empty">Telefonfoto · 4:3<br>indsæt eget foto af opgaven</div>
+                    <div>
+                        <h3>Terrasse i lærk</h3>
+                        <p class="jobrow-loc">Eksempel — sådan ser en opgave ud, når den er lagt op</p>
+                        <dl>
+                        <dt>Omfang</dt><dd>34 m² terrasse, 11 m rækværk</dd>
+                        <dt>Varighed</dt><dd>9 arbejdsdage</dd>
+                        <dt>Materialer</dt><dd>Lærketræ, rustfrie skruer, justerbare fødder</dd>
+                        <dt>Pris</dt><dd>61.400 kr. inkl. moms og materialer</dd>
+                        </dl>
+                        <p class="jobrow-quote">„Underlaget var dårligere, end vi regnede med. Vi lagde to ekstra strøer — og sagde det, før vi gjorde det.“<span class="sig">Eksempel</span></p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section section--line">
         <div class="wrap">
-            <div class="section-head">
-                <span class="eyebrow">Før og efter</span>
-                <h2>Træk i håndtaget</h2>
-            </div>
-            <p class="lead">
-                Samme standpunkt, samme afstand, samme dagslys. Fra en lejlighed på Skovvangsvej,
-                som vi selv har renoveret fra bunden.
-            </p>
-            <div class="grid-2" style="margin-top:32px">
+            <h2>Træk i håndtaget.</h2>
+            <p class="section-intro">Samme standpunkt, samme afstand, samme dagslys. Fra en lejlighed på Skovvangsvej, som vi selv har renoveret fra bunden.</p>
+            <div class="grid-2" style="margin-top:36px">
                 <figure style="margin:0">
-                    <div class="ba" tabindex="0" role="slider"
-                         aria-label="Stuen — træk for at se før og efter"
-                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
+                    <div class="ba" tabindex="0" role="slider" aria-label="Stuen — træk for at se før og efter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
                         <img class="ba-before" src="assets/billeder/Skovvangsvej/Stuen/Før/IMG_5041.jpeg" alt="Stuen, før renovering, Aarhus N 2026" loading="lazy">
                         <img class="ba-after" src="assets/billeder/Skovvangsvej/Stuen/Efter/IMG_6432.jpeg" alt="Stuen, efter renovering, Aarhus N 2026" loading="lazy">
                         <span class="ba-handle"></span>
@@ -228,9 +185,7 @@
                     <figcaption class="ba-caption">Stuen · Aarhus N · 2026</figcaption>
                 </figure>
                 <figure style="margin:0">
-                    <div class="ba" tabindex="0" role="slider"
-                         aria-label="Køkkenet — træk for at se før og efter"
-                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
+                    <div class="ba" tabindex="0" role="slider" aria-label="Køkkenet — træk for at se før og efter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
                         <img class="ba-before" src="assets/billeder/Skovvangsvej/Køkken/Før/IMG_4981.jpeg" alt="Køkkenet, før renovering, Aarhus N 2026" loading="lazy">
                         <img class="ba-after" src="assets/billeder/Skovvangsvej/Køkken/Efter/IMG_6435.jpeg" alt="Køkkenet, efter renovering, Aarhus N 2026" loading="lazy">
                         <span class="ba-handle"></span>
@@ -240,9 +195,7 @@
                     <figcaption class="ba-caption">Køkkenet · Aarhus N · 2026</figcaption>
                 </figure>
                 <figure style="margin:0">
-                    <div class="ba" tabindex="0" role="slider"
-                         aria-label="Badeværelset — træk for at se før og efter"
-                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
+                    <div class="ba" tabindex="0" role="slider" aria-label="Badeværelset — træk for at se før og efter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
                         <img class="ba-before" src="assets/billeder/Skovvangsvej/Badeværelset/Før 1/IMG_5034.jpeg" alt="Badeværelset, før renovering, Aarhus N 2026" loading="lazy">
                         <img class="ba-after" src="assets/billeder/Skovvangsvej/Badeværelset/Efter 1/IMG_6443.jpeg" alt="Badeværelset, efter renovering, Aarhus N 2026" loading="lazy">
                         <span class="ba-handle"></span>
@@ -252,9 +205,7 @@
                     <figcaption class="ba-caption">Badeværelset · Aarhus N · 2026</figcaption>
                 </figure>
                 <figure style="margin:0">
-                    <div class="ba" tabindex="0" role="slider"
-                         aria-label="Badeværelset, anden vinkel — træk for at se før og efter"
-                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
+                    <div class="ba" tabindex="0" role="slider" aria-label="Badeværelset, anden vinkel — træk for at se før og efter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos:50%">
                         <img class="ba-before" src="assets/billeder/Skovvangsvej/Badeværelset/Før 2/IMG_6177.jpeg" alt="Badeværelset, anden vinkel, før renovering, Aarhus N 2026" loading="lazy">
                         <img class="ba-after" src="assets/billeder/Skovvangsvej/Badeværelset/Efter 2/IMG_6445.jpeg" alt="Badeværelset, anden vinkel, efter renovering, Aarhus N 2026" loading="lazy">
                         <span class="ba-handle"></span>
@@ -267,71 +218,28 @@
         </div>
     </section>
 
-    <section class="section section--subtle reveal">
+    <section class="section section--line">
         <div class="wrap">
-            <div class="section-head">
-                <span class="eyebrow">Undervejs</span>
-                <h2>Sådan så det ud imens</h2>
-            </div>
+            <h2>Sådan så det ud imens.</h2>
             <div class="gallery">
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6183.jpeg"
-                         alt="Under renovering — Vægge revet ned, Aarhus N 2026" loading="lazy">
-                    <figcaption>Vægge revet ned</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6200.jpeg"
-                         alt="Under renovering — Nye skillevægge rejst, Aarhus N 2026" loading="lazy">
-                    <figcaption>Nye skillevægge rejst</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6217.jpeg"
-                         alt="Under renovering — Undergulv rettet op, Aarhus N 2026" loading="lazy">
-                    <figcaption>Undergulv rettet op</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6269.jpeg"
-                         alt="Under renovering — Lofter og forskalling, Aarhus N 2026" loading="lazy">
-                    <figcaption>Lofter og forskalling</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6302.jpeg"
-                         alt="Under renovering — Badeværelset opbygget, Aarhus N 2026" loading="lazy">
-                    <figcaption>Badeværelset opbygget</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6323.jpeg"
-                         alt="Under renovering — Køkkenet monteret, Aarhus N 2026" loading="lazy">
-                    <figcaption>Køkkenet monteret</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6328.jpeg"
-                         alt="Under renovering — Lister og finish, Aarhus N 2026" loading="lazy">
-                    <figcaption>Lister og finish</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6331.jpeg"
-                         alt="Under renovering — Sidste dag på pladsen, Aarhus N 2026" loading="lazy">
-                    <figcaption>Sidste dag på pladsen</figcaption>
-                </figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6183.jpeg" alt="Under renovering — Vægge revet ned, Aarhus N 2026" loading="lazy"><figcaption>Vægge revet ned</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6200.jpeg" alt="Under renovering — Nye skillevægge rejst, Aarhus N 2026" loading="lazy"><figcaption>Nye skillevægge rejst</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6217.jpeg" alt="Under renovering — Undergulv rettet op, Aarhus N 2026" loading="lazy"><figcaption>Undergulv rettet op</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6269.jpeg" alt="Under renovering — Lofter og forskalling, Aarhus N 2026" loading="lazy"><figcaption>Lofter og forskalling</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6302.jpeg" alt="Under renovering — Badeværelset opbygget, Aarhus N 2026" loading="lazy"><figcaption>Badeværelset opbygget</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6323.jpeg" alt="Under renovering — Køkkenet monteret, Aarhus N 2026" loading="lazy"><figcaption>Køkkenet monteret</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6328.jpeg" alt="Under renovering — Lister og finish, Aarhus N 2026" loading="lazy"><figcaption>Lister og finish</figcaption></figure>
+                <figure><img src="assets/billeder/Skovvangsvej/Byggeprocessen/IMG_6331.jpeg" alt="Under renovering — Sidste dag på pladsen, Aarhus N 2026" loading="lazy"><figcaption>Sidste dag på pladsen</figcaption></figure>
             </div>
         </div>
     </section>
-
-    <section class="section section--dark reveal" id="snak">
+    <section class="close section--line" id="snak">
         <div class="wrap">
-            <div class="col">
-                <span class="eyebrow">Kontakt</span>
-                <h2 style="margin-top:12px">Skal vi tage en uforpligtende snak?</h2>
-                <p style="margin-top:16px">
-                    Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på.
-                    Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge.
-                    Du får svar samme hverdag.
-                </p>
-            </div>
-            <div class="btn-row">
-                <a class="btn btn--on-dark" href="tel:+4528186488">Ring 28 18 64 88</a>
-                <a class="btn btn--accent" href="kontakt.html">Skriv to linjer</a>
+            <h2>Skal vi tage en uforpligtende snak?</h2>
+            <a class="close-phone" href="tel:+4528186488">28 18 64 88</a>
+            <div class="close-row">
+                <p>Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på. Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge. Du får svar samme hverdag.</p>
+                <a class="btn btn--accent" href="kontakt.html">Skriv til os</a>
             </div>
         </div>
     </section>
@@ -343,16 +251,17 @@
     <div class="wrap">
         <div class="footer-grid">
             <div>
-                <a class="lockup lockup--on-dark" href="index.html" aria-label="Naja Byg — forside">
+                <a class="lockup lockup--full" href="index.html" aria-label="Naja Byg — forside">
             <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
                 <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
                 <path class="door-leaf" d="M48,10 L92,2 L92,100 L48,92 Z"/>
             </svg>
             <span class="lockup-text">
                 <span class="lockup-name">Naja Byg</span>
+                <span class="lockup-sub">Nauntofte &amp; Jacobsen</span>
             </span>
         </a>
-                <p style="margin-top:16px">Tømrer i Aarhus og opland. Én opgave ad gangen — og timeprisen står på siden.</p>
+                <p style="margin-top:20px">Tømrer i Aarhus og opland. Én opgave ad gangen — og timeprisen står på siden.</p>
             </div>
             <div>
                 <h4>Kontakt</h4>

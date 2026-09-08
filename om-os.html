@@ -82,19 +82,9 @@
 </head>
 <body>
 
-<!-- ═══ Telefonbaren — klæbet til toppen, altid trykbar ═══ -->
-<div class="phonebar" id="phonebar">
-    <div class="phonebar-inner">
-        <span class="phonebar-label">Ring — vi tager den</span>
-        <a class="phonebar-number" href="tel:+4528186488">28 18 64 88</a>
-        <span class="phonebar-spacer"></span>
-        <a class="phonebar-alt" href="kontakt.html">Skriv i stedet</a>
-    </div>
-</div>
-
-<!-- ═══ Navigation ═══ -->
-<header class="nav">
-    <div class="nav-inner">
+<!-- ═══ Header ═══ -->
+<header class="hdr">
+    <div class="hdr-inner">
         <a class="lockup" href="index.html" aria-label="Naja Byg — forside">
             <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
                 <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
@@ -104,173 +94,92 @@
                 <span class="lockup-name">Naja Byg</span>
             </span>
         </a>
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
         <nav class="nav-links" id="navLinks">
-            <a href="index.html">Forside</a>
             <a href="ydelser.html">Ydelser</a>
             <a href="opgaver.html">Opgaver</a>
             <a href="priser.html">Priser</a>
             <a href="om-os.html" aria-current="page">Om os</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
+        <div class="hdr-contact">
+            <a class="hdr-phone" href="tel:+4528186488">28 18 64 88</a>
+            <a class="hdr-write" href="kontakt.html">Skriv til os</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
 </header>
 
 <main>
-
     <section class="section">
         <div class="wrap">
-            <a class="lockup lockup--full" href="index.html" aria-label="Naja Byg — forside">
-            <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
-                <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
-                <path class="door-leaf" d="M48,10 L92,2 L92,100 L48,92 Z"/>
-            </svg>
-            <span class="lockup-text">
-                <span class="lockup-name">Naja Byg</span>
-                <span class="lockup-sub">Nauntofte &amp; Jacobsen</span>
-            </span>
-        </a>
-            <span class="eyebrow" style="display:block;margin-top:32px">Om os</span>
-            <h1 style="font-size:clamp(2.1rem,4.6vw,3.4rem);margin-top:12px">To navne. Én kontaktperson.</h1>
-            <p class="lead" style="margin-top:20px">
-                Naja er Nauntofte og Jacobsen. Frederik tager telefonen og aftalerne. Niclas laver arbejdet.
-            </p>
+            <h1 style="font-size:clamp(2.4rem,4.8vw,3.6rem);line-height:1.04;max-width:18ch">To navne. Én kontaktperson.</h1>
+            <p class="section-intro">Naja er Nauntofte og Jacobsen. Frederik tager telefonen og aftalerne. Niclas laver arbejdet.</p>
         </div>
     </section>
 
-    <section class="section section--subtle reveal">
+    <section class="section section--line">
         <div class="wrap">
             <div class="grid-2">
                 <article class="person">
-                    <img src="assets/billeder/Niclas/83034665_10219400056046551_1889777028895342592_n.jpg"
-                         alt="Niclas Nauntofte, tømrer, Naja Byg" loading="lazy">
+                    <img src="assets/billeder/Niclas/83034665_10219400056046551_1889777028895342592_n.jpg" alt="Niclas Nauntofte, tømrer, Naja Byg" loading="lazy">
                     <div>
                         <h3 class="person-name">Niclas Nauntofte</h3>
-                        <p class="person-role">Uddannet tømrer · 10+ år i faget · udfører arbejdet</p>
-                        <p class="muted" style="margin-top:12px">
-                            Udlært tømrer med over ti år i faget. Det er Niclas, der står på pladsen —
-                            og som siger til, hvis noget skal laves anderledes, end du havde tænkt.
-                        </p>
+                        <p class="jobrow-loc">Uddannet tømrer · 10+ år i faget · udfører arbejdet</p>
+                        <p class="muted" style="margin-top:12px">Udlært tømrer med over ti år i faget. Det er Niclas, der står på pladsen — og som siger til, hvis noget skal laves anderledes, end du havde tænkt.</p>
                         <a class="person-phone" href="tel:+4528186488">28 18 64 88</a>
                     </div>
                 </article>
-
                 <article class="person">
-                    <img src="assets/billeder/Frederik/IMG_4038.jpeg"
-                         alt="Frederik Jacobsen, tilbud og aftaler, Naja Byg" loading="lazy">
+                    <img src="assets/billeder/Frederik/IMG_4038.jpeg" alt="Frederik Jacobsen, tilbud og aftaler, Naja Byg" loading="lazy">
                     <div>
                         <h3 class="person-name">Frederik Jacobsen</h3>
-                        <p class="person-role">Tilbud, aftaler og opmåling</p>
-                        <p class="muted" style="margin-top:12px">
-                            Kommer ud og måler op, skriver tilbuddet og holder aftalerne. Det er Frederik,
-                            du ringer til — og som ringer til dig, hvis noget rykker sig.
-                        </p>
+                        <p class="jobrow-loc">Tilbud, aftaler og opmåling</p>
+                        <p class="muted" style="margin-top:12px">Kommer ud og måler op, skriver tilbuddet og holder aftalerne. Det er Frederik, du ringer til — og som ringer til dig, hvis noget rykker sig.</p>
                         <!-- TODO: Frederiks direkte nummer. -->
                         <a class="person-phone is-todo" href="tel:+45">Direkte nummer — TODO</a>
                     </div>
                 </article>
             </div>
-
             <div class="col" style="margin-top:48px">
                 <h3>Hvem kommer?</h3>
-                <p style="margin-top:12px">
-                    Frederik kommer ud til opmålingen og skriver tilbuddet. Niclas kommer og laver
-                    arbejdet. Har du spørgsmål undervejs, ringer du til Frederik, som kender din sag
-                    fra første opkald, til vi afleverer sammen. Det er de samme to ansigter hele vejen.
-                </p>
+                <p style="margin-top:12px">Frederik kommer ud til opmålingen og skriver tilbuddet. Niclas kommer og laver arbejdet. Har du spørgsmål undervejs, ringer du til Frederik, som kender din sag fra første opkald, til vi afleverer sammen. Det er de samme to ansigter hele vejen.</p>
             </div>
         </div>
     </section>
 
     <!-- ═══ Løftelisten — den fulde. Står kun her, i tilbuddet og på visitkortet. ═══ -->
-    <section class="section reveal" id="loefter">
+    <section class="section section--line" id="loefter">
         <div class="wrap">
-            <div class="section-head">
-                <span class="eyebrow">Syv løfter. Ingen tillægsord.</span>
-                <h2>Det her forpligter vi os til</h2>
-            </div>
+            <h2>Det her forpligter vi os til.</h2>
+            <p class="section-intro">Syv løfter. Ingen tillægsord. De står ordret ens her, i tilbuddet og på visitkortet.</p>
             <!-- TODO: løftelisten v4.5 skal bekræftes af Niclas. -->
-            <div class="promises">
-                <div class="promise">
-                    <span class="promise-n">01</span>
-                    <span>
-                        <span class="promise-t">Du får svar samme hverdag.</span>
-                        <span class="promise-s">Også når svaret er, at opgaven ikke er noget for os. Så får du et navn på en, der kan.</span>
-                    </span>
-                </div>
-                <div class="promise">
-                    <span class="promise-n">02</span>
-                    <span>
-                        <span class="promise-t">Samme timepris for alle. Den står på hjemmesiden.</span>
-                        <span class="promise-s">Sammen med, hvad kørsel og materialer koster.</span>
-                    </span>
-                </div>
-                <div class="promise">
-                    <span class="promise-n">03</span>
-                    <span>
-                        <span class="promise-t">Skrider tid eller pris, laver vi en ny aftale sammen — før vi arbejder videre.</span>
-                        <span class="promise-s">Aldrig først på fakturaen.</span>
-                    </span>
-                </div>
-                <div class="promise">
-                    <span class="promise-n">04</span>
-                    <span>
-                        <span class="promise-t">Én opgave ad gangen. Vi starter ikke hos dig, før vi er færdige hos den forrige.</span>
-                        <span class="promise-s">Det betyder, at du venter på, at vi starter — ikke på, at vi bliver færdige.</span>
-                    </span>
-                </div>
-                <div class="promise">
-                    <span class="promise-n">05</span>
-                    <span>
-                        <span class="promise-t">Du har én kontaktperson, der kender din sag fra start til slut.</span>
-                        <span class="promise-s">Frederik tager telefonen og aftalerne. Niclas, uddannet tømrer med 10+ år i faget, udfører arbejdet.</span>
-                    </span>
-                </div>
-                <div class="promise">
-                    <span class="promise-n">06</span>
-                    <span>
-                        <span class="promise-t">Bliver vi forsinket, får du besked, så snart vi ved det.</span>
-                        <span class="promise-s">Planlagte ændringer senest dagen før. Sker der noget på dagen, ringer vi med det samme.</span>
-                    </span>
-                </div>
-                <div class="promise">
-                    <span class="promise-n">07</span>
-                    <span>
-                        <span class="promise-t">Vi afslutter først, når listen er tom, og du er tilfreds.</span>
-                        <span class="promise-s">Vi går opgaven igennem sammen og skriver ned, hvad der mangler. Står der noget på listen, er vi ikke færdige.</span>
-                    </span>
-                </div>
+            <div class="clauses">
+                <div class="clause"><span class="t">Du får svar samme hverdag.</span><p class="p">Også når svaret er, at opgaven ikke er noget for os. Så får du et navn på en, der kan.</p></div>
+                <div class="clause"><span class="t">Samme timepris for alle. Den står på hjemmesiden.</span><p class="p">Sammen med, hvad kørsel og materialer koster.</p></div>
+                <div class="clause"><span class="t">Skrider tid eller pris, laver vi en ny aftale sammen — før vi arbejder videre.</span><p class="p">Aldrig først på fakturaen.</p></div>
+                <div class="clause"><span class="t">Én opgave ad gangen. Vi starter ikke hos dig, før vi er færdige hos den forrige.</span><p class="p">Det betyder, at du venter på, at vi starter — ikke på, at vi bliver færdige.</p></div>
+                <div class="clause"><span class="t">Du har én kontaktperson, der kender din sag fra start til slut.</span><p class="p">Frederik tager telefonen og aftalerne. Niclas, uddannet tømrer med 10+ år i faget, udfører arbejdet.</p></div>
+                <div class="clause"><span class="t">Bliver vi forsinket, får du besked, så snart vi ved det.</span><p class="p">Planlagte ændringer senest dagen før. Sker der noget på dagen, ringer vi med det samme.</p></div>
+                <div class="clause"><span class="t">Vi afslutter først, når listen er tom, og du er tilfreds.</span><p class="p">Vi går opgaven igennem sammen og skriver ned, hvad der mangler. Står der noget på listen, er vi ikke færdige.</p></div>
             </div>
         </div>
     </section>
 
-    <section class="section section--subtle reveal">
+    <section class="section section--line">
         <div class="wrap">
             <div class="col">
-                <span class="eyebrow">Hvor standarden kommer fra</span>
-                <p style="margin-top:12px">
-                    Vi driver også ejendomsselskabet NAJA Ejendomsinvest og har renoveret vores egne
-                    lejligheder fra bunden — det er dér, man lærer, hvad der holder, fordi man selv
-                    betaler for det, der ikke gør.
-                </p>
+                <h3>Hvor standarden kommer fra</h3>
+                <p style="margin-top:12px">Vi driver også ejendomsselskabet NAJA Ejendomsinvest og har renoveret vores egne lejligheder fra bunden — det er dér, man lærer, hvad der holder, fordi man selv betaler for det, der ikke gør.</p>
             </div>
         </div>
     </section>
-
-    <section class="section section--dark reveal" id="snak">
+    <section class="close section--line" id="snak">
         <div class="wrap">
-            <div class="col">
-                <span class="eyebrow">Kontakt</span>
-                <h2 style="margin-top:12px">Skal vi tage en uforpligtende snak?</h2>
-                <p style="margin-top:16px">
-                    Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på.
-                    Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge.
-                    Du får svar samme hverdag.
-                </p>
-            </div>
-            <div class="btn-row">
-                <a class="btn btn--on-dark" href="tel:+4528186488">Ring 28 18 64 88</a>
-                <a class="btn btn--accent" href="kontakt.html">Skriv to linjer</a>
+            <h2>Skal vi tage en uforpligtende snak?</h2>
+            <a class="close-phone" href="tel:+4528186488">28 18 64 88</a>
+            <div class="close-row">
+                <p>Ring til Frederik, eller skriv to linjer om, hvad du går og tænker på. Du behøver ikke vide, hvad du skal bede om — det er vores arbejde at spørge. Du får svar samme hverdag.</p>
+                <a class="btn btn--accent" href="kontakt.html">Skriv til os</a>
             </div>
         </div>
     </section>
@@ -282,16 +191,17 @@
     <div class="wrap">
         <div class="footer-grid">
             <div>
-                <a class="lockup lockup--on-dark" href="index.html" aria-label="Naja Byg — forside">
+                <a class="lockup lockup--full" href="index.html" aria-label="Naja Byg — forside">
             <svg class="lockup-mark" viewBox="16 2 76 98" aria-hidden="true" focusable="false">
                 <path class="door-open" d="M16,10 L48,10 L48,92 L16,92 Z"/>
                 <path class="door-leaf" d="M48,10 L92,2 L92,100 L48,92 Z"/>
             </svg>
             <span class="lockup-text">
                 <span class="lockup-name">Naja Byg</span>
+                <span class="lockup-sub">Nauntofte &amp; Jacobsen</span>
             </span>
         </a>
-                <p style="margin-top:16px">Tømrer i Aarhus og opland. Én opgave ad gangen — og timeprisen står på siden.</p>
+                <p style="margin-top:20px">Tømrer i Aarhus og opland. Én opgave ad gangen — og timeprisen står på siden.</p>
             </div>
             <div>
                 <h4>Kontakt</h4>

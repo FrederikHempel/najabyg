@@ -2,11 +2,28 @@
 
 Dette dokument beskriver projektets nuværende tilstand og konventioner. Læs det grundigt, inden du laver ændringer.
 
-**Designgrundlag, i prioriteret rækkefølge:**
+**Grundlag — og hvad der er låst, og hvad der er åbent:**
 
-1. `naja-byg-designguide-v4.html` (v4.8, 7. september 2026) — **facit.** Afsnit 16 er forsidens drejebog. Er der tvivl om en farve, en formulering eller et komponentvalg, slår guiden koden.
-2. `naja-byg-frygtanalyse.html` — 49 kodede klagepunkter fra danske boligejere. Forklarer *hvorfor* løfterne og stemplerne er formuleret, som de er. Læs den, før du ændrer et budskab.
-3. `OPGAVER-v4.3.md` — deltaen fra 24. august-koden til guidens v4.8. **Udført 7. september 2026** (opgave 0–9; Lighthouse udestår). Listen står som dokumentation af, hvad der blev ændret og hvorfor.
+Tre dokumenter ligger i mappen. De er grundlag, ikke facit. Frederik bygger sitet, og han bestemmer, hvordan det ser ud.
+
+1. `naja-byg-frygtanalyse.html` — 49 kodede klagepunkter fra danske boligejere. Det er research, ikke smag. Forklarer *hvorfor* løfterne, stemplerne og tragten er, som de er.
+2. `naja-byg-designguide-v4.html` (v4.8) — identiteten, som den er tænkt. Afsnit 02, 03, 05, 13 og 16 er tekst og struktur bygget på analysen; resten er visuelle valg.
+3. `OPGAVER-v4.3.md` — den ordnede delta fra 24. august-koden. Brug den som liste, ikke som lov.
+
+**Låst — fordi det bygger på analysen og er gennemgået af Frederik:**
+- Løftelisten (syv) og kvalitetsstemplerne (fem), ordret — se Signaturkomponenter
+- De tre tal på prissiden: timepris, kørsel, materialer — og tærsklen for varsling
+- Forsiden som tragt: syv trin, ét kundespørgsmål hver, én CTA i bunden
+- Sprogreglen: sig det ligeud; kvalitet/faglighed/erfaring kun med kvittering i samme sætning
+- SEO-reglerne
+- Work Sans · varm hvid grund · døråbningen som mærke
+
+**Åbent — Frederiks valg, og Claude Code må afvige fra guiden her uden at spørge:**
+- Layout, komposition, spacing, sektionshøjder, billedbeskæringer
+- Hvor meget teal, hvor og hvordan. Guidens 24 % er en tommelfingerregel, ikke en grænse
+- Komponenternes form — stemplerne skal have overskrift + sætning, men rissestregen er ét forslag
+- Bevægelse, ud over reglen om `prefers-reduced-motion`
+- Alt, der ikke står under Låst
 
 `naja-byg-designguide.pdf` (v3.0) er forældet og må ikke bruges som reference.
 
@@ -35,13 +52,10 @@ Sitet svarer på to ting, og kun de to: at kunden ikke ved, hvad hun skal bede o
 | `om-os.html` | Niclas og Frederik, direkte numre, **den fulde løfteliste**, ejendomsforretningen som faktalinje |
 | `kontakt.html` | Fem formularfelter med hjælpetekster + rækkefølgen for en opgave |
 | `gate.html` | Adgangsside (entry point, kun indtil live) |
-| `style.css` | Hele designsystemet, bygget på guidens v4-tokens |
+| `style.css` | Hele designsystemet, bygget på guidens v4-tokens. Komponenterne står under „Forsiden som et tilbud på papir“ |
+| `PRODUCT.md` | Produktsandhed til designværktøjet (impeccable). Kort. |
 | `script.js` | Telefonbar, mobilmenu, før/efter-slider, adgangstjek |
 | `sitemap.xml` / `robots.txt` | SEO — se afsnittet nedenfor |
-| `favicon.svg` / `favicon-32.png` | Mærket alene. SVG først, PNG som fallback |
-| `assets/og-image.jpg` | 1200 × 630, fuldt lockup på Sand 50. Genereres med Pillow |
-| `assets/tilbud-eksempel.pdf` | **Placeholder** — skiftes til et rigtigt, anonymiseret tilbud |
-| `assets/billeder/hero/` | Hero-beskæringer (desktop 16:9, mobil stående). Originalen er `Byggeprocessen/IMG_6323.jpeg` |
 | `intern.html` / `intern.js` / `intern.css` | **Intern** dashboard + beregner til ejendomsforretningen. Skjult URL, eget legacy-stylesheet — rører ikke det nye brand |
 | `_arkiv-ejendomsinvest/` | Den gamle NAJA Ejendomsinvest-side, som den så ud før rebrandet |
 | `logo/` | Logoarbejde. **Døråbningen (E8) er valgt** — se afsnittet Logo |
@@ -123,16 +137,21 @@ Hjørneradius 2 px (aldrig over 4). Rammer 1 px. Maks. indholdsbredde 1140 px, t
 
 ---
 
-## Hero
+## Layout — forsiden som et tilbud på papir (8. september 2026)
 
-Fuldbredde-billede med overskrift og handling i venstre side. Gradienten er brandets teal (`rgba(4,48,44,…)`) — aldrig en generisk sort overlay.
+Frederiks dom over v4.8-koden: farvestriber, logo to gange, fem ens kasser, søgt prisoverskrift. Siden blev bygget om med friske øjne. Konceptet: **et godt tilbud på papir** — tal, klausuler og navne, sat ligeud på varm hvid med hårlinjer som eneste struktur.
 
-- **Desktop:** gradienten kommer fra venstre, motivet får luft til højre. Bytter du billede, skal beskæringen laves om — ellers lander motivet under teksten.
-- **Mobil (< 760 px):** teksten flytter ned i bunden, hvor gradienten er tættest, og knapperne bliver fuldbredde. Stående beskæring.
-- Hero-billedet har `fetchpriority="high"` og **ikke** `loading="lazy"`. Aldrig over 250 KB.
-- Billederne er midlertidige, indtil de rigtige kommer. Systemet er bygget til telefonfotos — se Billeder.
-- Heroen bærer det **fulde lockup** (mærke + navn + undertekst) over h1. Navbaren bærer standard-lockup. Det er guidens regel, ikke en dublet.
-- Heroens knapper er aldrig rust — tragtens eneste rust-knap er trin 7's *Skriv to linjer*.
+- **Én header** (`.hdr`), lys, sticky: mærke · sider · nummeret i 600 · „Skriv til os“. Ingen mørk telefonbar. Ingen „vi tager den“.
+- **Hero delt** (`.hero-grid`): tekst til venstre, fotoet til højre uden overlay og uden logo, bløder ud til skærmkanten. Fotoet afdækkes én gang fra venstre mod højre (`door-open`, 640 ms) — sidens eneste indtoning. Mobil: foto øverst, tekst under.
+- **Klausuler** (`.clauses` / `.clause`): påstand i stor grad til venstre, mekanisme til højre, hårlinjer imellem. Bruges til stemplerne, løftelisten, spørgsmålene og ydelseslisten på undersiderne. **Aldrig kasser, aldrig ikoner, aldrig eyebrow-labels over overskrifter.**
+- **Ydelseslisten** (`.services-list`): én stor typografisk liste i to spalter med pil.
+- **Prisfeltet** (`.price-block`): sidens ene teal-felt. Tallene i op til 4,4 rem. Overskriften er „Hvad koster det?“ — ikke „Timeprisen står her. Ikke bag en formular.“ (fravalgt som søgt).
+- **Jobrækker** (`.jobrows` / `.jobrow`): foto til venstre, fakta til højre, én pr. række. Erstatter kortgriddet.
+- **Forløbet** (`.flow`): fire trin med store tal i teal.
+- **Afslutningen** (`.close`): nummeret i op til 6 rem som sidens sidste ord, plus den ene rust-knap „Skriv til os“. Alle sider slutter sådan.
+- **Hero-billederne** ligger i `assets/billeder/hero/` (split-beskæring til desktop, stående til mobil). Aldrig over 250 KB. Midlertidige, indtil de rigtige kommer.
+
+Regler fra designværktøjets kvalitetsgulv, som nu gælder: ingen eyebrow over overskrifter · ingen ens kort som sidestruktur · ingen farvet kant over 1 px · ingen sektionsnumre uden betydning.
 
 ---
 
@@ -254,13 +273,10 @@ Aldrig: tal der tæller op · parallax · karruseller · autoplay-video i hero.
 - [ ] **Kontaktformularen har ingen backend.** `action="#"`. Sæt en formulartjeneste på
 - [ ] **Logoet** skal gennem en grafiker (bog-læsningen). Skitsen bruges indtil da
 - [ ] **Byg Garanti-mærket** må først vises, når medlemskab af DI Byggeri eller Dansk Håndværk er på plads
-- [ ] **HTTPS på najabyg.dk** — certifikat ikke udstedt, se Hosting
-- [ ] **robots.txt** vendes til Allow ved go-live
 - [ ] **Google Business Profile** med de samme billeder
 - [ ] **De rigtige billeder** — hero og jobkort er midlertidige
 - [ ] **Syddjurs Byg** — tre fakta til forsidens trin 4 (år, navn, farens rolle)
 - [ ] **Et rigtigt, anonymiseret tilbud** som PDF til forsidens trin 6
-- [ ] **Vores venner i branchen** (`ydelser.html#venner`): firmanavn, URL, by og én sætning for Jespers VVS-firma og elektrikeren. Navne, ikke logoer — guidens regel om fremmede mærker gælder
 
 ---
 
@@ -317,13 +333,7 @@ Sessionen nulstilles ved lukning af browsertab. Der er ingen server-side sikkerh
 
 ## Hosting
 
-Deployes som statisk site via GitHub Pages fra `../GitHub/najabyg` (branch `main`, custom domain `najabyg.dk`). **Pushed 7. september 2026** — najabyg.dk viser nu det nye site bag gaten. Go-live er tidligst marts 2027.
-
-**Sådan deployes en ændring:** kopiér sitets filer fra denne mappe til repoet (kun HTML/CSS/JS, `assets/billeder`, `data`, `scripts`, favicon, sitemap, robots, CLAUDE.md, OPGAVER) — aldrig designguide, analyser, `logo/`, `_arkiv-ejendomsinvest/` eller `visual inspiration/`. De er ignoreret i repoets `.gitignore`. Commit og push til `main`; Pages bygger på under et minut.
-
-**Kendte forhold:**
-- `robots.txt` blokerer alt, så længe gaten er på — crawlere kører ikke JavaScript, så gaten alene holder dem ikke ude. Vendes til `Allow: /` ved go-live.
-- **HTTPS virker ikke på najabyg.dk** (september 2026). DNS er korrekt (A-records til GitHub Pages, `is_https_eligible: true`), men GitHub har ikke udstedt certifikatet. Fix: GitHub → repo → Settings → Pages → fjern custom domain, gem, tilføj `najabyg.dk` igen, vent på „Certificate issued", slå „Enforce HTTPS" til. Skal være løst før go-live.
+Deployes som statisk site. Produktionsrepoet ligger i `../GitHub/najabyg` (custom domain `najabyg.dk`) og indeholder stadig den **gamle** ejendomsinvest-udgave — det skal opdateres separat, når indholdet her er godkendt. Go-live er tidligst marts 2027.
 
 ---
 

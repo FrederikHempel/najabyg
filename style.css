@@ -200,93 +200,9 @@ img {
     gap: clamp(20px, 3vw, 32px);
 }
 
-/* ── Telefonbaren ────────────────────────────────────────────
-   Sitets vigtigste enkeltelement. Klæbet til toppen, altid trykbar. */
-.phonebar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--nb-teal-950);
-    color: var(--nb-sand-50);
-}
-
-.phonebar-inner {
-    max-width: var(--nb-max-width);
-    margin: 0 auto;
-    padding: 14px clamp(20px, 5vw, 48px);
-    display: flex;
-    align-items: center;
-    gap: var(--sp-4);
-    flex-wrap: wrap;
-}
-
-.phonebar.is-compact .phonebar-inner { padding-top: 8px; padding-bottom: 8px; }
-
-.phonebar-label {
-    font-size: .72rem;
-    font-weight: 600;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--nb-sten-400);
-}
-.phonebar.is-compact .phonebar-label { display: none; }
-
-.phonebar-number {
-    font-family: var(--nb-font-display);
-    font-weight: 600;
-    letter-spacing: -.02em;
-    font-size: 1.2rem;
-    color: var(--nb-sand-50);
-    text-decoration: none;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-}
-.phonebar-number:hover { color: var(--nb-rust-400); }
-
-.phonebar-spacer { flex: 1; }
-
-.phonebar-alt {
-    color: var(--nb-sand-100);
-    text-decoration: none;
-    font-size: .94rem;
-    border-bottom: 1px solid var(--nb-sten-500);
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-}
-.phonebar-alt:hover { color: var(--nb-rust-400); border-bottom-color: var(--nb-rust-400); }
-
-/* På mobil skal baren fylde én række — nummeret er det, der tæller. */
-@media (max-width: 620px) {
-    .phonebar-inner { flex-wrap: nowrap; gap: var(--sp-3); padding-top: 10px; padding-bottom: 10px; }
-    .phonebar-label { display: none; }
-    .phonebar-number { font-size: 1.12rem; }
-    .phonebar-alt { white-space: nowrap; font-size: .88rem; }
-}
-
-/* ── Navigation ──────────────────────────────────────────────── */
-.nav {
-    background: var(--nb-bg);
-    border-bottom: 1px solid var(--nb-border);
-    /* Ikke sticky — telefonbaren er det element, der skal blive stående. */
-    position: relative;
-    z-index: 90;
-}
-
-.nav-inner {
-    max-width: var(--nb-max-width);
-    margin: 0 auto;
-    padding: var(--sp-3) clamp(20px, 5vw, 48px);
-    display: flex;
-    align-items: center;
-    gap: var(--sp-6);
-}
-
 /* ── Logo-lockup ────────────────────────────────────────────
-   Døråbningen (E8) + „Naja Byg“. Mærkets højde = 1,30 × graden,
-   afstand mærke→navn = 0,45 × versalhøjden (≈ 0,30 em i Work Sans).
-   Bladet skifter farve i negativ; åbningen er altid Rust 400. */
+   Døråbningen (E8) + „Naja Byg“. Bladet skifter farve i negativ;
+   åbningen er altid Rust 400. */
 .lockup {
     display: inline-flex;
     align-items: center;
@@ -296,58 +212,51 @@ img {
     text-decoration: none;
     line-height: 1;
     white-space: nowrap;
+    flex: none;
 }
 .lockup:hover { color: var(--nb-logo-ink); }
-
-.lockup-mark {
-    height: 1.3em;
-    width: auto;
-    flex: none;
-    filter: none;              /* ingen billedgrading på mærket */
-}
+.lockup-mark { height: 1.3em; width: auto; flex: none; filter: none; }
 .lockup-mark .door-open { fill: var(--nb-rust-400); }
 .lockup-mark .door-leaf { fill: var(--nb-logo-ink); }
-
-.lockup-text {
-    display: flex;
-    flex-direction: column;
-    gap: .18em;
-}
-
-.lockup-name {
-    font-family: var(--nb-font-display);
-    font-weight: 700;          /* den ene tilladte 700 */
-    letter-spacing: -.035em;
-    font-size: 1em;
-    line-height: 1;
-}
-
-/* Underteksten — kun i fuldt lockup (hero, Om os). Aldrig i to linjer. */
+.lockup-text { display: flex; flex-direction: column; gap: .18em; }
+.lockup-name { font-family: var(--nb-font-display); font-weight: 700; letter-spacing: -.035em; font-size: 1em; line-height: 1; }
 .lockup-sub {
-    font-family: var(--nb-font-body);
-    font-weight: 500;
-    font-size: .36em;          /* ≈ 0,26 × ordmærkets versalhøjde */
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: var(--nb-sten-600);
-    white-space: nowrap;
-    line-height: 1;
+    font-family: var(--nb-font-body); font-weight: 500; font-size: .36em;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--nb-sten-600);
+    white-space: nowrap; line-height: 1;
 }
-
 .lockup--on-dark { color: var(--nb-sand-50); }
 .lockup--on-dark:hover { color: var(--nb-sand-50); }
 .lockup--on-dark .lockup-mark .door-leaf { fill: var(--nb-sand-50); }
 .lockup--on-dark .lockup-sub { color: var(--nb-sten-400); }
-
 .lockup--full { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+
+/* ── Header ─────────────────────────────────────────────────
+   Én lys bjælke. Mærket til venstre, sider i midten, nummeret til højre.
+   Nummeret er det stærkeste element — det er det, kunden skal bruge. */
+.hdr {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--nb-bg);
+    border-bottom: 1px solid var(--nb-border);
+}
+
+.hdr-inner {
+    max-width: var(--nb-max-width);
+    margin: 0 auto;
+    padding: 14px clamp(20px, 5vw, 48px);
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 40px);
+}
 
 .nav-links {
     margin-left: auto;
     display: flex;
-    gap: var(--sp-6);
+    gap: clamp(16px, 2vw, 28px);
     align-items: center;
 }
-
 .nav-links a {
     color: var(--nb-teal-900);
     text-decoration: none;
@@ -358,14 +267,42 @@ img {
     border-bottom: 2px solid transparent;
 }
 .nav-links a:hover,
-.nav-links a[aria-current="page"] {
-    color: var(--nb-teal-950);
-    border-bottom-color: var(--nb-accent);
+.nav-links a[aria-current="page"] { color: var(--nb-teal-950); border-bottom-color: var(--nb-teal-950); }
+
+.hdr-contact {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 1.6vw, 22px);
+    padding-left: clamp(12px, 2vw, 28px);
+    border-left: 1px solid var(--nb-border);
 }
+.hdr-phone {
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: 1.12rem;
+    letter-spacing: -.02em;
+    color: var(--nb-teal-950);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+.hdr-phone:hover { color: var(--nb-accent); }
+.hdr-write {
+    font-size: .94rem;
+    color: var(--nb-teal-900);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--nb-border-ui);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+.hdr-write:hover { color: var(--nb-accent); border-bottom-color: var(--nb-accent); }
 
 .nav-toggle {
     display: none;
-    margin-left: auto;
     min-width: 44px;
     min-height: 44px;
     background: transparent;
@@ -377,7 +314,13 @@ img {
     cursor: pointer;
 }
 
+@media (max-width: 900px) {
+    .hdr-write { display: none; }
+    .nav-links a { font-size: .9rem; }
+}
 @media (max-width: 760px) {
+    .hdr-inner { flex-wrap: wrap; gap: 12px; }
+    .hdr-contact { margin-left: auto; border-left: 0; padding-left: 0; }
     .nav-toggle { display: block; }
     .nav-links {
         display: none;
@@ -391,7 +334,6 @@ img {
     }
     .nav-links.is-open { display: flex; }
     .nav-links a { width: 100%; border-bottom: 1px solid var(--nb-border); }
-    .nav-inner { flex-wrap: wrap; }
 }
 
 /* ── Knapper ─────────────────────────────────────────────────
@@ -446,127 +388,83 @@ img {
 }
 
 /* ── Hero ────────────────────────────────────────────────────
-   Fuldbredde-billede med tekst og handling i venstre side.
-   Gradienten er brandets teal — ikke en generisk sort overlay. */
+   Delt: teksten til venstre på varm hvid, fotoet til højre uden overlay.
+   Fotoet bløder ud til højre kant. Det eneste, der bevæger sig, er
+   døren, der åbner: fotoet afdækkes fra venstre mod højre én gang. */
 .hero {
-    position: relative;
-    isolation: isolate;
     overflow: hidden;
-    background: var(--nb-teal-950);
-    min-height: clamp(520px, 76vh, 740px);
+}
+.hero-grid {
+    max-width: var(--nb-max-width);
+    margin: 0 auto;
+    padding-left: clamp(20px, 5vw, 48px);
+    display: grid;
+    grid-template-columns: minmax(0, 11fr) minmax(0, 10fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+}
+.hero-copy { padding: clamp(48px, 8vw, 104px) 0; }
+
+.hero h1 {
+    font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+    line-height: 1.02;
+    max-width: 12ch;
+}
+.hero-lead {
+    margin: clamp(20px, 3vw, 28px) 0 0;
+    font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+    line-height: 1.5;
+    color: var(--nb-text-lead);
+    max-width: 38ch;
+}
+.hero-actions {
     display: flex;
     align-items: center;
-    padding: clamp(56px, 9vw, 96px) 0;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin-top: clamp(28px, 4vw, 40px);
 }
 
-.hero-media { position: absolute; inset: 0; z-index: -2; }
-.hero-media img {
+.hero-photo {
+    position: relative;
+    margin: 0;
+    /* bløder ud til højre kant af skærmen */
+    margin-right: calc(50% - 50vw);
+    min-height: clamp(420px, 56vw, 720px);
+    align-self: stretch;
+}
+.hero-photo img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Motivet sidder lidt over midten — hold personen i billedet ved lave højder. */
-    object-position: 50% 50%;
+    object-position: 62% 50%;
 }
-
-/* Mobil: gradienten kommer nedefra, så teksten står i bunden af billedet. */
-.hero-veil {
+.hero-caption {
     position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(to top,
-        rgba(4, 48, 44, .96) 0%,
-        rgba(4, 48, 44, .88) 42%,
-        rgba(4, 48, 44, .52) 72%,
-        rgba(4, 48, 44, .24) 100%);
-}
-
-/* Fra tablet og op: gradienten kommer fra venstre, og motivet får luft til højre. */
-@media (min-width: 760px) {
-    .hero-veil {
-        background:
-            linear-gradient(98deg,
-                rgba(4, 48, 44, .97) 0%,
-                rgba(4, 48, 44, .94) 30%,
-                rgba(4, 48, 44, .74) 48%,
-                rgba(4, 48, 44, .30) 66%,
-                rgba(4, 48, 44, .06) 83%,
-                rgba(4, 48, 44, 0) 100%),
-            linear-gradient(to top, rgba(4, 48, 44, .38), rgba(4, 48, 44, 0) 46%);
-    }
-}
-
-.hero-inner { width: 100%; }
-.hero-content { max-width: 34rem; }
-
-.hero .rule { background: var(--nb-rust-400); }
-.hero .hero-lockup { margin-bottom: var(--sp-8); }
-
-.hero h1 {
-    color: var(--nb-sand-50);
-    max-width: 15ch;
-    margin-bottom: var(--sp-6);
-}
-
-.hero-lead {
-    color: var(--nb-sand-100);
-    font-size: clamp(1.06rem, 1.9vw, 1.24rem);
-    line-height: 1.55;
-    max-width: 46ch;
+    left: 0;
+    bottom: 0;
     margin: 0;
+    padding: 10px 16px;
+    background: var(--nb-bg);
+    color: var(--nb-text-lead);
+    font-size: .84rem;
+    line-height: 1.3;
+}
+.hero-caption b { font-weight: 600; color: var(--nb-text-heading); }
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes door-open { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0 0 0 0); } }
+    .hero-photo img { animation: door-open 400ms cubic-bezier(.2, .8, .2, 1) both; }
 }
 
-.hero .btn-row { margin-top: var(--sp-8); align-items: center; }
-
-.hero-link {
-    color: var(--nb-sand-100);
-    font-size: .96rem;
-    text-decoration: none;
-    border-bottom: 1px solid var(--nb-sten-500);
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-}
-.hero-link:hover { color: var(--nb-rust-400); border-bottom-color: var(--nb-rust-400); }
-
-/* Billedtekst — sted og år, som guiden foreskriver. */
-.hero-credit {
-    position: absolute;
-    right: clamp(20px, 5vw, 48px);
-    bottom: var(--sp-4);
-    margin: 0;
-    padding: 5px 11px;
-    /* Egen baggrund — billedet kan være lyst netop dér. */
-    background: rgba(4, 48, 44, .62);
-    color: var(--nb-sand-100);
-    font-size: .68rem;
-    font-weight: 600;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-}
-/* Mobil: teksten lægges i bunden, hvor gradienten er tættest.
-   Billedtekstens chip flyttes op, så den ikke støder ind i knapperne. */
-@media (max-width: 759px) {
-    .hero {
-        align-items: flex-end;
-        min-height: clamp(560px, 84vh, 720px);
-        padding-bottom: clamp(52px, 11vw, 80px);
-    }
-    .hero-veil {
-        background: linear-gradient(to top,
-            rgba(4, 48, 44, .97) 0%,
-            rgba(4, 48, 44, .94) 54%,
-            rgba(4, 48, 44, .68) 79%,
-            rgba(4, 48, 44, .34) 100%);
-    }
-    .hero .btn-row { flex-direction: column; align-items: stretch; gap: var(--sp-3); }
-    .hero .btn-row .btn { width: 100%; }
-    .hero-link { align-self: flex-start; }
-    .hero-credit {
-        left: clamp(20px, 5vw, 48px);
-        right: auto;
-        top: var(--sp-4);
-        bottom: auto;
-    }
+@media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 0; padding-left: 0; }
+    .hero-copy { order: 2; padding: clamp(32px, 7vw, 48px) clamp(20px, 5vw, 48px) clamp(40px, 8vw, 56px); }
+    .hero-photo { order: 1; margin-right: 0; min-height: 0; aspect-ratio: 4 / 5; max-height: 72vh; }
+    .hero h1 { max-width: none; }
+    .hero-actions .btn { width: 100%; }
 }
 
 /* ── Løftelisten ─────────────────────────────────────────────
@@ -824,8 +722,8 @@ td.name { font-weight: 600; color: var(--nb-text-heading); }
 .note {
     margin-top: var(--sp-6);
     padding: var(--sp-4) var(--sp-6);
-    border-left: 3px solid var(--nb-accent);
-    background: var(--nb-bg-subtle);
+    border-left: 1px solid var(--nb-border-ui);
+    background: transparent;
     max-width: 74ch;
 }
 .note p { font-size: .96rem; color: var(--nb-text-muted); }
@@ -1020,34 +918,34 @@ td.name { font-weight: 600; color: var(--nb-text-heading); }
     font-size: 1.06rem;
 }
 
-/* ── Footer ──────────────────────────────────────────────────── */
+/* ── Footer ──────────────────────────────────────────────────
+   Lys, med hårlinje. Prisfeltet er sidens eneste mørke felt. */
 .footer {
-    background: var(--nb-bg-inverse);
-    color: var(--nb-text-muted-dark);
+    background: var(--nb-bg-subtle);
+    color: var(--nb-text-muted);
+    border-top: 1px solid var(--nb-border);
     padding: clamp(48px, 7vw, 80px) 0 var(--sp-8);
     font-size: .94rem;
 }
-.footer a { color: var(--nb-sand-100); text-decoration: none; }
-.footer a:hover { color: var(--nb-rust-400); }
-.footer h4 { color: var(--nb-sand-50); margin-bottom: var(--sp-3); }
-
+.footer a { color: var(--nb-teal-900); text-decoration: none; }
+.footer a:hover { color: var(--nb-accent); }
+.footer h4 { color: var(--nb-text-heading); margin-bottom: var(--sp-3); }
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: clamp(28px, 4vw, 48px);
 }
 .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
-
 .footer-base {
     margin-top: clamp(32px, 5vw, 56px);
     padding-top: var(--sp-6);
-    border-top: 1px solid rgba(169, 164, 143, .24);
+    border-top: 1px solid var(--nb-border);
     display: flex;
     flex-wrap: wrap;
     gap: var(--sp-4) var(--sp-8);
     justify-content: space-between;
     font-size: .86rem;
-    color: var(--nb-sten-400);
+    color: var(--nb-text-muted);
 }
 
 /* ── Bevægelse ───────────────────────────────────────────────
@@ -1345,3 +1243,250 @@ td.name { font-weight: 600; color: var(--nb-text-heading); }
     font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
     color: var(--nb-sten-700);
 }
+
+
+/* ══════════════════════════════════════════════════════════════
+   Forsiden som et tilbud på papir — klausuler, liste, tal, underskrift
+   ══════════════════════════════════════════════════════════════ */
+
+/* Sektionsrytme: hårlinjer, ikke farvestriber */
+.section--line { border-top: 1px solid var(--nb-border); }
+.section h2 { font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.06; max-width: 22ch; }
+.section-intro {
+    margin-top: clamp(16px, 2vw, 22px);
+    font-size: clamp(1.04rem, 1.4vw, 1.16rem);
+    line-height: 1.55;
+    color: var(--nb-text-lead);
+    max-width: 58ch;
+}
+
+/* ── Klausulerne (de fem stempler) ──────────────────────────
+   Påstand til venstre i stor grad, mekanisme til højre. Hårlinjer imellem. */
+.clauses {
+    margin-top: clamp(28px, 4vw, 44px);
+    border-top: 1px solid var(--nb-border-ui);
+}
+.clause {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 12px clamp(24px, 4vw, 64px);
+    padding: clamp(20px, 2.6vw, 30px) 0;
+    border-bottom: 1px solid var(--nb-border);
+}
+.clause:last-child { border-bottom-color: var(--nb-border-ui); }
+.clause .t {
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: clamp(1.32rem, 2.1vw, 1.72rem);
+    line-height: 1.15;
+    letter-spacing: -.028em;
+    color: var(--nb-text-heading);
+}
+.clause .p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--nb-text);
+    max-width: 52ch;
+    align-self: start;
+    padding-top: .3em;
+}
+@media (max-width: 640px) {
+    .clause { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ── Ydelseslisten ───────────────────────────────────────────
+   Én stor typografisk liste. Ingen ikoner, ingen kasser. */
+.services-list {
+    list-style: none;
+    margin: clamp(28px, 4vw, 44px) 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: clamp(32px, 5vw, 80px);
+    border-top: 1px solid var(--nb-border-ui);
+}
+.services-list li { break-inside: avoid; border-bottom: 1px solid var(--nb-border); }
+.services-list a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    letter-spacing: -.025em;
+    line-height: 1.2;
+    color: var(--nb-text-heading);
+    text-decoration: none;
+}
+.services-list a:hover { color: var(--nb-accent); }
+@media (max-width: 640px) { .services-list { columns: 1; } }
+
+/* ── Priserne — sidens ene teal-felt ─────────────────────────
+   Sat som poster i et tilbud: post til venstre, beløb til højre, hårlinje under. */
+.price-block {
+    background: var(--nb-bg-inverse);
+    color: var(--nb-text-on-dark);
+    padding: clamp(56px, 8vw, 104px) 0;
+}
+.price-block h2, .price-block h1 { color: var(--nb-sand-50); }
+.price-block .section-intro { color: var(--nb-text-muted-dark); }
+.price-lines {
+    margin-top: clamp(32px, 5vw, 48px);
+    border-top: 1px solid rgba(169, 164, 143, .5);
+    max-width: 62rem;
+}
+.price-line {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px clamp(24px, 4vw, 64px);
+    align-items: baseline;
+    padding: clamp(18px, 2.4vw, 26px) 0;
+    border-bottom: 1px solid rgba(169, 164, 143, .3);
+}
+.price-line:last-child { border-bottom-color: rgba(169, 164, 143, .5); }
+.price-line .lbl {
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+    letter-spacing: -.02em;
+    color: var(--nb-sand-50);
+}
+.price-line .sub { margin: 4px 0 0; font-size: .96rem; color: var(--nb-text-muted-dark); max-width: 44ch; }
+.price-line .val {
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    line-height: 1;
+    letter-spacing: -.035em;
+    color: var(--nb-sand-50);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
+}
+.price-line .val small { font-size: .5em; font-weight: 500; letter-spacing: 0; color: var(--nb-sand-100); margin-left: .25em; }
+.price-line .val.is-todo { font-style: normal; border-bottom: 2px dashed var(--nb-sten-500); padding-bottom: .06em; }
+.price-line .sub.is-todo { font-style: italic; }
+.price-threshold {
+    margin: clamp(28px, 4vw, 40px) 0 0;
+    font-size: clamp(1.04rem, 1.5vw, 1.2rem);
+    line-height: 1.5;
+    color: var(--nb-sand-100);
+    max-width: 56ch;
+}
+.price-block .link-more { color: var(--nb-sand-100); border-bottom-color: var(--nb-sten-500); }
+.price-block .link-more:hover { color: var(--nb-rust-400); border-bottom-color: var(--nb-rust-400); }
+@media (max-width: 560px) {
+    .price-line { grid-template-columns: 1fr; }
+    .price-line .val { text-align: left; width: fit-content; }
+}
+
+/* ── Jobkort som rækker ──────────────────────────────────────
+   Foto til venstre, fakta til højre. Læses som poster i et regnskab. */
+.jobrows { margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--nb-border-ui); }
+.jobrow {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(20px, 3vw, 48px);
+    padding: clamp(24px, 3vw, 36px) 0;
+    border-bottom: 1px solid var(--nb-border);
+}
+.jobrow:last-child { border-bottom-color: var(--nb-border-ui); }
+.jobrow-media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--nb-sand-100); }
+.jobrow-media img { width: 100%; height: 100%; object-fit: cover; transition: scale 400ms ease-out; }
+.jobrow:hover .jobrow-media img { scale: 1.03; }
+.jobrow-media--empty {
+    display: grid; place-items: center; text-align: center;
+    border: 1px dashed var(--nb-border-ui);
+    color: var(--nb-sten-600); font-size: .86rem; line-height: 1.4; padding: 24px;
+}
+.jobrow h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); letter-spacing: -.025em; }
+.jobrow-loc { margin: 4px 0 0; color: var(--nb-text-muted); font-size: .96rem; }
+.jobrow dl {
+    margin: 18px 0 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 24px;
+    font-size: 1rem;
+}
+.jobrow dt { color: var(--nb-text-muted); }
+.jobrow dd { margin: 0; color: var(--nb-text-heading); font-weight: 500; }
+.jobrow dd.is-todo { font-weight: 400; }
+.jobrow-quote {
+    margin: 20px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--nb-border);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    max-width: 52ch;
+}
+.jobrow-quote .sig { display: block; margin-top: 6px; color: var(--nb-text-muted); font-size: .92rem; }
+@media (max-width: 640px) { .jobrow { grid-template-columns: 1fr; } }
+
+/* ── Forløbet ────────────────────────────────────────────────── */
+.flow {
+    counter-reset: step;
+    list-style: none;
+    margin: clamp(28px, 4vw, 44px) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 40px);
+    border-top: 1px solid var(--nb-border-ui);
+}
+.flow li { counter-increment: step; padding-top: 18px; }
+.flow li::before {
+    content: counter(step);
+    display: block;
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1;
+    letter-spacing: -.03em;
+    color: var(--nb-text-heading);
+    margin-bottom: 14px;
+}
+.flow strong {
+    display: block;
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: 1.12rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+.flow p { margin: 0; color: var(--nb-text); font-size: .98rem; }
+@media (max-width: 860px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .flow { grid-template-columns: 1fr; } }
+
+/* ── Afslutningen — nummeret i stor skrift ───────────────────── */
+.close { padding: clamp(64px, 10vw, 128px) 0; }
+.close h2 { max-width: 16ch; }
+.close-phone {
+    display: inline-block;
+    margin-top: clamp(24px, 4vw, 40px);
+    font-family: var(--nb-font-display);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 8vw, 6rem);
+    line-height: 1;
+    letter-spacing: -.045em;
+    color: var(--nb-text-heading);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    border-bottom: 3px solid var(--nb-text-heading);
+    padding-bottom: .06em;
+}
+.close-phone:hover { color: var(--nb-accent); border-bottom-color: var(--nb-accent); }
+.close-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    margin-top: clamp(24px, 3vw, 36px);
+}
+.close-row p { margin: 0; color: var(--nb-text-lead); max-width: 44ch; }
+
+/* Footer med fuldt lockup */
+.footer .lockup--full { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+.jobrow-example { margin: 0 0 12px; font-size: .86rem; color: var(--nb-text-muted); }

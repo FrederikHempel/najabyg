@@ -154,6 +154,24 @@ Regler fra designværktøjets kvalitetsgulv, som nu gælder: ingen eyebrow over 
 
 ---
 
+## Layout — båndrytmen (9. sep. 2026, efter Frederiks note om at siden var statisk)
+
+Siden var én flade hele vejen ned bortset fra prisbåndet. Nu skifter den **materiale**, ikke bare farve, ned gennem sektionerne:
+
+| Bånd | Flade | Hvorfor |
+|---|---|---|
+| Hero | Foto + teal-fade | Det eneste billede over folden |
+| Hvad vi laver | `band-warm` (sand-100), lav højde | Indholdsfortegnelse, ikke sektion. Syv ikoner på én linje, centreret |
+| Nytænkende tømrervirksomhed | `band-light` (sand-50) | Læseflade |
+| Det har vi bygget | `band-warm` | Varm bund får de hvide kort til at stå frem |
+| Sådan ser det ud | `band-light` + **fuldbredde-mosaik** | Billederne *er* båndet — ingen container, kant til kant |
+| Vores priser | Teal | Sidens stærke felt |
+| Proces og løfter | `band-light` | Læseflade |
+| Kontakt os | `band-warm` | Skiller sig fra proces ovenfor |
+| Footer | Teal | Ankrer bunden |
+
+**Reglen:** skiftet skal være et materialeskift — varm tone, fuldbredde-foto eller teal — aldrig mekanisk zebrastribning. Sand-50 og sand-100 ligger tæt nok på hinanden til at det læses som papirskift, ikke som striber. „Ét mørkt felt“-reglen fra 8. september er ophævet: prisbåndet og footeren er begge teal, og det er med vilje.
+
 ## Layout — forsidens rækkefølge (9. sep. 2026)
 
 Efter Frederiks rettelser 9. september: **Hero** (fuldt foto, teal-fade fra venstre, h1 + lead + „Ring“ + „Skriv til os“; ingen logo, ingen billedtekst) → **Hvad vi laver** (syv håndtegnede SVG-ikoner i rust, inline i HTML) → **Nytænkende tømrervirksomhed med 10+ års erfaring** (om-tekst + de to navne) → **Det har vi bygget** (tre kort side om side i Koh Kood-layoutet: foto, titel, én linje, specs, pris, „Se mere“/„Kontakt os“) → **Sådan ser det ud, når vi er færdige** (billedmosaik, ikke et ens grid) → **Vores priser** (teal-felt, tre poster, „Vi siger til, hvis det tager længere tid end ventet.“) → **Vores proces og løfter til dig** (trin 1–4 + løftekæden: Vi kommer som lovet → Du har kun med personer at gøre, du kender → Transparent kommunikation → Vores opgave er først færdig, når du er tilfreds) → **Kontakt os** (nummeret i stor skrift). „Det kan du regne med“-afsnittet er taget af forsiden — de fem stempler står stadig på Ydelser, de syv løfter på Om os.
